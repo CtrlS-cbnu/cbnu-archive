@@ -1,0 +1,57 @@
+# =========================
+# Project Root
+# =========================
+
+.agentrules.md
+.resolvederror.md
+.devspec.md
+
+# =========================
+# Operating System & IDE
+# =========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# =========================
+# Environment Variables & Logs
+# =========================
+.env
+.env.*
+*.log
+
+# =========================
+# Frontend (React / Node.js)
+# =========================
+node_modules/
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# =========================
+# Backend (Spring Boot / Java)
+# =========================
+.gradle/
+build/
+target/
+!gradle/wrapper/gradle-wrapper.jar
+*.class
+*.jar
+*.war
+bin/
+
+# =========================
+# AI Service (FastAPI / Python)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+.coverage
