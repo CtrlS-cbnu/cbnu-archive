@@ -1,10 +1,9 @@
 # =========================
-# Project Root
+# Project Root(yhw1737)
 # =========================
 
-.agentrules.md
-.resolvederror.md
 .devspec.md
+.agents
 
 # =========================
 # Operating System & IDE
