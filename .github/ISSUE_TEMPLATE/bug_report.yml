@@ -1,6 +1,6 @@
-name: 🐛 Bug Report
-description: 게임 또는 시스템에서 발생한 버그를 신고합니다.
-title: "[Bug] "
+name: 🐛 버그 리포트 (Bug)
+description: 오류 및 버그 발생 시 사용합니다.
+title: "[BUG] "
 labels: ["bug"]
 assignees: []
 
@@ -8,24 +8,35 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: 무슨 일이 일어났나요?
+      label: 발생 현상
       placeholder: |
-        어떤 상황에서 어떤 문제가 생겼는지 자유롭게 설명해주세요.
-        스크린샷이나 영상이 있으면 여기 첨부해도 좋습니다.
+        어떤 상황에서 어떤 오류가 발생했는지 기술하세요.
+        스크린샷 또는 에러 로그가 있으면 첨부하세요.
     validations:
       required: true
 
   - type: textarea
     id: steps
     attributes:
-      label: 재현 방법 (선택)
+      label: 재현 절차 (선택)
       placeholder: |
         1. 
         2. 
         3.
 
   - type: textarea
-    id: extra
+    id: expected
     attributes:
-      label: 참고 사항 (선택)
-      placeholder: Godot 버전, 에러 로그, 관련 파일명 등 추가로 전달할 내용
+      label: 예상 결과 / 실제 결과 (선택)
+      placeholder: |
+        예상 결과: 
+        실제 결과: 
+
+  - type: textarea
+    id: env
+    attributes:
+      label: 발생 환경 (선택)
+      placeholder: |
+        OS: 
+        Browser/Tool: 
+        Part: (예: Frontend, Backend, AI)
