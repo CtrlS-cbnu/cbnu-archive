@@ -709,7 +709,7 @@ AI 기능은 실제 서비스에서 백엔드와 연결되어야 하므로,
 |일부 연동 시스템 장애 발생 시	|사용 가능한 검색 방식만으로 결과 반환|
 
 ---
-###Reference
+### Reference
 
 - Hugging Face Transformers
 - Hugging Face Sentence Transformers
