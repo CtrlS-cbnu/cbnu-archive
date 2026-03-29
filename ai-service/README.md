@@ -708,3 +708,17 @@ AI 기능은 실제 서비스에서 백엔드와 연결되어야 하므로,
 |추천 결과가 부족한 경우	|최신 프로젝트, 인기 프로젝트로 보완|
 |일부 연동 시스템 장애 발생 시	|사용 가능한 검색 방식만으로 결과 반환|
 
+---
+###Reference
+
+- Hugging Face Transformers
+- Hugging Face Sentence Transformers
+- Sentence Transformers
+- Hugging Face LLM Course (FAISS)
+- Hugging Face Transformers Pipelines
+- `sentenc-transformers/all-MiniLM-L6-v2'
+- Qdrant
+- Qdrant Text Search
+- Qdrant Embeddings
+- Qdrant Filtering 
+
