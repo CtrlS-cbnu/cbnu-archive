@@ -134,22 +134,117 @@ def infer_languages_from_config(config_texts: Dict[str, str]) -> List[str]:
     return sorted(langs)
 
 
-def extract_keywords(text: str, max_keywords: int = 12) -> List[str]:
-    tokens = re.findall(r"[A-Za-z가-힣][A-Za-z0-9가-힣\-\+\.]{1,30}", text)
-    counts: Dict[str, int] = {}
+def extract_keywords(text: str, topic: str | None = None, max_keywords: int = 4) -> list[str]:
+    import re
 
+    # 1) 먼저 살리고 싶은 핵심 구문들
+    phrase_patterns = [
+        "프로젝트 아카이브",
+        "추천 시스템",
+        "자연어 처리",
+        "컴퓨터 비전",
+        "헬스케어",
+        "웹 플랫폼",
+        "도서 추천",
+        "교과목 추천",
+        "상품 추천",
+        "논문 검색",
+        "문서 검색",
+        "졸업작품 검색",
+        "학교 공지 챗봇",
+        "수업 Q&A",
+        "법률 질의응답",
+        "의료 영상",
+        "질환 분류",
+        "의료 상담",
+        "이미지 분류",
+        "행동 탐지",
+        "텍스트 분류",
+        "침입 탐지",
+        "로그 분석",
+        "취약점 진단",
+        "시설 예약",
+        "협업 툴",
+        "성적 분석",
+        "수강신청 예측",
+        "강의자료 요약",
+        "질의응답",
+        "요약",
+        "OCR",
+    ]
+
+    # 2) 잡음 단어/표현 제거
+    noisy_patterns = [
+        r"개발되었다\.?",
+        r"구성되었다\.?",
+        r"사용자가",
+        r"쉽게",
+        r"활용할",
+        r"도메인에서",
+        r"문제를",
+        r"해결하기",
+        r"위해",
+        r"주요",
+        r"기술",
+        r"스택은",
+        r"기능을",
+        r"제공하는",
+        r"중심으로",
+        r"이며",
+        r"이다\.?",
+        r"있도록",
+    ]
+
+    cleaned = text
+    for pat in noisy_patterns:
+        cleaned = re.sub(pat, " ", cleaned, flags=re.IGNORECASE)
+
+    # 3) 먼저 phrase 매칭
+    found: list[str] = []
+    lowered = cleaned.lower()
+
+    for phrase in sorted(phrase_patterns, key=len, reverse=True):
+        if phrase.lower() in lowered and phrase not in found:
+            found.append(phrase)
+
+    # 4) topic 우선 삽입
+    if topic and topic not in found:
+        found.insert(0, topic)
+
+    # 5) 남은 단어 후보 추출
+    tokens = re.findall(r"[A-Za-z가-힣][A-Za-z0-9가-힣\-\+]{1,30}", cleaned)
+
+    stopwords = {
+        "이", "그", "저", "및", "또한", "기반", "활용", "사용", "기술", "스택",
+        "프로젝트", "도메인", "기능", "문제", "사용자", "쉽게", "구성",
+        "python", "react", "spring", "postgresql", "fastapi", "opencv",
+        "pytorch", "docker", "mongodb", "mysql", "qdrant", "rag", "opensearch",
+        "tensorflow", "transformers",
+    }
+
+    extra_tokens = []
     for token in tokens:
-        t = token.strip().lower()
+        t = token.strip()
+        tl = t.lower()
         if len(t) < 2:
             continue
-        if t in KEYWORD_STOPWORDS:
+        if tl in stopwords:
             continue
-        if re.fullmatch(r"\d+", t):
+        if re.fullmatch(r"\d+", tl):
             continue
-        counts[t] = counts.get(t, 0) + 1
+        if tl.endswith("이며") or tl.endswith("이다"):
+            continue
+        extra_tokens.append(t)
 
-    ranked = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
-    return [k for k, _ in ranked[:max_keywords]]
+    # 6) phrase 우선 + 남는 토큰 보조
+    final_keywords: list[str] = []
+    for kw in found + extra_tokens:
+        if kw not in final_keywords:
+            final_keywords.append(kw)
+        if len(final_keywords) >= max_keywords:
+            break
+
+    return final_keywords[:max_keywords]
 
 
 def infer_project_type(text: str) -> str | None:
@@ -234,7 +329,7 @@ class MetadataAnalyzer:
         ))
 
         topic, sub_topics = infer_topic(merged_text)
-        keywords = extract_keywords(merged_text)
+        keywords = extract_keywords(merged_text, topic)
         project_type = infer_project_type(merged_text)
         difficulty = infer_difficulty(tech_stack, merged_text)
         io_types = infer_input_output_type(merged_text)

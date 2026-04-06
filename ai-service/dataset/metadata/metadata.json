@@ -1,0 +1,31 @@
+{
+  "tech_stack_aliases": {
+    "spring": "Spring Boot",
+    "springboot": "Spring Boot",
+    "js": "JavaScript",
+    "ts": "TypeScript",
+    "postgres": "PostgreSQL",
+    "torch": "PyTorch",
+    "cv2": "OpenCV",
+    "tf": "TensorFlow",
+    "node": "Node.js",
+    "elasticsearch": "OpenSearch"
+  },
+  "topic_aliases": {
+    "archive": "프로젝트 아카이브",
+    "recommendation": "추천 시스템",
+    "computer vision": "컴퓨터 비전",
+    "nlp": "자연어 처리",
+    "healthcare": "헬스케어",
+    "security": "보안",
+    "chatbot": "챗봇",
+    "education": "교육",
+    "web": "웹 플랫폼"
+  },
+  "project_type_aliases": {
+    "capstone": "캡스톤",
+    "team project": "팀 프로젝트",
+    "assignment": "수업 과제",
+    "hackathon": "해커톤"
+  }
+}

@@ -17,6 +17,7 @@ class ProjectInput:
     config_texts: Dict[str, str]
     course_name: str
     semester: str
+    team_size: Optional[int] = None
 
 
 @dataclass

@@ -1,0 +1,2522 @@
+{
+  "q001": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p071",
+      "relevance": 3
+    }
+  ],
+  "q002": [
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p055",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p076",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p078",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p083",
+      "relevance": 3
+    }
+  ],
+  "q003": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p068",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p077",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p078",
+      "relevance": 3
+    }
+  ],
+  "q004": [
+    {
+      "doc_id": "p004",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p039",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p062",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p066",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p079",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p090",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p120",
+      "relevance": 3
+    }
+  ],
+  "q005": [
+    {
+      "doc_id": "p005",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p015",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p054",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p061",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p063",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p067",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p070",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p075",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p109",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 2
+    }
+  ],
+  "q006": [
+    {
+      "doc_id": "p006",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p009",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p037",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p073",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p090",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p099",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p105",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p108",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p120",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p017",
+      "relevance": 2
+    }
+  ],
+  "q007": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p046",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p069",
+      "relevance": 3
+    }
+  ],
+  "q008": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    }
+  ],
+  "q009": [
+    {
+      "doc_id": "p006",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p009",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p037",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p073",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p099",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p105",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 2
+    }
+  ],
+  "q010": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    }
+  ],
+  "q011": [
+    {
+      "doc_id": "p004",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p002",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p003",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p017",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 2
+    }
+  ],
+  "q012": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q013": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p059",
+      "relevance": 3
+    }
+  ],
+  "q014": [
+    {
+      "doc_id": "p014",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p053",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p058",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p072",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p114",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p024",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p063",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p067",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p087",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p088",
+      "relevance": 2
+    }
+  ],
+  "q015": [
+    {
+      "doc_id": "p005",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p015",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p054",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p061",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p063",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p067",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p070",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p075",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p109",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 2
+    }
+  ],
+  "q016": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    }
+  ],
+  "q017": [
+    {
+      "doc_id": "p017",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p062",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p066",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p073",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p074",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p079",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p080",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p090",
+      "relevance": 3
+    }
+  ],
+  "q018": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p071",
+      "relevance": 3
+    }
+  ],
+  "q019": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p050",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p077",
+      "relevance": 3
+    }
+  ],
+  "q020": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p046",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p069",
+      "relevance": 3
+    }
+  ],
+  "q021": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p050",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p077",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p084",
+      "relevance": 3
+    }
+  ],
+  "q022": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p078",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p095",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p097",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p116",
+      "relevance": 3
+    }
+  ],
+  "q023": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p068",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p078",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p091",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p098",
+      "relevance": 3
+    }
+  ],
+  "q024": [
+    {
+      "doc_id": "p024",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p030",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p041",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p049",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p093",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p102",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p111",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p014",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p058",
+      "relevance": 2
+    }
+  ],
+  "q025": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 3
+    }
+  ],
+  "q026": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q027": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q028": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p059",
+      "relevance": 3
+    }
+  ],
+  "q029": [
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p055",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p076",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p078",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p083",
+      "relevance": 3
+    }
+  ],
+  "q030": [
+    {
+      "doc_id": "p030",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p060",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p100",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p024",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p041",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p049",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p053",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p064",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p082",
+      "relevance": 2
+    }
+  ],
+  "q031": [
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p017",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p062",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p066",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p074",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p079",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p080",
+      "relevance": 3
+    }
+  ],
+  "q032": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    }
+  ],
+  "q033": [
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p046",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p069",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p083",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p094",
+      "relevance": 3
+    }
+  ],
+  "q034": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q035": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p017",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q036": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    }
+  ],
+  "q037": [
+    {
+      "doc_id": "p006",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p009",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p037",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p039",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p073",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p099",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p120",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p012",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 2
+    }
+  ],
+  "q038": [
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p039",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p120",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p002",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p003",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p004",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p006",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p009",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 2
+    }
+  ],
+  "q039": [
+    {
+      "doc_id": "p004",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p037",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p039",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p099",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p120",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p002",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p003",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p006",
+      "relevance": 2
+    }
+  ],
+  "q040": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q041": [
+    {
+      "doc_id": "p024",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p041",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p049",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p093",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p102",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p111",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p030",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p060",
+      "relevance": 2
+    }
+  ],
+  "q042": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    }
+  ],
+  "q043": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p068",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p078",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p091",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p098",
+      "relevance": 3
+    }
+  ],
+  "q044": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p050",
+      "relevance": 3
+    }
+  ],
+  "q045": [
+    {
+      "doc_id": "p004",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p017",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p031",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p062",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p066",
+      "relevance": 3
+    }
+  ],
+  "q046": [
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p046",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p069",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p083",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p089",
+      "relevance": 3
+    }
+  ],
+  "q047": [
+    {
+      "doc_id": "p024",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p030",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p060",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p093",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p102",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p041",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p049",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p053",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p064",
+      "relevance": 2
+    }
+  ],
+  "q048": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    }
+  ],
+  "q049": [
+    {
+      "doc_id": "p024",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p030",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p041",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p049",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p060",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p093",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p102",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p111",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 2
+    }
+  ],
+  "q050": [
+    {
+      "doc_id": "p003",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p006",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p008",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p010",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p016",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p019",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p021",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p023",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p043",
+      "relevance": 3
+    }
+  ],
+  "q051": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p045",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    }
+  ],
+  "q052": [
+    {
+      "doc_id": "p011",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p052",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p059",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p002",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p003",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p004",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p012",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 2
+    }
+  ],
+  "q053": [
+    {
+      "doc_id": "p014",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p053",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p058",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p072",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p114",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p011",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p030",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p038",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p060",
+      "relevance": 2
+    }
+  ],
+  "q054": [
+    {
+      "doc_id": "p005",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p015",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p054",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p061",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p063",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p067",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p070",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p075",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p100",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p109",
+      "relevance": 3
+    }
+  ],
+  "q055": [
+    {
+      "doc_id": "p002",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p007",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p020",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p029",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p033",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p046",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p055",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p069",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p076",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p083",
+      "relevance": 3
+    }
+  ],
+  "q056": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p042",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p048",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    }
+  ],
+  "q057": [
+    {
+      "doc_id": "p001",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p018",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p022",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p025",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p032",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p036",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p044",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p056",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p057",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p071",
+      "relevance": 3
+    }
+  ],
+  "q058": [
+    {
+      "doc_id": "p014",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p053",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p058",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p072",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p114",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p024",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p063",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p067",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p087",
+      "relevance": 2
+    },
+    {
+      "doc_id": "p088",
+      "relevance": 2
+    }
+  ],
+  "q059": [
+    {
+      "doc_id": "p012",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p013",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p026",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p027",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p028",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p034",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p035",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p040",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p051",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p052",
+      "relevance": 3
+    }
+  ],
+  "q060": [
+    {
+      "doc_id": "p024",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p030",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p041",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p047",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p049",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p060",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p093",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p102",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p111",
+      "relevance": 3
+    },
+    {
+      "doc_id": "p053",
+      "relevance": 2
+    }
+  ]
+}

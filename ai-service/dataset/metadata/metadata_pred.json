@@ -1,0 +1,2244 @@
+[
+  {
+    "project_id": "p001",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p002",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "RAG",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p003",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "학교 공지 챗봇",
+        "주제를",
+        "학교"
+      ]
+    }
+  },
+  {
+    "project_id": "p004",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "행동 탐지",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p005",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "MySQL",
+        "PostgreSQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p006",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "FastAPI",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "의료 영상",
+        "헬스케어",
+        "주제를",
+        "의료"
+      ]
+    }
+  },
+  {
+    "project_id": "p007",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "RAG",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "문서 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p008",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "챗봇",
+        "학교 공지 챗봇",
+        "주제를",
+        "학교"
+      ]
+    }
+  },
+  {
+    "project_id": "p009",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "Docker",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "의료 상담",
+        "헬스케어",
+        "주제를",
+        "의료"
+      ]
+    }
+  },
+  {
+    "project_id": "p010",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "챗봇",
+        "학교 공지 챗봇",
+        "주제를",
+        "학교"
+      ]
+    }
+  },
+  {
+    "project_id": "p011",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "Docker",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "행동 탐지",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p012",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "Python",
+        "TensorFlow"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "자연어 처리",
+        "텍스트 분류",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p013",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "FastAPI",
+        "MongoDB",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p014",
+    "pred": {
+      "topic": "보안",
+      "tech_stack": [
+        "Docker",
+        "MongoDB"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "보안",
+        "침입 탐지",
+        "주제를",
+        "침입"
+      ]
+    }
+  },
+  {
+    "project_id": "p015",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "MySQL",
+        "PostgreSQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "협업 툴",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p016",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p017",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "이미지 분류",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p018",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p019",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p020",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "문서 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p021",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python",
+        "RAG"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p022",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p023",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "RAG"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p024",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "Python",
+        "React"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "강의자료 요약",
+        "요약",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p025",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "추천 시스템",
+        "상품 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p026",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "Python",
+        "TensorFlow"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p027",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "질의응답",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p028",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "FastAPI",
+        "MongoDB",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "질의응답",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p029",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "Qdrant",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p030",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "성적 분석",
+        "주제를",
+        "성적"
+      ]
+    }
+  },
+  {
+    "project_id": "p031",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "Docker",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "이미지 분류",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p032",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "추천 시스템",
+        "상품 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p033",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p034",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "질의응답",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p035",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "OpenCV",
+        "Python",
+        "TensorFlow"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p036",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p037",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "의료 상담",
+        "헬스케어",
+        "주제를",
+        "의료"
+      ]
+    }
+  },
+  {
+    "project_id": "p038",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "Docker",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "의료 영상",
+        "헬스케어",
+        "주제를",
+        "의료"
+      ]
+    }
+  },
+  {
+    "project_id": "p039",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "질환 분류",
+        "헬스케어",
+        "주제를",
+        "질환"
+      ]
+    }
+  },
+  {
+    "project_id": "p040",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "질의응답",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p041",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "PostgreSQL",
+        "Python",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "성적 분석",
+        "주제를",
+        "성적"
+      ]
+    }
+  },
+  {
+    "project_id": "p042",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p043",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p044",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p045",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "이미지 분류",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p046",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "RAG",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "졸업작품 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p047",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "Python",
+        "React"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "강의자료 요약",
+        "요약",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p048",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p049",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "Python",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "성적 분석",
+        "주제를",
+        "성적"
+      ]
+    }
+  },
+  {
+    "project_id": "p050",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "Qdrant",
+        "RAG"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "학교 공지 챗봇",
+        "주제를",
+        "학교"
+      ]
+    }
+  },
+  {
+    "project_id": "p051",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p052",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "텍스트 분류",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p053",
+    "pred": {
+      "topic": "보안",
+      "tech_stack": [
+        "Docker",
+        "MongoDB",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "보안",
+        "침입 탐지",
+        "주제를",
+        "침입"
+      ]
+    }
+  },
+  {
+    "project_id": "p054",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "협업 툴",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p055",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "문서 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p056",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "상품 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p057",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "교과목 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p058",
+    "pred": {
+      "topic": "보안",
+      "tech_stack": [
+        "Docker",
+        "MongoDB",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "보안",
+        "침입 탐지",
+        "주제를",
+        "침입"
+      ]
+    }
+  },
+  {
+    "project_id": "p059",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "OpenCV",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p060",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "Python",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "강의자료 요약",
+        "요약",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p061",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "MySQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p062",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p063",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "협업 툴",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p064",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "MySQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p065",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p066",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "행동 탐지",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p067",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p068",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p069",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p070",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "협업 툴",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p071",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p072",
+    "pred": {
+      "topic": "보안",
+      "tech_stack": [
+        "Docker",
+        "MongoDB",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "보안",
+        "취약점 진단",
+        "주제를",
+        "취약점"
+      ]
+    }
+  },
+  {
+    "project_id": "p073",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "Docker",
+        "FastAPI",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "질환 분류",
+        "헬스케어",
+        "주제를",
+        "질환"
+      ]
+    }
+  },
+  {
+    "project_id": "p074",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "Docker",
+        "FastAPI",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "행동 탐지",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p075",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p076",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "Qdrant",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "졸업작품 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p077",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p078",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "교과목 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p079",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p080",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "이미지 분류",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p081",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "TensorFlow"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "자연어 처리",
+        "텍스트 분류",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p082",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "MySQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p083",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "RAG",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p084",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "RAG"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p085",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p086",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "Qdrant",
+        "RAG"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "학교 공지 챗봇",
+        "주제를",
+        "학교"
+      ]
+    }
+  },
+  {
+    "project_id": "p087",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "추천 시스템",
+        "상품 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p088",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "추천 시스템",
+        "상품 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p089",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p090",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p091",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p092",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p093",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "강의자료 요약",
+        "요약",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p094",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "PostgreSQL",
+        "Qdrant",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p095",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "도서 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p096",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "문서 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p097",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "교과목 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p098",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p099",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "의료 영상",
+        "헬스케어",
+        "주제를",
+        "의료"
+      ]
+    }
+  },
+  {
+    "project_id": "p100",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p101",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "Qdrant"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "교과목 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p102",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "강의자료 요약",
+        "요약",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p103",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "Qdrant",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p104",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "행동 탐지",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p105",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "Docker",
+        "FastAPI",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p106",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "Docker",
+        "FastAPI",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p107",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "문서 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p108",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "이미지 분류",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p109",
+    "pred": {
+      "topic": "웹 플랫폼",
+      "tech_stack": [
+        "MySQL",
+        "React",
+        "Spring Boot"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "웹 플랫폼",
+        "시설 예약",
+        "플랫폼",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p110",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "Python",
+        "RAG"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "챗봇",
+        "수업 Q&A",
+        "주제를",
+        "수업"
+      ]
+    }
+  },
+  {
+    "project_id": "p111",
+    "pred": {
+      "topic": "교육",
+      "tech_stack": [
+        "MySQL",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "교육",
+        "성적 분석",
+        "주제를",
+        "성적"
+      ]
+    }
+  },
+  {
+    "project_id": "p112",
+    "pred": {
+      "topic": "챗봇",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "Python",
+        "RAG"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "챗봇",
+        "법률 질의응답",
+        "질의응답",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p113",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "Python",
+        "TensorFlow"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p114",
+    "pred": {
+      "topic": "보안",
+      "tech_stack": [
+        "Docker",
+        "MongoDB",
+        "Python"
+      ],
+      "difficulty": "초급",
+      "keywords": [
+        "보안",
+        "취약점 진단",
+        "주제를",
+        "취약점"
+      ]
+    }
+  },
+  {
+    "project_id": "p115",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "RAG",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "논문 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p116",
+    "pred": {
+      "topic": "추천 시스템",
+      "tech_stack": [
+        "FastAPI",
+        "OpenSearch",
+        "PostgreSQL",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "추천 시스템",
+        "상품 추천",
+        "추천",
+        "시스템"
+      ]
+    }
+  },
+  {
+    "project_id": "p117",
+    "pred": {
+      "topic": "프로젝트 아카이브",
+      "tech_stack": [
+        "OpenSearch",
+        "Qdrant",
+        "React",
+        "Redis",
+        "Spring Boot"
+      ],
+      "difficulty": "고급",
+      "keywords": [
+        "프로젝트 아카이브",
+        "문서 검색",
+        "아카이브",
+        "주제를"
+      ]
+    }
+  },
+  {
+    "project_id": "p118",
+    "pred": {
+      "topic": "컴퓨터 비전",
+      "tech_stack": [
+        "FastAPI",
+        "OpenCV",
+        "PyTorch",
+        "Python"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "컴퓨터 비전",
+        "OCR",
+        "컴퓨터",
+        "비전"
+      ]
+    }
+  },
+  {
+    "project_id": "p119",
+    "pred": {
+      "topic": "자연어 처리",
+      "tech_stack": [
+        "Docker",
+        "Python",
+        "TensorFlow"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "자연어 처리",
+        "요약",
+        "자연어",
+        "처리"
+      ]
+    }
+  },
+  {
+    "project_id": "p120",
+    "pred": {
+      "topic": "헬스케어",
+      "tech_stack": [
+        "FastAPI",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "difficulty": "중급",
+      "keywords": [
+        "의료 상담",
+        "헬스케어",
+        "주제를",
+        "의료"
+      ]
+    }
+  }
+]
