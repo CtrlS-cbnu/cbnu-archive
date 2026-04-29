@@ -19,8 +19,23 @@ export interface ChatResponse {
   suggestedFollowUps: string[]
 }
 
+// Matches actual AI service response shape from POST /search
+export interface NaturalSearchResultItem {
+  project_id: number
+  title: string
+  topic: string
+  tech_stack: string[]
+  keywords: string[]
+  difficulty: string
+  project_type: string
+  rank: number
+  final_score: number
+  reasons: string[]
+}
+
 export interface NaturalSearchResult {
-  interpretedConditions: Record<string, unknown>
-  answer: string
-  projects: (ProjectSummary & { matchReason: string })[]
+  query: string
+  count: number
+  results: NaturalSearchResultItem[]
+  llm_answer: string | null
 }
