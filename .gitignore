@@ -45,6 +45,9 @@ target/
 *.jar
 *.war
 bin/
+.idea/
+*.iml
+.DS_Store
 
 # =========================
 # AI Service (FastAPI / Python)
