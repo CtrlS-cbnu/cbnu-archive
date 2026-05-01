@@ -25,7 +25,7 @@ export function GNB() {
           <Link to="/chat" className="text-gray-600 hover:text-gray-900">
             AI 탐색
           </Link>
-          {role === 'STUDENT' || role === 'ADMIN' ? (
+          {role === 'USER' || role === 'ADMIN' ? (
             <>
               <Link to="/my" className="text-gray-600 hover:text-gray-900">
                 내 프로젝트

@@ -4,9 +4,10 @@ import type { UserRole } from '@/types/user'
 
 interface AuthState {
   accessToken: string | null
+  refreshToken: string | null
   userId: number | null
   role: UserRole
-  setAuth: (token: string, userId: number, role: UserRole) => void
+  setAuth: (accessToken: string, refreshToken: string, userId: number, role: UserRole) => void
   setAccessToken: (token: string) => void
   logout: () => void
 }
@@ -16,11 +17,13 @@ export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
       accessToken: null,
+      refreshToken: null,
       userId: null,
       role: 'GUEST',
-      setAuth: (accessToken, userId, role) => set({ accessToken, userId, role }),
+      setAuth: (accessToken, refreshToken, userId, role) =>
+        set({ accessToken, refreshToken, userId, role }),
       setAccessToken: (accessToken) => set({ accessToken }),
-      logout: () => set({ accessToken: null, userId: null, role: 'GUEST' }),
+      logout: () => set({ accessToken: null, refreshToken: null, userId: null, role: 'GUEST' }),
     }),
     { name: 'cbnu-auth' },
   ),

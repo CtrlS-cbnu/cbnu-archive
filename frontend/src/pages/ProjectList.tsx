@@ -40,7 +40,7 @@ export default function ProjectList() {
 
   // Load all projects on first render so the page isn't empty
   useEffect(() => {
-    searchKeyword({ q: '', sort: 'latest', page: 1, size: 20 })
+    searchKeyword({ keyword: '', page: 0, size: 20 })
       .then((page) => setKeywordProjects(page.items ?? []))
       .catch(() => {/* silently skip if backend/MSW not available */})
   }, [])
@@ -61,9 +61,8 @@ export default function ProjectList() {
       } else {
         // Keyword search through backend; returns empty list until backend is ready
         const page = await searchKeyword({
-          q: keyword,
-          sort: 'latest',
-          page: 1,
+          keyword: keyword,
+          page: 0,
           size: 20,
         })
         setKeywordProjects(page.items ?? [])

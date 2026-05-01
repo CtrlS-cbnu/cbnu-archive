@@ -18,6 +18,34 @@ export interface ProjectMember {
   role: string
 }
 
+// ── Backend actual response shape (ProjectResponse) ──────────────────────────
+export interface BackendProjectResponse {
+  id: number
+  title: string
+  summary: string
+  description: string
+  readme: string
+  techStacks: string[]
+  year: number
+  semester: string      // backend uses String: "FIRST" | "SECOND"
+  difficulty: string
+  domain: string
+  authorId: number
+  authorName: string
+  createdAt: string
+  updatedAt: string
+}
+
+// Backend paginated list response
+export interface BackendPage<T> {
+  content: T[]
+  totalElements: number
+  totalPages: number
+  number: number   // 0-based page index
+  size: number
+}
+
+// ── Frontend view model (used throughout UI) ──────────────────────────────────
 export interface ProjectSummary {
   id: number
   title: string

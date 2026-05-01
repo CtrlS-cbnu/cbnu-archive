@@ -24,9 +24,9 @@ const router = createBrowserRouter([
       { path: 'projects', element: <ProjectList /> },
       { path: 'projects/:id', element: <ProjectDetail /> },
 
-      // STUDENT 이상 접근 가능
+      // USER 이상 접근 가능
       {
-        element: <RequireAuth role="STUDENT" />,
+        element: <RequireAuth role="USER" />,
         children: [
           { path: 'projects/new', element: <ProjectUpload /> },
           { path: 'projects/:id/edit', element: <ProjectEdit /> },
