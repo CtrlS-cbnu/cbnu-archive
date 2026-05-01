@@ -7,9 +7,14 @@ export function GNB() {
   const navigate = useNavigate()
 
   const handleLogout = async () => {
-    await logout()
-    useAuthStore.getState().logout()
-    navigate('/login')
+    try {
+      await logout()
+    } catch {
+      // JWT is stateless — clear local state even if server call fails
+    } finally {
+      useAuthStore.getState().logout()
+      navigate('/login')
+    }
   }
 
   return (
