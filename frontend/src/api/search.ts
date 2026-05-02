@@ -50,11 +50,31 @@ export const searchKeyword = (params: KeywordSearchParams) =>
       return result
     })
 
+// Backend recommend response shape
+interface BackendRecommendResult {
+  answer: string
+  recommendedProjectIds: number[]
+  reasoning: string
+}
+
+export interface NaturalSearchBackendResult {
+  answer: string
+  reasoning: string
+  projects: ProjectSummary[]
+}
+
 // Natural language recommendation via backend AI adapter
-export const searchNatural = (query: string, sessionId?: string) =>
-  api
-    .post<{ data: NaturalSearchResult }>('/api/v1/projects/recommend', { query, sessionId })
-    .then((r) => r.data.data)
+// Fetches each recommended project by ID in parallel after getting the ID list
+export const searchNatural = async (query: string): Promise<NaturalSearchBackendResult> => {
+  const res = await api.post<{ data: BackendRecommendResult }>('/api/v1/projects/recommend', { query })
+  const { answer, recommendedProjectIds, reasoning } = res.data.data
+  const projects = await Promise.all(
+    recommendedProjectIds.map((id) =>
+      api.get<{ data: BackendProjectResponse }>(`/api/v1/projects/${id}`).then((r) => toSummary(r.data.data)),
+    ),
+  )
+  return { answer, reasoning, projects }
+}
 
 // Direct AI service call — fallback when backend AI adapter is unavailable
 const aiApi = axios.create({
