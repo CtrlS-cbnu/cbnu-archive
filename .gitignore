@@ -6,6 +6,7 @@
 .frontend-devspec.md
 .agents
 copilot-instructions.md
+seed_projects.py
 
 # =========================
 # Operating System & IDE
