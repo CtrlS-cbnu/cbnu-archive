@@ -6,7 +6,7 @@ import { login } from '@/api/auth'
 import { useAuthStore } from '@/store/authStore'
 
 const schema = z.object({
-  identifier: z.string().min(1, '필수 항목입니다.').max(100),
+  email: z.string().email('올바른 이메일 형식을 입력해주세요.').max(100),
   password: z.string().min(1, '필수 항목입니다.').max(128),
 })
 
@@ -30,12 +30,12 @@ export default function Login() {
 
   const onSubmit = async (values: FormValues) => {
     try {
-      const data = await login(values)
-      setAuth(data.accessToken, data.userId, data.role)
+      const { accessToken, refreshToken, userId, role: userRole } = await login(values)
+      setAuth(accessToken, refreshToken, userId, userRole)
       const redirect = searchParams.get('redirect') ?? '/'
       navigate(redirect, { replace: true })
     } catch {
-      setError('root', { message: '아이디 또는 비밀번호를 확인해 주세요.' })
+      setError('root', { message: '이메일 또는 비밀번호를 확인해 주세요.' })
     }
   }
 
@@ -44,13 +44,14 @@ export default function Login() {
       <h1 className="mb-8 text-center text-2xl font-bold text-gray-900">로그인</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
-          <label className="mb-1 block text-sm font-medium text-gray-700">학번 / 이메일</label>
+          <label className="mb-1 block text-sm font-medium text-gray-700">이메일</label>
           <input
-            {...register('identifier')}
+            {...register('email')}
+            type="email"
             className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
-          {errors.identifier && (
-            <p className="mt-1 text-xs text-red-500">{errors.identifier.message}</p>
+          {errors.email && (
+            <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
           )}
         </div>
         <div>

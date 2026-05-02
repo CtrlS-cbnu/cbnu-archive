@@ -4,7 +4,7 @@ import { useAuthStore } from '@/store/authStore'
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080',
-  withCredentials: true, // Refresh Token 쿠키 자동 전송
+  withCredentials: true,
   timeout: 10000,
 })
 
@@ -23,13 +23,15 @@ api.interceptors.response.use(
     if (error.response?.status === 401 && !original._retry) {
       original._retry = true
       try {
+        // Send stored refreshToken in request body as backend expects
+        const refreshToken = useAuthStore.getState().refreshToken
         const { data } = await axios.post(
-          '/api/auth/refresh',
-          {},
-          { withCredentials: true },
+          `${import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080'}/api/v1/auth/reissue`,
+          { refreshToken },
         )
-        useAuthStore.getState().setAccessToken(data.accessToken)
-        original.headers.Authorization = `Bearer ${data.accessToken}`
+        const newAccessToken = data.data.accessToken
+        useAuthStore.getState().setAccessToken(newAccessToken)
+        original.headers.Authorization = `Bearer ${newAccessToken}`
         return api(original)
       } catch {
         useAuthStore.getState().logout()
