@@ -1,26 +1,29 @@
 import { api } from './axiosInstance'
-import type { LoginRequest, LoginResponse, JwtPayload, UserRole } from '@/types/user'
 import { useAuthStore } from '@/store/authStore'
+import type { UserRole } from '@/types/user'
+import type { LoginRequest } from '@/types/user'
 
-// Decode JWT payload without a library — backend embeds userId, email, role in claims
-function decodeJwt(token: string): JwtPayload {
+// Decode JWT payload without verification (trust the server)
+const decodeJwt = (token: string): Record<string, unknown> => {
   const payload = token.split('.')[1]
   return JSON.parse(atob(payload.replace(/-/g, '+').replace(/_/g, '/')))
 }
 
-export const login = async (data: LoginRequest) => {
-  const res = await api.post<{ success: boolean; data: LoginResponse }>('/api/v1/auth/login', data)
+export const login = async (data: LoginRequest): Promise<void> => {
+  const res = await api.post<{ data: { accessToken: string; refreshToken: string } }>(
+    '/api/v1/auth/login',
+    data,
+  )
   const { accessToken, refreshToken } = res.data.data
-  const claims = decodeJwt(accessToken)
-  return {
+  // Extract userId (sub) and role directly from JWT to avoid an extra /me request
+  const payload = decodeJwt(accessToken)
+  useAuthStore.getState().setAuth(
     accessToken,
     refreshToken,
-    userId: Number(claims.sub),
-    role: claims.role as UserRole,
-  }
+    Number(payload.sub),
+    payload.role as UserRole,
+  )
 }
 
-export const logout = () => {
-  const refreshToken = useAuthStore.getState().refreshToken
-  return api.post('/api/v1/auth/logout', { refreshToken })
-}
+// Backend blacklists the access token; Authorization header is added by the interceptor
+export const logout = () => api.post('/api/v1/auth/logout')

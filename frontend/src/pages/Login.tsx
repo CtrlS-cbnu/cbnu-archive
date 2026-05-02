@@ -6,7 +6,7 @@ import { login } from '@/api/auth'
 import { useAuthStore } from '@/store/authStore'
 
 const schema = z.object({
-  email: z.string().email('올바른 이메일 형식을 입력해주세요.').max(100),
+  email: z.string().email('유효한 이메일을 입력해 주세요.').max(100),
   password: z.string().min(1, '필수 항목입니다.').max(128),
 })
 
@@ -15,7 +15,7 @@ type FormValues = z.infer<typeof schema>
 export default function Login() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { role, setAuth } = useAuthStore()
+  const { role } = useAuthStore()
 
   const {
     register,
@@ -30,8 +30,7 @@ export default function Login() {
 
   const onSubmit = async (values: FormValues) => {
     try {
-      const { accessToken, refreshToken, userId, role: userRole } = await login(values)
-      setAuth(accessToken, refreshToken, userId, userRole)
+      await login(values)
       const redirect = searchParams.get('redirect') ?? '/'
       navigate(redirect, { replace: true })
     } catch {

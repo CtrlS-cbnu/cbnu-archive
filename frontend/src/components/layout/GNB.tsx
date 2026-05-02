@@ -10,7 +10,7 @@ export function GNB() {
     try {
       await logout()
     } catch {
-      // JWT is stateless — clear local state even if server call fails
+      // Ignore API error — always clear local auth state
     } finally {
       useAuthStore.getState().logout()
       navigate('/login')
