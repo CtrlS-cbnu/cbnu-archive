@@ -1,35 +1,14 @@
 import { useState, useRef, useEffect } from 'react'
 import { useChatStore } from '@/store/chatStore'
-import { searchNaturalDirect } from '@/api/search'
+import { searchNatural } from '@/api/search'
 import { ProjectCard } from '@/components/project/ProjectCard'
-import type { NaturalSearchResultItem } from '@/types/chat'
 import type { ProjectSummary } from '@/types/project'
-
-// Convert AI result item to ProjectSummary for display in chat bubbles
-function toProjectSummary(item: NaturalSearchResultItem): ProjectSummary {
-  return {
-    id: item.project_id,
-    title: item.title,
-    summary: item.topic,
-    year: 0,
-    semester: 1,
-    subjectName: item.project_type,
-    teamName: '',
-    techStacks: item.tech_stack,
-    tags: item.keywords,
-    status: 'APPROVED',
-    viewCount: 0,
-    downloadCount: 0,
-    createdAt: '',
-  }
-}
 
 // Each message in the conversation (extends base ChatMessage with AI result metadata)
 interface DisplayMessage {
   role: 'user' | 'assistant'
   content: string
   projects?: ProjectSummary[]
-  matchReasonMap?: Record<number, string[]>  // project_id → reasons
 }
 
 export default function Chat() {
@@ -57,20 +36,12 @@ export default function Chat() {
     setLoading(true)
 
     try {
-      const result = await searchNaturalDirect(text)
-
-      // Build project list and reason map from AI results
-      const projects = result.results.map(toProjectSummary)
-      const reasonMap: Record<number, string[]> = {}
-      result.results.forEach((item) => {
-        reasonMap[item.project_id] = item.reasons
-      })
+      const result = await searchNatural(text)
 
       const assistantMsg: DisplayMessage = {
         role: 'assistant',
-        content: result.llm_answer ?? '관련 프로젝트를 찾았습니다.',
-        projects,
-        matchReasonMap: reasonMap,
+        content: result.answer || '관련 프로젝트를 찾았습니다.',
+        projects: result.projects,
       }
       setMessages((prev) => [...prev, assistantMsg])
     } catch {
@@ -125,7 +96,6 @@ export default function Chat() {
                     <ProjectCard
                       key={project.id}
                       project={project}
-                      matchReasons={msg.matchReasonMap?.[project.id]}
                     />
                   ))}
                 </div>
