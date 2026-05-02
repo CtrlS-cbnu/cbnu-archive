@@ -3,28 +3,9 @@ import { SearchBar } from '@/components/search/SearchBar'
 import { FilterPanel } from '@/components/search/FilterPanel'
 import { ProjectCard } from '@/components/project/ProjectCard'
 import { useSearchStore } from '@/store/searchStore'
-import { searchNaturalDirect, searchKeyword } from '@/api/search'
-import type { NaturalSearchResultItem, NaturalSearchResult } from '@/types/chat'
+import { searchNatural, searchKeyword } from '@/api/search'
+import type { NaturalSearchBackendResult } from '@/api/search'
 import type { ProjectSummary } from '@/types/project'
-
-// Map AI service result item to the ProjectSummary shape ProjectCard expects
-function toProjectSummary(item: NaturalSearchResultItem): ProjectSummary {
-  return {
-    id: item.project_id,
-    title: item.title,
-    summary: item.topic,
-    year: 0,
-    semester: 1,
-    subjectName: item.project_type,
-    teamName: '',
-    techStacks: item.tech_stack,
-    tags: item.keywords,
-    status: 'APPROVED',
-    viewCount: 0,
-    downloadCount: 0,
-    createdAt: '',
-  }
-}
 
 export default function ProjectList() {
   const { keyword, searchType, filters } = useSearchStore()
@@ -33,7 +14,7 @@ export default function ProjectList() {
   const [error, setError] = useState<string | null>(null)
 
   // Natural search state
-  const [naturalResult, setNaturalResult] = useState<NaturalSearchResult | null>(null)
+  const [naturalResult, setNaturalResult] = useState<NaturalSearchBackendResult | null>(null)
 
   // Keyword search state (backend stub); pre-populated on mount
   const [keywordProjects, setKeywordProjects] = useState<ProjectSummary[]>([])
@@ -55,8 +36,7 @@ export default function ProjectList() {
 
     try {
       if (searchType === 'natural') {
-        // Call AI service directly while backend proxy is not implemented
-        const result = await searchNaturalDirect(keyword)
+        const result = await searchNatural(keyword)
         setNaturalResult(result)
       } else {
         // Keyword search through backend; returns empty list until backend is ready
@@ -75,7 +55,7 @@ export default function ProjectList() {
   }, [keyword, searchType, filters])
 
   // Derive display list from whichever search mode is active
-  const naturalItems = naturalResult?.results ?? []
+  const naturalItems = naturalResult?.projects ?? []
   const displayProjects = searchType === 'keyword' ? keywordProjects : []
   // Consider page "has results" when there's anything to show
   const hasResults = searchType === 'natural' ? naturalItems.length > 0 : displayProjects.length > 0
@@ -94,11 +74,11 @@ export default function ProjectList() {
 
         {/* Main results area */}
         <section className="min-w-0 flex-1">
-          {/* AI LLM summary box */}
-          {naturalResult?.llm_answer && (
+          {/* AI answer box */}
+          {naturalResult?.answer && (
             <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
               <p className="mb-1 font-semibold">AI 답변</p>
-              <p className="leading-relaxed">{naturalResult.llm_answer}</p>
+              <p className="leading-relaxed">{naturalResult.answer}</p>
             </div>
           )}
 
@@ -138,15 +118,11 @@ export default function ProjectList() {
           {!isLoading && searchType === 'natural' && naturalItems.length > 0 && (
             <>
               <p className="mb-3 text-sm text-gray-500">
-                총 <span className="font-semibold text-gray-800">{naturalResult!.count}</span>개의 프로젝트를 찾았습니다.
+                총 <span className="font-semibold text-gray-800">{naturalItems.length}</span>개의 프로젝트를 찾았습니다.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {naturalItems.map((item) => (
-                  <ProjectCard
-                    key={item.project_id}
-                    project={toProjectSummary(item)}
-                    matchReasons={item.reasons}
-                  />
+                {naturalItems.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
             </>
