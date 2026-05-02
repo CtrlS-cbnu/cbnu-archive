@@ -20,13 +20,16 @@ public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
+    private final TokenBlacklistService tokenBlacklistService;
 
     public AuthService(UserRepository userRepository,
                        PasswordEncoder passwordEncoder,
-                       JwtTokenProvider jwtTokenProvider) {
+                       JwtTokenProvider jwtTokenProvider,
+                       TokenBlacklistService tokenBlacklistService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtTokenProvider = jwtTokenProvider;
+        this.tokenBlacklistService = tokenBlacklistService;
     }
 
     public UserResponse signUp(SignUpRequest request) {
@@ -48,6 +51,14 @@ public class AuthService {
         String accessToken = jwtTokenProvider.generateAccessToken(user.getId(), user.getEmail(), user.getRole());
         String refreshToken = jwtTokenProvider.generateRefreshToken(user.getId());
         return new TokenResponse(accessToken, refreshToken);
+    }
+
+    public void logout(String accessToken) {
+        if (!jwtTokenProvider.validateToken(accessToken)) {
+            throw new AuthException(ErrorCode.INVALID_TOKEN);
+        }
+        // Refresh token은 서버에 저장되지 않으므로, 클라이언트가 refresh token도 반드시 폐기해야 합니다.
+        tokenBlacklistService.add(accessToken, jwtTokenProvider.getExpirationFromToken(accessToken));
     }
 
     public TokenResponse reissue(String refreshToken) {

@@ -87,6 +87,11 @@ public class JwtTokenProvider {
         return UserRole.valueOf(roleName);
     }
 
+    public Date getExpirationFromToken(String token) {
+        Claims claims = parseClaims(token);
+        return claims.getExpiration();
+    }
+
     private Claims parseClaims(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(key)
