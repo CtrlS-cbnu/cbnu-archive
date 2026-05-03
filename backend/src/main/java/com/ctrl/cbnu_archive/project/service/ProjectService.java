@@ -161,7 +161,8 @@ public class ProjectService {
                 project.getTechStacks(),
                 project.getYear(),
                 project.getSemester(),
-                project.getDifficulty()
+                project.getDifficulty(),
+                project.getDomain()
         );
         String embeddingText = buildEmbeddingText(project);
         eventPublisher.publishEvent(new ProjectIndexEvent(project.getId(), indexDocument, embeddingText));

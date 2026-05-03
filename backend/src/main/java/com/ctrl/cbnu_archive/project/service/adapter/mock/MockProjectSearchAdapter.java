@@ -70,12 +70,17 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
 
     private boolean matchesKeyword(ProjectIndexDocument doc, String keyword) {
         if (keyword == null || keyword.isBlank()) {
-            return true;
+        return true;
         }
         String lower = keyword.toLowerCase();
-        return doc.title().toLowerCase().contains(lower)
-                || doc.summary().toLowerCase().contains(lower)
-                || doc.description().toLowerCase().contains(lower);
+        return containsIgnoreCase(doc.title(), lower)
+                || containsIgnoreCase(doc.summary(), lower)
+                || containsIgnoreCase(doc.description(), lower)
+                || containsIgnoreCase(doc.domain(), lower);
+    }
+
+    private boolean containsIgnoreCase(String value, String keyword) {
+        return value != null && value.toLowerCase().contains(keyword);
     }
 
     private boolean matchesListFilter(List<String> values, List<String> filter) {
