@@ -48,6 +48,7 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
                 .filter(doc -> matchesValue(doc.year(), query.year()))
                 .filter(doc -> matchesValue(doc.semester(), query.semester()))
                 .filter(doc -> matchesValue(doc.difficulty(), query.difficulty()))
+                .filter(doc -> matchesValue(doc.domain(), query.domain()))
                 .map(doc -> new ProjectSearchResult(
                         doc.projectId(),
                         doc.title(),
@@ -56,6 +57,7 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
                         doc.year(),
                         doc.semester(),
                         doc.difficulty(),
+                        doc.domain(),
                         1.0f
                 ))
                 .collect(Collectors.toList());
