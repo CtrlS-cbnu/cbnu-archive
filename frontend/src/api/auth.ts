@@ -1,7 +1,6 @@
 import { api } from './axiosInstance'
 import { useAuthStore } from '@/store/authStore'
-import type { UserRole } from '@/types/user'
-import type { LoginRequest } from '@/types/user'
+import type { UserRole, LoginRequest, SignupRequest } from '@/types/user'
 
 // Decode JWT payload without verification (trust the server)
 const decodeJwt = (token: string): Record<string, unknown> => {
@@ -24,6 +23,8 @@ export const login = async (data: LoginRequest): Promise<void> => {
     payload.role as UserRole,
   )
 }
+
+export const signup = (data: SignupRequest) => api.post('/api/v1/auth/signup', data)
 
 // Backend blacklists the access token; Authorization header is added by the interceptor
 export const logout = () => api.post('/api/v1/auth/logout')
