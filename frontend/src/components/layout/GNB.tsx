@@ -18,31 +18,31 @@ export function GNB() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-primary-700 bg-primary-600 shadow-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
-        <Link to="/" className="text-lg font-bold text-primary-600">
+        <Link to="/" className="text-lg font-bold text-white">
           AI Archive
         </Link>
         <nav className="flex items-center gap-4 text-sm">
-          <Link to="/projects" className="text-gray-600 hover:text-gray-900">
+          <Link to="/projects" className="text-primary-100 hover:text-white transition-colors">
             프로젝트
           </Link>
-          <Link to="/chat" className="text-gray-600 hover:text-gray-900">
+          <Link to="/chat" className="text-primary-100 hover:text-white transition-colors">
             AI 탐색
           </Link>
           {role === 'USER' || role === 'ADMIN' ? (
             <>
-              <Link to="/my" className="text-gray-600 hover:text-gray-900">
+              <Link to="/my" className="text-primary-100 hover:text-white transition-colors">
                 내 프로젝트
               </Link>
               {role === 'ADMIN' && (
-                <Link to="/admin/pending" className="text-gray-600 hover:text-gray-900">
+                <Link to="/admin/pending" className="text-primary-100 hover:text-white transition-colors">
                   관리
                 </Link>
               )}
               <button
                 onClick={handleLogout}
-                className="text-gray-600 hover:text-gray-900"
+                className="text-primary-100 hover:text-white transition-colors"
               >
                 로그아웃
               </button>
@@ -50,7 +50,7 @@ export function GNB() {
           ) : (
             <Link
               to="/login"
-              className="rounded-md bg-primary-600 px-3 py-1.5 text-white hover:bg-primary-700"
+              className="rounded-md bg-white px-3 py-1.5 font-medium text-primary-700 transition-colors hover:bg-primary-50"
             >
               로그인
             </Link>
