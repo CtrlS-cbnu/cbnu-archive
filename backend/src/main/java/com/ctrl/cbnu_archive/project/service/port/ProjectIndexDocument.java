@@ -10,6 +10,7 @@ public record ProjectIndexDocument(
         List<String> techStacks,
         Integer year,
         String semester,
-        String difficulty
+        String difficulty,
+        String domain
 ) {
 }

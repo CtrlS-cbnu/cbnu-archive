@@ -10,6 +10,7 @@ public record ProjectSearchResult(
         Integer year,
         String semester,
         String difficulty,
+        String domain,
         float score
 ) {
 }

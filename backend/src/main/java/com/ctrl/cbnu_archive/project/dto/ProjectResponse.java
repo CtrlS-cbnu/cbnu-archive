@@ -51,7 +51,7 @@ public record ProjectResponse(
                 result.year(),
                 result.semester(),
                 result.difficulty(),
-                null,
+                result.domain(),
                 null,
                 null,
                 null,

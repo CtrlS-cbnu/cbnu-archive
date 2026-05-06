@@ -126,11 +126,8 @@ public class ProjectService {
     public ProjectResponse updateProject(Long id, ProjectUpdateRequest request, Long currentUserId, boolean isAdmin) {
         Objects.requireNonNull(request, "ProjectUpdateRequest must not be null");
         Project project = repository.findById(id).orElseThrow(() -> new ProjectNotFoundException(id));
-        User currentUser = userRepository.findById(currentUserId)
-                .orElseThrow(() -> new ProjectException(ErrorCode.USER_NOT_FOUND, "사용자를 찾을 수 없습니다."));
-        if (!isAdmin && !project.isAuthor(currentUser)) {
-            throw new ProjectException(ErrorCode.NOT_PROJECT_OWNER, "프로젝트 수정 권한이 없습니다.");
-        }
+        User currentUser = getUserOrThrow(currentUserId);
+        validateProjectOwnerOrAdmin(project, currentUser, isAdmin, "프로젝트 수정 권한이 없습니다.");
         ProjectMapper.applyUpdate(request, project);
         if (project.getReadme() != null && !project.getReadme().isBlank()) {
             String summary = aiSummaryPort.summarize(project.getReadme(), project.getDescription());
@@ -143,11 +140,8 @@ public class ProjectService {
 
     public void deleteProject(Long id, Long currentUserId, boolean isAdmin) {
         Project project = repository.findById(id).orElseThrow(() -> new ProjectNotFoundException(id));
-        User currentUser = userRepository.findById(currentUserId)
-                .orElseThrow(() -> new ProjectException(ErrorCode.USER_NOT_FOUND, "사용자를 찾을 수 없습니다."));
-        if (!isAdmin && !project.isAuthor(currentUser)) {
-            throw new ProjectException(ErrorCode.NOT_PROJECT_OWNER, "프로젝트 삭제 권한이 없습니다.");
-        }
+        User currentUser = getUserOrThrow(currentUserId);
+        validateProjectOwnerOrAdmin(project, currentUser, isAdmin, "프로젝트 삭제 권한이 없습니다.");
         repository.deleteById(id);
         eventPublisher.publishEvent(new ProjectDeleteEvent(id));
     }
@@ -161,7 +155,8 @@ public class ProjectService {
                 project.getTechStacks(),
                 project.getYear(),
                 project.getSemester(),
-                project.getDifficulty()
+                project.getDifficulty(),
+                project.getDomain()
         );
         String embeddingText = buildEmbeddingText(project);
         eventPublisher.publishEvent(new ProjectIndexEvent(project.getId(), indexDocument, embeddingText));
@@ -180,5 +175,16 @@ public class ProjectService {
             builder.append(" \n").append(project.getReadme());
         }
         return builder.toString();
+    }
+
+    private User getUserOrThrow(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new ProjectException(ErrorCode.USER_NOT_FOUND, "사용자를 찾을 수 없습니다."));
+    }
+
+    private void validateProjectOwnerOrAdmin(Project project, User currentUser, boolean isAdmin, String message) {
+        if (!isAdmin && !project.isAuthor(currentUser)) {
+            throw new ProjectException(ErrorCode.NOT_PROJECT_OWNER, message);
+        }
     }
 }

@@ -39,6 +39,7 @@ public class ProjectIndexEventListener {
         Map<String, Object> metadata = Map.of(
                 "title", document.title(),
                 "difficulty", document.difficulty(),
+                "domain", document.domain(),
                 "year", document.year(),
                 "semester", document.semester()
         );
