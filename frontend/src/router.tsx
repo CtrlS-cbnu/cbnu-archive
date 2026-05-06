@@ -3,6 +3,7 @@ import { PageWrapper } from '@/components/layout/PageWrapper'
 import { RequireAuth } from '@/components/layout/RequireAuth'
 import Home from '@/pages/Home'
 import Login from '@/pages/Login'
+import SignUp from '@/pages/SignUp'
 import ProjectList from '@/pages/ProjectList'
 import ProjectDetail from '@/pages/ProjectDetail'
 import ProjectUpload from '@/pages/ProjectUpload'
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'login', element: <Login /> },
+      { path: 'signup', element: <SignUp /> },
       { path: 'projects', element: <ProjectList /> },
       { path: 'projects/:id', element: <ProjectDetail /> },
 
