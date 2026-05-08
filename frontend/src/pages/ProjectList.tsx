@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { SearchBar } from '@/components/search/SearchBar'
 import { FilterPanel } from '@/components/search/FilterPanel'
 import { ProjectCard } from '@/components/project/ProjectCard'
@@ -8,7 +8,7 @@ import type { NaturalSearchBackendResult } from '@/api/search'
 import type { ProjectSummary } from '@/types/project'
 
 export default function ProjectList() {
-  const { keyword, searchType, filters } = useSearchStore()
+  const { keyword, searchType, filters, sort } = useSearchStore()
 
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -16,43 +16,66 @@ export default function ProjectList() {
   // Natural search state
   const [naturalResult, setNaturalResult] = useState<NaturalSearchBackendResult | null>(null)
 
-  // Keyword search state (backend stub); pre-populated on mount
+  // Keyword search results
   const [keywordProjects, setKeywordProjects] = useState<ProjectSummary[]>([])
 
-  // Load all projects on first render so the page isn't empty
-  useEffect(() => {
-    searchKeyword({ keyword: '', page: 0, size: 20 })
-      .then((page) => setKeywordProjects(page.items ?? []))
-      .catch(() => {/* silently skip if backend/MSW not available */})
-  }, [])
+  // Ref so filter-change effects always use the latest keyword without re-subscribing
+  const keywordRef = useRef(keyword)
+  keywordRef.current = keyword
 
-  const handleSearch = useCallback(async () => {
-    // Natural search always requires a query
-    if (searchType === 'natural' && !keyword.trim()) return
+  // Execute keyword search — reused by filter effect and handleSearch
+  const execKeywordSearch = useCallback(async (kw: string) => {
     setIsLoading(true)
     setError(null)
     setNaturalResult(null)
-    setKeywordProjects([])
-
     try {
-      if (searchType === 'natural') {
-        const result = await searchNatural(keyword)
-        setNaturalResult(result)
-      } else {
-        // Keyword search through backend; returns empty list until backend is ready
-        const page = await searchKeyword({
-          keyword: keyword,
-          page: 0,
-          size: 20,
-        })
-        setKeywordProjects(page.items ?? [])
-      }
-    } catch (e) {
+      const result = await searchKeyword({
+        keyword: kw || undefined,
+        // Map array filters to single values that the current backend accepts
+        year: filters.years[0],
+        semester: filters.semester === 1 ? 'FIRST' : filters.semester === 2 ? 'SECOND' : undefined,
+        domain: filters.domains[0],
+        techStacks: filters.techStacks.length > 0 ? filters.techStacks : undefined,
+        sort,
+        page: 0,
+        size: 20,
+      })
+      setKeywordProjects(result.items ?? [])
+    } catch {
       setError('검색 중 오류가 발생했습니다. 서버 상태를 확인해주세요.')
     } finally {
       setIsLoading(false)
     }
-  }, [keyword, searchType, filters])
+  }, [filters, sort])
+
+  // On mount and whenever filters/sort change, re-run keyword search automatically
+  // keywordRef ensures we always use the latest keyword without adding it as a dep
+  useEffect(() => {
+    if (searchType !== 'keyword') return
+    execKeywordSearch(keywordRef.current)
+  }, [filters, sort, searchType, execKeywordSearch])
+
+  const handleSearch = useCallback(async () => {
+    if (searchType === 'natural') {
+      // Natural search always requires a query
+      if (!keyword.trim()) return
+      setIsLoading(true)
+      setError(null)
+      setNaturalResult(null)
+      setKeywordProjects([])
+      try {
+        const result = await searchNatural(keyword)
+        setNaturalResult(result)
+      } catch {
+        setError('검색 중 오류가 발생했습니다. 서버 상태를 확인해주세요.')
+      } finally {
+        setIsLoading(false)
+      }
+    } else {
+      // Keyword search: run immediately with current keyword + active filters
+      execKeywordSearch(keyword)
+    }
+  }, [keyword, searchType, execKeywordSearch])
 
   // Derive display list from whichever search mode is active
   const naturalItems = naturalResult?.projects ?? []
