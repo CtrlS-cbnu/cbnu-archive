@@ -112,3 +112,14 @@ export interface RecommendationItem {
 export interface RecommendationResult {
   recommendations: RecommendationItem[]
 }
+
+export interface KeywordSearchParams {
+  keyword?: string
+  techStacks?: string[]
+  year?: number
+  semester?: string
+  difficulty?: string
+  domain?: string
+  page?: number
+  size?: number
+}
