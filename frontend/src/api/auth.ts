@@ -1,5 +1,6 @@
 import { api } from './axiosInstance'
 import { useAuthStore } from '@/store/authStore'
+import type { ApiResponse } from '@/types/api'
 import type { UserRole, LoginRequest, SignupRequest } from '@/types/user'
 
 // Decode JWT payload without verification (trust the server)
@@ -9,7 +10,7 @@ const decodeJwt = (token: string): Record<string, unknown> => {
 }
 
 export const login = async (data: LoginRequest): Promise<void> => {
-  const res = await api.post<{ data: { accessToken: string; refreshToken: string } }>(
+  const res = await api.post<ApiResponse<{ accessToken: string; refreshToken: string }>>(
     '/api/v1/auth/login',
     data,
   )
