@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { useNavigate, useSearchParams, Navigate } from 'react-router-dom'
+import { useNavigate, useSearchParams, Navigate, Link } from 'react-router-dom'
 import { login } from '@/api/auth'
 import { useAuthStore } from '@/store/authStore'
 
@@ -77,6 +77,12 @@ export default function Login() {
           {isSubmitting ? '로그인 중...' : '로그인'}
         </button>
       </form>
+      <p className="mt-6 text-center text-sm text-gray-500">
+        계정이 없으신가요?{' '}
+        <Link to="/signup" className="font-medium text-primary-600 hover:text-primary-700">
+          회원가입
+        </Link>
+      </p>
     </div>
   )
 }
