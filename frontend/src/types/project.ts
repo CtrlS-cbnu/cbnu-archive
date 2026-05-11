@@ -120,6 +120,8 @@ export interface KeywordSearchParams {
   semester?: string
   difficulty?: string
   domain?: string
+  isTeam?: boolean
+  sort?: SortOption
   page?: number
   size?: number
 }

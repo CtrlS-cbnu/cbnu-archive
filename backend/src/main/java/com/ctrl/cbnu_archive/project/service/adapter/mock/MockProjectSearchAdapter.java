@@ -46,9 +46,10 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
                 .filter(doc -> matchesKeyword(doc, query.keyword()))
                 .filter(doc -> matchesListFilter(doc.techStacks(), query.techStacks()))
                 .filter(doc -> matchesValue(doc.year(), query.year()))
-                .filter(doc -> matchesValue(doc.semester(), query.semester()))
+                .filter(doc -> matchesSemester(doc.semester(), query.semester()))
                 .filter(doc -> matchesValue(doc.difficulty(), query.difficulty()))
                 .filter(doc -> matchesValue(doc.domain(), query.domain()))
+                .filter(doc -> matchesValue(doc.isTeam(), query.isTeam()))
                 .map(doc -> new ProjectSearchResult(
                         doc.projectId(),
                         doc.title(),
@@ -58,6 +59,7 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
                         doc.semester(),
                         doc.difficulty(),
                         doc.domain(),
+                        doc.isTeam(),
                         1.0f
                 ))
                 .collect(Collectors.toList());
@@ -102,5 +104,20 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
             return true;
         }
         return expected.equals(actual);
+    }
+
+    // Normalize semester to canonical form so "1"/"FIRST" and "2"/"SECOND" both match
+    private String normalizeSemester(String s) {
+        if (s == null) return null;
+        return switch (s.toUpperCase()) {
+            case "1", "FIRST" -> "FIRST";
+            case "2", "SECOND" -> "SECOND";
+            default -> s.toUpperCase();
+        };
+    }
+
+    private boolean matchesSemester(String actual, String expected) {
+        if (expected == null) return true;
+        return normalizeSemester(expected).equals(normalizeSemester(actual));
     }
 }

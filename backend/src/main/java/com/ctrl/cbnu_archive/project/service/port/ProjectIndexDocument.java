@@ -11,6 +11,7 @@ public record ProjectIndexDocument(
         Integer year,
         String semester,
         String difficulty,
-        String domain
+        String domain,
+        Boolean isTeam
 ) {
 }
