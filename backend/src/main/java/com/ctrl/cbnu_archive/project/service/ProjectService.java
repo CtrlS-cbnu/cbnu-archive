@@ -156,7 +156,8 @@ public class ProjectService {
                 project.getYear(),
                 project.getSemester(),
                 project.getDifficulty(),
-                project.getDomain()
+                project.getDomain(),
+                project.getIsTeam()
         );
         String embeddingText = buildEmbeddingText(project);
         eventPublisher.publishEvent(new ProjectIndexEvent(project.getId(), indexDocument, embeddingText));

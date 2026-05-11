@@ -12,7 +12,8 @@ public record ProjectCreateRequest(
         Integer year,
         String semester,
         String difficulty,
-        String domain
+        String domain,
+        Boolean isTeam
 ) {
     public Project toEntity(User author) {
         return Project.create(
@@ -25,6 +26,7 @@ public record ProjectCreateRequest(
                 semester,
                 difficulty,
                 domain,
+                isTeam,
                 author
         );
     }

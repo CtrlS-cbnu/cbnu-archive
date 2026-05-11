@@ -6,6 +6,8 @@ export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL ?? '',
   withCredentials: true,
   timeout: 10000,
+  // Spring @ModelAttribute expects repeated params (key=v1&key=v2), not bracket notation (key[]=v1)
+  paramsSerializer: { indexes: null },
 })
 
 api.interceptors.request.use((config) => {

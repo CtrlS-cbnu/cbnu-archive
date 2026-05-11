@@ -10,10 +10,11 @@ public record SearchRequest(
         String semester,
         String difficulty,
         String domain,
+        Boolean isTeam,
         int page,
         int size
 ) {
     public SearchQuery toSearchQuery() {
-        return new SearchQuery(keyword, techStacks, year, semester, difficulty, domain, page, size);
+        return new SearchQuery(keyword, techStacks, year, semester, difficulty, domain, isTeam, page, size);
     }
 }

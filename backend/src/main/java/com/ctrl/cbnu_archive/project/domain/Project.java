@@ -48,6 +48,8 @@ public class Project extends BaseTimeEntity {
     private String semester;
     private String difficulty;
     private String domain;
+    @Column(name = "is_team")
+    private Boolean isTeam;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
@@ -66,6 +68,7 @@ public class Project extends BaseTimeEntity {
                     String semester,
                     String difficulty,
                     String domain,
+                    Boolean isTeam,
                     User author) {
         this.title = Objects.requireNonNull(title, "title must not be null");
         this.summary = summary;
@@ -78,6 +81,7 @@ public class Project extends BaseTimeEntity {
         this.semester = semester;
         this.difficulty = difficulty;
         this.domain = domain;
+        this.isTeam = isTeam;
         this.author = Objects.requireNonNull(author, "author must not be null");
     }
 
@@ -90,8 +94,9 @@ public class Project extends BaseTimeEntity {
                                  String semester,
                                  String difficulty,
                                  String domain,
+                                 Boolean isTeam,
                                  User author) {
-        return new Project(title, summary, description, readme, techStacks, year, semester, difficulty, domain, author);
+        return new Project(title, summary, description, readme, techStacks, year, semester, difficulty, domain, isTeam, author);
     }
 
     public Long getId() {
@@ -132,6 +137,10 @@ public class Project extends BaseTimeEntity {
 
     public String getDomain() {
         return domain;
+    }
+
+    public Boolean getIsTeam() {
+        return isTeam;
     }
 
     public Long getAuthorId() {

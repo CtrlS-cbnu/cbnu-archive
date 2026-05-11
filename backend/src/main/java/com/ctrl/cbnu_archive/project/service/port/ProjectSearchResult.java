@@ -11,6 +11,7 @@ public record ProjectSearchResult(
         String semester,
         String difficulty,
         String domain,
+        Boolean isTeam,
         float score
 ) {
 }

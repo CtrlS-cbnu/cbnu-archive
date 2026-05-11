@@ -36,6 +36,8 @@ export default function ProjectList() {
         semester: filters.semester === 1 ? 'FIRST' : filters.semester === 2 ? 'SECOND' : undefined,
         domain: filters.domains[0],
         techStacks: filters.techStacks.length > 0 ? filters.techStacks : undefined,
+        // null means "no filter", true/false means team/individual
+        isTeam: filters.isTeam ?? undefined,
         sort,
         page: 0,
         size: 20,

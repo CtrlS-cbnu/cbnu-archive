@@ -9,6 +9,7 @@ public record SearchQuery(
         String semester,
         String difficulty,
         String domain,
+        Boolean isTeam,
         int page,
         int size
 ) {
