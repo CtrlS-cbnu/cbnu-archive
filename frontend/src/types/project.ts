@@ -64,6 +64,7 @@ export interface ProjectSummary {
 
 export interface ProjectDetail extends ProjectSummary {
   description: string
+  readme: string
   members: ProjectMember[]
   visibility: Visibility
   files: ProjectFile[]
