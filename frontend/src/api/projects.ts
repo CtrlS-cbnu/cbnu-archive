@@ -1,5 +1,6 @@
 import { api } from './axiosInstance'
 import { toSummary, toPagedSummary } from './_adapters'
+import { getProjectFiles } from './files'
 import type { ApiResponse } from '@/types/api'
 import type {
   BackendPage,
@@ -15,22 +16,23 @@ export const getProjects = (params: ProjectListParams) =>
     .get<ApiResponse<BackendPage<BackendProjectResponse>>>('/api/v1/projects', { params })
     .then((r) => toPagedSummary(r.data.data))
 
-export const getProjectDetail = (id: number) =>
-  api
-    .get<ApiResponse<BackendProjectResponse>>(`/api/v1/projects/${id}`)
-    .then((r) => {
-      const p = r.data.data
-      const summary = toSummary(p)
-      const detail: ProjectDetail = {
-        ...summary,
-        description: p.description ?? '',
-        readme: p.readme ?? '',
-        members: [],
-        visibility: 'PUBLIC',
-        files: [],
-      }
-      return detail
-    })
+export const getProjectDetail = async (id: number): Promise<ProjectDetail> => {
+  const [res, files] = await Promise.all([
+    api.get<ApiResponse<BackendProjectResponse>>(`/api/v1/projects/${id}`),
+    // Fetch project files in parallel; gracefully fall back to empty list on error
+    getProjectFiles(id).catch(() => []),
+  ])
+  const p = res.data.data
+  const summary = toSummary(p)
+  return {
+    ...summary,
+    description: p.description ?? '',
+    readme: p.readme ?? '',
+    members: [],
+    visibility: 'PUBLIC',
+    files,
+  }
+}
 
 export const createProject = (data: ProjectCreateRequest) =>
   api
