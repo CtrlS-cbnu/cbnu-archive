@@ -70,7 +70,7 @@ export default function MyProjects() {
         <h1 className="text-2xl font-bold text-gray-900">내 프로젝트</h1>
         <Link
           to="/projects/new"
-          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90"
+          className="flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700"
         >
           <Plus className="h-4 w-4" />
           프로젝트 등록
@@ -88,7 +88,7 @@ export default function MyProjects() {
           <p className="text-gray-500">등록된 프로젝트가 없습니다.</p>
           <Link
             to="/projects/new"
-            className="mt-4 flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90"
+            className="mt-4 flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700"
           >
             <Plus className="h-4 w-4" />
             첫 프로젝트 등록하기
@@ -112,7 +112,7 @@ export default function MyProjects() {
               {/* Title — links to detail page */}
               <Link
                 to={`/projects/${project.id}`}
-                className="mb-1 line-clamp-2 font-semibold text-gray-900 hover:text-primary"
+                className="mb-1 line-clamp-2 font-semibold text-gray-900 hover:text-primary-600"
               >
                 {project.title}
               </Link>
