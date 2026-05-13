@@ -40,12 +40,6 @@ export function GNB() {
                   관리
                 </Link>
               )}
-              <Link
-                to="/projects/new"
-                className="rounded-md bg-white px-3 py-1.5 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-50"
-              >
-                프로젝트 등록
-              </Link>
               <button
                 onClick={handleLogout}
                 className="text-primary-100 hover:text-white transition-colors"
