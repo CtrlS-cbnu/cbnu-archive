@@ -32,14 +32,20 @@ export function GNB() {
           </Link>
           {role === 'USER' || role === 'ADMIN' ? (
             <>
-              <Link to="/my" className="text-primary-100 hover:text-white transition-colors">
+              <Link to="/my-projects" className="text-primary-100 hover:text-white transition-colors">
                 내 프로젝트
               </Link>
               {role === 'ADMIN' && (
-                <Link to="/admin/pending" className="text-primary-100 hover:text-white transition-colors">
+                <Link to="/admin" className="text-primary-100 hover:text-white transition-colors">
                   관리
                 </Link>
               )}
+              <Link
+                to="/projects/new"
+                className="rounded-md bg-white px-3 py-1.5 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-50"
+              >
+                프로젝트 등록
+              </Link>
               <button
                 onClick={handleLogout}
                 className="text-primary-100 hover:text-white transition-colors"
