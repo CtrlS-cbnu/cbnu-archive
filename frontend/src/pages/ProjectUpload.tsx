@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Upload, X, Plus, FileText, AlertCircle } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
 import { api } from '@/api/axiosInstance'
 import type { ApiResponse } from '@/types/api'
 import type { BackendProjectResponse } from '@/types/project'
@@ -57,6 +58,7 @@ export default function ProjectUpload() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
+  const [readmeTab, setReadmeTab] = useState<'편집' | '미리보기'>('편집')
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   // Validate a file — check extension and size
@@ -277,14 +279,44 @@ export default function ProjectUpload() {
 
         {/* ── README (Markdown) ────────────────────────────────── */}
         <div>
-          <label className="mb-1 block text-sm font-medium text-gray-700">README (마크다운)</label>
-          <textarea
-            rows={8}
-            value={form.readme}
-            onChange={(e) => setForm((p) => ({ ...p, readme: e.target.value }))}
-            placeholder="## 프로젝트 소개&#10;&#10;마크다운 형식으로 작성해주세요"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
-          />
+          <div className="mb-1 flex items-center justify-between">
+            <label className="text-sm font-medium text-gray-700">README (마크다운)</label>
+            {/* Toggle between edit and preview modes */}
+            <div className="flex overflow-hidden rounded-md border border-gray-300">
+              {(['편집', '미리보기'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setReadmeTab(tab)}
+                  className={`px-3 py-0.5 text-xs transition ${
+                    readmeTab === tab
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-white text-gray-500 hover:bg-gray-50'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+          {readmeTab === '편집' ? (
+            <textarea
+              rows={8}
+              value={form.readme}
+              onChange={(e) => setForm((p) => ({ ...p, readme: e.target.value }))}
+              placeholder="## 프로젝트 소개&#10;&#10;마크다운 형식으로 작성해주세요"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
+            />
+          ) : (
+            // Rendered markdown preview
+            <div className="prose prose-sm min-h-[14rem] w-full max-w-none overflow-auto rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              {form.readme.trim() ? (
+                <ReactMarkdown>{form.readme}</ReactMarkdown>
+              ) : (
+                <p className="text-gray-400">내용을 입력하면 미리보기가 표시됩니다.</p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* ── File Dropzone ─────────────────────────────────────── */}
