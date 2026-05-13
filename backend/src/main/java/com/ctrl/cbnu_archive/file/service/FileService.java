@@ -14,7 +14,6 @@ import com.ctrl.cbnu_archive.project.domain.Project;
 import com.ctrl.cbnu_archive.project.exception.ProjectException;
 import com.ctrl.cbnu_archive.project.repository.ProjectRepository;
 import java.io.IOException;
-import java.io.InputStream;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
@@ -84,24 +83,6 @@ public class FileService {
         return fileRepository.findByProject_Id(projectId).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
-    }
-
-    /** Returns the raw InputStream for a file so the controller can stream bytes to the client. */
-    @Transactional(readOnly = true)
-    public InputStream downloadFileStream(Long fileId, Long currentUserId, boolean isAdmin) {
-        Objects.requireNonNull(fileId, "fileId must not be null");
-        ProjectFile projectFile = fileRepository.findById(fileId)
-                .orElseThrow(() -> new FileException(ErrorCode.FILE_NOT_FOUND, "파일을 찾을 수 없습니다."));
-        validateProjectAccess(projectFile.getProjectId(), currentUserId, isAdmin);
-        return fileStoragePort.download(projectFile.getStorageKey());
-    }
-
-    /** Returns the original file name for a given file id (used by download endpoint for Content-Disposition). */
-    @Transactional(readOnly = true)
-    public String getFileName(Long fileId) {
-        return fileRepository.findById(fileId)
-                .orElseThrow(() -> new FileException(ErrorCode.FILE_NOT_FOUND, "파일을 찾을 수 없습니다."))
-                .getFileName();
     }
 
     public void deleteFile(Long fileId, Long currentUserId, boolean isAdmin) {

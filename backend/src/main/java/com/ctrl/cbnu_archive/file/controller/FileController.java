@@ -7,14 +7,8 @@ import com.ctrl.cbnu_archive.global.response.ApiResponse;
 import com.ctrl.cbnu_archive.global.security.jwt.CustomUserDetails;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import java.io.InputStream;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,26 +56,6 @@ public class FileController {
             @PathVariable Long fileId
     ) {
         return ApiResponse.success(fileService.getFile(fileId, userDetails.getId(), userDetails.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"))));
-    }
-
-    @Operation(summary = "파일 바이트 스트리밍 다운로드", description = "파일 내용을 직접 스트리밍합니다. mock-storage를 사용할 때도 동작합니다.")
-    @GetMapping("/{fileId}/download")
-    public ResponseEntity<InputStreamResource> downloadFile(
-            @AuthenticationPrincipal CustomUserDetails userDetails,
-            @PathVariable Long fileId
-    ) {
-        InputStream stream = fileService.downloadFileStream(
-                fileId,
-                userDetails.getId(),
-                userDetails.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"))
-        );
-        String fileName = fileService.getFileName(fileId);
-        // Encode filename for Content-Disposition to handle Korean and special characters
-        String encoded = URLEncoder.encode(fileName, StandardCharsets.UTF_8).replace("+", "%20");
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename*=UTF-8''" + encoded)
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .body(new InputStreamResource(stream));
     }
 
     @Operation(summary = "파일 삭제", description = "프로젝트 작성자 또는 ADMIN이 파일을 삭제합니다.")
