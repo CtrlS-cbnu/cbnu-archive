@@ -6,21 +6,36 @@ import { Button } from '@/components/ui/Button'
 const DOMAIN_OPTIONS = ['웹', '앱', '인공지능', '백엔드', '클라우드', '보안', '데이터분석', '임베디드']
 const SEMESTER_OPTIONS: (1 | 2)[] = [1, 2]
 const CURRENT_YEAR = new Date().getFullYear()
-const YEAR_OPTIONS = Array.from({ length: 5 }, (_, i) => CURRENT_YEAR - i)
+const MIN_YEAR = 2010
 
 export function FilterPanel() {
   const { filters, setFilter, resetFilters } = useSearchStore()
   const [techInput, setTechInput] = useState('')
+  // Year range: from/to strings so empty string stays valid while typing
+  const [yearFrom, setYearFrom] = useState('')
+  const [yearTo, setYearTo] = useState('')
 
   const toggleArrayItem = <T,>(arr: T[], item: T): T[] =>
     arr.includes(item) ? arr.filter((v) => v !== item) : [...arr, item]
 
   const addTechStack = (value: string) => {
     const tag = value.trim()
-    if (tag && !filters.techStacks.includes(tag)) {
+    // Deduplicate case-insensitively so 'React' and 'react' aren't both added
+    if (tag && !filters.techStacks.some((t) => t.toLowerCase() === tag.toLowerCase())) {
       setFilter('techStacks', [...filters.techStacks, tag])
     }
     setTechInput('')
+  }
+
+  // Build the [from, to, from+1, ...] year array and push it to the store
+  const applyYearRange = (from: string, to: string) => {
+    const f = parseInt(from)
+    const t = parseInt(to)
+    if (!from && !to) { setFilter('years', []); return }
+    if (isNaN(f) || isNaN(t) || f > t) return
+    const range: number[] = []
+    for (let y = f; y <= t; y++) range.push(y)
+    setFilter('years', range)
   }
 
   const hasActiveFilter =
@@ -42,24 +57,42 @@ export function FilterPanel() {
         )}
       </div>
 
-      {/* 연도 */}
+      {/* 연도 범위 — from / to 입력 후 결과는 store의 years 배열로 저장 */}
       <div>
         <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">수행 연도</p>
-        <div className="flex flex-wrap gap-1.5">
-          {YEAR_OPTIONS.map((year) => (
-            <button
-              key={year}
-              onClick={() => setFilter('years', toggleArrayItem(filters.years, year))}
-              className={`rounded-md border px-2.5 py-1 text-xs transition ${
-                filters.years.includes(year)
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-gray-200 text-gray-600 hover:border-gray-300'
-              }`}
-            >
-              {year}
-            </button>
-          ))}
+        <div className="flex items-center gap-1.5">
+          <input
+            type="number"
+            min={MIN_YEAR}
+            max={CURRENT_YEAR}
+            placeholder={String(MIN_YEAR)}
+            value={yearFrom}
+            onChange={(e) => {
+              setYearFrom(e.target.value)
+              applyYearRange(e.target.value, yearTo)
+            }}
+            className="w-[72px] rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
+          />
+          <span className="text-xs text-gray-400">~</span>
+          <input
+            type="number"
+            min={MIN_YEAR}
+            max={CURRENT_YEAR}
+            placeholder={String(CURRENT_YEAR)}
+            value={yearTo}
+            onChange={(e) => {
+              setYearTo(e.target.value)
+              applyYearRange(yearFrom, e.target.value)
+            }}
+            className="w-[72px] rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
+          />
         </div>
+        {/* Show active range indicator */}
+        {filters.years.length > 0 && (
+          <p className="mt-1 text-xs text-primary-600">
+            {filters.years[0]} ~ {filters.years[filters.years.length - 1]} 선택됨
+          </p>
+        )}
       </div>
 
       {/* 학기 */}

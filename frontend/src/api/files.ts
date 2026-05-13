@@ -41,6 +41,23 @@ export const getProjectFiles = (projectId: number) =>
     .get<ApiResponse<BackendFileResponse[]>>(`/api/v1/files/projects/${projectId}`)
     .then((r) => r.data.data.map(toProjectFile))
 
+// Download file bytes directly via backend streaming endpoint.
+// This bypasses mock-storage URLs which are not real HTTP servers.
+export const downloadFileBlob = (fileId: number, fileName: string) =>
+  api
+    .get(`/api/v1/files/${fileId}/download`, { responseType: 'blob' })
+    .then((r) => {
+      // Create a temporary object URL and trigger browser download
+      const url = URL.createObjectURL(r.data as Blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = fileName
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+      URL.revokeObjectURL(url)
+    })
+
 // Backend returns FileResponse with a downloadUrl field directly (no separate /download sub-path)
 export const getDownloadUrl = (fileId: number) =>
   api

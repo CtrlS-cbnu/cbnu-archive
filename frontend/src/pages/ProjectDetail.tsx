@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { Download, FileText, Pencil, Trash2, ChevronLeft } from 'lucide-react'
 import { getProjectDetail, deleteProject, getRecommendations } from '@/api/projects'
-import { getDownloadUrl } from '@/api/files'
+import { downloadFileBlob } from '@/api/files'
 import { useAuthStore } from '@/store/authStore'
 import type { ProjectDetail as ProjectDetailType } from '@/types/project'
 import type { RecommendationItem } from '@/types/project'
@@ -212,17 +212,17 @@ export default function ProjectDetail() {
   )
 }
 
-// 파일 한 행 — 클릭 시 download URL을 가져와서 새 탭에서 열기
+// 파일 한 행 — 클릭 시 백엔드 streaming endpoint를 통해 직접 다운로드
 function FileDownloadRow({ file }: { file: import('@/types/file').ProjectFile }) {
   const [loading, setLoading] = useState(false)
 
   const handleDownload = async () => {
     setLoading(true)
     try {
-      const { downloadUrl } = await getDownloadUrl(file.id)
-      window.open(downloadUrl, '_blank', 'noopener,noreferrer')
+      // Use the streaming endpoint to avoid mock-storage redirect issues
+      await downloadFileBlob(file.id, file.originalName)
     } catch {
-      alert('파일 URL을 가져오지 못했습니다.')
+      alert('파일 다운로드에 실패했습니다.')
     } finally {
       setLoading(false)
     }
