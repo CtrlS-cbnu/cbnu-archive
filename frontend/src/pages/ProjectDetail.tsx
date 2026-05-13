@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
 import { Download, FileText, Pencil, Trash2, ChevronLeft } from 'lucide-react'
 import { getProjectDetail, deleteProject, getRecommendations } from '@/api/projects'
-import { downloadFileBlob } from '@/api/files'
+import { getDownloadUrl } from '@/api/files'
 import { useAuthStore } from '@/store/authStore'
 import type { ProjectDetail as ProjectDetailType } from '@/types/project'
 import type { RecommendationItem } from '@/types/project'
@@ -169,8 +171,24 @@ export default function ProjectDetail() {
       {project.readme && (
         <section>
           <h2 className="mb-3 text-lg font-semibold text-gray-900">README</h2>
-          <div className="prose prose-sm prose-gray max-w-none rounded-xl border border-gray-200 bg-white p-5">
-            <ReactMarkdown>{project.readme}</ReactMarkdown>
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, remarkBreaks]}
+              components={{
+                // Explicit heading sizes so Tailwind Preflight reset is overridden
+                h1({ children }) { return <h1 className="mb-2 mt-4 text-2xl font-bold text-gray-900">{children}</h1> },
+                h2({ children }) { return <h2 className="mb-2 mt-3 text-xl font-semibold text-gray-800">{children}</h2> },
+                h3({ children }) { return <h3 className="mb-1 mt-3 text-lg font-semibold text-gray-800">{children}</h3> },
+                p({ children }) { return <p className="mb-2 leading-relaxed">{children}</p> },
+                ul({ children }) { return <ul className="mb-2 list-disc pl-5">{children}</ul> },
+                ol({ children }) { return <ol className="mb-2 list-decimal pl-5">{children}</ol> },
+                li({ children }) { return <li className="mb-0.5">{children}</li> },
+                blockquote({ children }) { return <blockquote className="my-2 border-l-4 border-gray-300 pl-3 italic text-gray-600">{children}</blockquote> },
+                strong({ children }) { return <strong className="font-semibold">{children}</strong> },
+              }}
+            >
+              {project.readme}
+            </ReactMarkdown>
           </div>
         </section>
       )}
@@ -212,17 +230,22 @@ export default function ProjectDetail() {
   )
 }
 
-// 파일 한 행 — 클릭 시 백엔드 streaming endpoint를 통해 직접 다운로드
+// 파일 한 행 — 클릭 시 백엔드에서 presigned URL을 받아 새 탭으로 다운로드
 function FileDownloadRow({ file }: { file: import('@/types/file').ProjectFile }) {
   const [loading, setLoading] = useState(false)
 
   const handleDownload = async () => {
     setLoading(true)
     try {
-      // Use the streaming endpoint to avoid mock-storage redirect issues
-      await downloadFileBlob(file.id, file.originalName)
+      const { downloadUrl } = await getDownloadUrl(file.id)
+      // Mock storage URLs are fake and cannot be resolved externally
+      if (downloadUrl.includes('mock-storage')) {
+        alert('파일 다운로드 기능은 현재 서버 업데이트 후 이용 가능합니다.\n빠른 시일 내에 지원될 예정입니다.')
+        return
+      }
+      window.open(downloadUrl, '_blank', 'noopener,noreferrer')
     } catch {
-      alert('파일 다운로드에 실패했습니다.')
+      alert('파일 URL을 가져오지 못했습니다. 잠시 후 다시 시도해주세요.')
     } finally {
       setLoading(false)
     }

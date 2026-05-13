@@ -2,6 +2,8 @@ import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Upload, X, Plus, FileText, AlertCircle } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
 import { api } from '@/api/axiosInstance'
 import type { ApiResponse } from '@/types/api'
 import type { BackendProjectResponse } from '@/types/project'
@@ -309,9 +311,25 @@ export default function ProjectUpload() {
             />
           ) : (
             // Rendered markdown preview
-            <div className="prose prose-sm min-h-[14rem] w-full max-w-none overflow-auto rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+            <div className="min-h-[14rem] w-full overflow-auto rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
               {form.readme.trim() ? (
-                <ReactMarkdown>{form.readme}</ReactMarkdown>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, remarkBreaks]}
+                  components={{
+                    // Explicit heading sizes so Tailwind Preflight reset is overridden
+                    h1({ children }) { return <h1 className="mb-2 mt-4 text-2xl font-bold text-gray-900">{children}</h1> },
+                    h2({ children }) { return <h2 className="mb-2 mt-3 text-xl font-semibold text-gray-800">{children}</h2> },
+                    h3({ children }) { return <h3 className="mb-1 mt-3 text-lg font-semibold text-gray-800">{children}</h3> },
+                    p({ children }) { return <p className="mb-2 leading-relaxed">{children}</p> },
+                    ul({ children }) { return <ul className="mb-2 list-disc pl-5">{children}</ul> },
+                    ol({ children }) { return <ol className="mb-2 list-decimal pl-5">{children}</ol> },
+                    li({ children }) { return <li className="mb-0.5">{children}</li> },
+                    blockquote({ children }) { return <blockquote className="my-2 border-l-4 border-gray-300 pl-3 italic text-gray-600">{children}</blockquote> },
+                    strong({ children }) { return <strong className="font-semibold">{children}</strong> },
+                  }}
+                >
+                  {form.readme}
+                </ReactMarkdown>
               ) : (
                 <p className="text-gray-400">내용을 입력하면 미리보기가 표시됩니다.</p>
               )}

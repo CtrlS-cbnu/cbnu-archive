@@ -88,9 +88,12 @@ export function FilterPanel() {
           />
         </div>
         {/* Show active range indicator */}
-        {filters.years.length > 0 && (
-          <p className="mt-1 text-xs text-primary-600">
-            {filters.years[0]} ~ {filters.years[filters.years.length - 1]} 선택됨
+        {filters.years.length === 1 && (
+          <p className="mt-1 text-xs text-primary-600">{filters.years[0]}년 선택됨</p>
+        )}
+        {filters.years.length > 1 && (
+          <p className="mt-1 text-xs text-gray-500">
+            {filters.years[0]}~{filters.years[filters.years.length - 1]} (전체 표시)
           </p>
         )}
       </div>
