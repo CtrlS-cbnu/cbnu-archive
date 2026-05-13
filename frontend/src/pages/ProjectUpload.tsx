@@ -169,7 +169,7 @@ export default function ProjectUpload() {
             value={form.title}
             onChange={(e) => setForm((p) => ({ ...p, title: e.target.value }))}
             placeholder="프로젝트 제목을 입력하세요"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
           />
         </div>
 
@@ -183,7 +183,7 @@ export default function ProjectUpload() {
               max={2099}
               value={form.year}
               onChange={(e) => setForm((p) => ({ ...p, year: Number(e.target.value) }))}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
             />
           </div>
           <div>
@@ -191,7 +191,7 @@ export default function ProjectUpload() {
             <select
               value={form.semester}
               onChange={(e) => setForm((p) => ({ ...p, semester: Number(e.target.value) as 1 | 2 }))}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
             >
               <option value={1}>1학기</option>
               <option value={2}>2학기</option>
@@ -202,7 +202,7 @@ export default function ProjectUpload() {
             <select
               value={form.difficulty}
               onChange={(e) => setForm((p) => ({ ...p, difficulty: e.target.value }))}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
             >
               {DIFFICULTY_OPTIONS.map((o) => (
                 <option key={o.value} value={o.value}>{o.label}</option>
@@ -218,7 +218,7 @@ export default function ProjectUpload() {
             <select
               value={form.domain}
               onChange={(e) => setForm((p) => ({ ...p, domain: e.target.value }))}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
             >
               <option value="">선택하세요</option>
               {DOMAIN_OPTIONS.map((d) => (
@@ -242,9 +242,9 @@ export default function ProjectUpload() {
         {/* ── Tech Stacks ──────────────────────────────────────── */}
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">기술 스택</label>
-          <div className="flex flex-wrap gap-2 rounded-lg border border-gray-300 px-3 py-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary">
+          <div className="flex flex-wrap gap-2 rounded-lg border border-gray-300 px-3 py-2 focus-within:border-primary-600 focus-within:ring-1 focus-within:ring-primary-600">
             {form.techStacks.map((tag) => (
-              <span key={tag} className="flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+              <span key={tag} className="flex items-center gap-1 rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-600">
                 {tag}
                 <button type="button" onClick={() => removeTech(tag)}>
                   <X className="h-3 w-3" />
@@ -271,7 +271,7 @@ export default function ProjectUpload() {
             value={form.description}
             onChange={(e) => setForm((p) => ({ ...p, description: e.target.value }))}
             placeholder="프로젝트를 간략히 설명해주세요"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
           />
         </div>
 
@@ -283,7 +283,7 @@ export default function ProjectUpload() {
             value={form.readme}
             onChange={(e) => setForm((p) => ({ ...p, readme: e.target.value }))}
             placeholder="## 프로젝트 소개&#10;&#10;마크다운 형식으로 작성해주세요"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600"
           />
         </div>
 
@@ -296,7 +296,7 @@ export default function ProjectUpload() {
             onDrop={handleDrop}
             onClick={() => fileInputRef.current?.click()}
             className={`flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed py-8 transition-colors ${
-              dragOver ? 'border-primary bg-primary/5' : 'border-gray-300 hover:border-gray-400'
+              dragOver ? 'border-primary-600 bg-primary-50' : 'border-gray-300 hover:border-gray-400'
             }`}
           >
             <Upload className="h-8 w-8 text-gray-400" />
@@ -355,7 +355,7 @@ export default function ProjectUpload() {
           <button
             type="submit"
             disabled={isSubmitting || !form.title.trim()}
-            className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary/90 disabled:opacity-50"
+            className="flex items-center gap-2 rounded-lg bg-primary-600 px-5 py-2 text-sm font-medium text-white hover:bg-primary-700 disabled:opacity-50"
           >
             {isSubmitting ? (
               <>
