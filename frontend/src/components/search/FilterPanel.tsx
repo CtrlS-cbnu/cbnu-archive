@@ -7,13 +7,12 @@ const DOMAIN_OPTIONS = ['웹', '앱', '인공지능', '백엔드', '클라우드
 const SEMESTER_OPTIONS: (1 | 2)[] = [1, 2]
 const CURRENT_YEAR = new Date().getFullYear()
 const MIN_YEAR = 2010
+// Year options from newest to oldest for the dropdown
+const YEAR_OPTIONS = Array.from({ length: CURRENT_YEAR - MIN_YEAR + 1 }, (_, i) => CURRENT_YEAR - i)
 
 export function FilterPanel() {
   const { filters, setFilter, resetFilters } = useSearchStore()
   const [techInput, setTechInput] = useState('')
-  // Year range: from/to strings so empty string stays valid while typing
-  const [yearFrom, setYearFrom] = useState('')
-  const [yearTo, setYearTo] = useState('')
 
   const toggleArrayItem = <T,>(arr: T[], item: T): T[] =>
     arr.includes(item) ? arr.filter((v) => v !== item) : [...arr, item]
@@ -25,17 +24,6 @@ export function FilterPanel() {
       setFilter('techStacks', [...filters.techStacks, tag])
     }
     setTechInput('')
-  }
-
-  // Build the [from, to, from+1, ...] year array and push it to the store
-  const applyYearRange = (from: string, to: string) => {
-    const f = parseInt(from)
-    const t = parseInt(to)
-    if (!from && !to) { setFilter('years', []); return }
-    if (isNaN(f) || isNaN(t) || f > t) return
-    const range: number[] = []
-    for (let y = f; y <= t; y++) range.push(y)
-    setFilter('years', range)
   }
 
   const hasActiveFilter =
@@ -57,45 +45,22 @@ export function FilterPanel() {
         )}
       </div>
 
-      {/* 연도 범위 — from / to 입력 후 결과는 store의 years 배열로 저장 */}
+      {/* 연도 — 단일 연도 선택 드롭다운 (백엔드는 year 단일 값만 지원) */}
       <div>
         <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">수행 연도</p>
-        <div className="flex items-center gap-1.5">
-          <input
-            type="number"
-            min={MIN_YEAR}
-            max={CURRENT_YEAR}
-            placeholder={String(MIN_YEAR)}
-            value={yearFrom}
-            onChange={(e) => {
-              setYearFrom(e.target.value)
-              applyYearRange(e.target.value, yearTo)
-            }}
-            className="w-[72px] rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
-          />
-          <span className="text-xs text-gray-400">~</span>
-          <input
-            type="number"
-            min={MIN_YEAR}
-            max={CURRENT_YEAR}
-            placeholder={String(CURRENT_YEAR)}
-            value={yearTo}
-            onChange={(e) => {
-              setYearTo(e.target.value)
-              applyYearRange(yearFrom, e.target.value)
-            }}
-            className="w-[72px] rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
-          />
-        </div>
-        {/* Show active range indicator */}
-        {filters.years.length === 1 && (
-          <p className="mt-1 text-xs text-primary-600">{filters.years[0]}년 선택됨</p>
-        )}
-        {filters.years.length > 1 && (
-          <p className="mt-1 text-xs text-gray-500">
-            {filters.years[0]}~{filters.years[filters.years.length - 1]} (전체 표시)
-          </p>
-        )}
+        <select
+          value={filters.years[0] ?? ''}
+          onChange={(e) => {
+            const v = e.target.value
+            setFilter('years', v ? [parseInt(v)] : [])
+          }}
+          className="w-full rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
+        >
+          <option value="">전체</option>
+          {YEAR_OPTIONS.map((y) => (
+            <option key={y} value={y}>{y}년</option>
+          ))}
+        </select>
       </div>
 
       {/* 학기 */}
