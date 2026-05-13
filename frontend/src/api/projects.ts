@@ -24,6 +24,7 @@ export const getProjectDetail = (id: number) =>
       const detail: ProjectDetail = {
         ...summary,
         description: p.description ?? '',
+        readme: p.readme ?? '',
         members: [],
         visibility: 'PUBLIC',
         files: [],
