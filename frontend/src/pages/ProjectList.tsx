@@ -13,7 +13,7 @@ export default function ProjectList() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Natural search state
+  // Natural search result
   const [naturalResult, setNaturalResult] = useState<NaturalSearchBackendResult | null>(null)
 
   // Keyword search results
@@ -31,12 +31,12 @@ export default function ProjectList() {
     try {
       const result = await searchKeyword({
         keyword: kw || undefined,
-        // Map array filters to single values that the current backend accepts
-        year: filters.years[0],
+        // Backend supports only a single year filter; send undefined when a range is selected
+        // so results are not filtered by year (all years shown)
+        year: filters.years.length === 1 ? filters.years[0] : undefined,
         semester: filters.semester === 1 ? 'FIRST' : filters.semester === 2 ? 'SECOND' : undefined,
         domain: filters.domains[0],
         techStacks: filters.techStacks.length > 0 ? filters.techStacks : undefined,
-        // null means "no filter", true/false means team/individual
         isTeam: filters.isTeam ?? undefined,
         sort,
         page: 0,
@@ -51,7 +51,6 @@ export default function ProjectList() {
   }, [filters, sort])
 
   // On mount and whenever filters/sort change, re-run keyword search automatically
-  // keywordRef ensures we always use the latest keyword without adding it as a dep
   useEffect(() => {
     if (searchType !== 'keyword') return
     execKeywordSearch(keywordRef.current)
@@ -59,7 +58,6 @@ export default function ProjectList() {
 
   const handleSearch = useCallback(async () => {
     if (searchType === 'natural') {
-      // Natural search always requires a query
       if (!keyword.trim()) return
       setIsLoading(true)
       setError(null)
@@ -74,15 +72,12 @@ export default function ProjectList() {
         setIsLoading(false)
       }
     } else {
-      // Keyword search: run immediately with current keyword + active filters
       execKeywordSearch(keyword)
     }
   }, [keyword, searchType, execKeywordSearch])
 
-  // Derive display list from whichever search mode is active
   const naturalItems = naturalResult?.projects ?? []
   const displayProjects = searchType === 'keyword' ? keywordProjects : []
-  // Consider page "has results" when there's anything to show
   const hasResults = searchType === 'natural' ? naturalItems.length > 0 : displayProjects.length > 0
 
   return (
@@ -107,7 +102,7 @@ export default function ProjectList() {
             </div>
           )}
 
-          {/* Loading skeleton */}
+          {/* Skeleton loading grid */}
           {isLoading && (
             <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {Array.from({ length: 6 }).map((_, i) => (
@@ -116,22 +111,22 @@ export default function ProjectList() {
             </div>
           )}
 
-          {/* Error message */}
+          {/* Error */}
           {!isLoading && error && (
             <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
               {error}
             </p>
           )}
 
-          {/* Empty state — shown only after a search is triggered */}
-          {!isLoading && !error && !hasResults && (keyword.trim() !== '') && (
+          {/* Empty state */}
+          {!isLoading && !error && !hasResults && keyword.trim() !== '' && (
             <div className="flex flex-col items-center gap-2 py-16 text-gray-400">
               <p className="text-lg font-medium">검색 결과가 없습니다.</p>
               <p className="text-sm">다른 키워드나 AI 자연어 검색을 시도해보세요.</p>
             </div>
           )}
 
-          {/* Initial state — show all projects (no search yet) */}
+          {/* Initial state for natural search */}
           {!isLoading && !error && keyword.trim() === '' && searchType === 'natural' && (
             <div className="flex flex-col items-center gap-2 py-16 text-gray-400">
               <p className="text-lg font-medium">AI에게 자유롭게 질문해보세요.</p>

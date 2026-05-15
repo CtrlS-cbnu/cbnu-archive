@@ -2,18 +2,11 @@ import { useState, useRef, useEffect } from 'react'
 import { useChatStore } from '@/store/chatStore'
 import { searchNatural } from '@/api/search'
 import { ProjectCard } from '@/components/project/ProjectCard'
-import type { ProjectSummary } from '@/types/project'
-
-// Each message in the conversation (extends base ChatMessage with AI result metadata)
-interface DisplayMessage {
-  role: 'user' | 'assistant'
-  content: string
-  projects?: ProjectSummary[]
-}
+import type { ChatMessage } from '@/types/chat'
 
 export default function Chat() {
-  const { isLoading, setLoading } = useChatStore()
-  const [messages, setMessages] = useState<DisplayMessage[]>([])
+  // Persist messages in chatStore so they survive page navigation
+  const { messages, isLoading, addMessage, setLoading, resetSession } = useChatStore()
   const [input, setInput] = useState('')
   const [error, setError] = useState<string | null>(null)
   const bottomRef = useRef<HTMLDivElement>(null)
@@ -31,23 +24,21 @@ export default function Chat() {
     setError(null)
 
     // Append user message immediately so the UI feels responsive
-    const userMsg: DisplayMessage = { role: 'user', content: text }
-    setMessages((prev) => [...prev, userMsg])
+    const userMsg: ChatMessage = { role: 'user', content: text }
+    addMessage(userMsg)
     setLoading(true)
 
     try {
       const result = await searchNatural(text)
 
-      const assistantMsg: DisplayMessage = {
+      const assistantMsg: ChatMessage = {
         role: 'assistant',
         content: result.answer || '관련 프로젝트를 찾았습니다.',
         projects: result.projects,
       }
-      setMessages((prev) => [...prev, assistantMsg])
+      addMessage(assistantMsg)
     } catch {
       setError('AI 서비스 응답 중 오류가 발생했습니다. 서버 상태를 확인해주세요.')
-      // Remove the optimistic user message on failure
-      setMessages((prev) => prev.slice(0, -1))
     } finally {
       setLoading(false)
     }
@@ -63,7 +54,17 @@ export default function Chat() {
 
   return (
     <div className="flex h-[calc(100vh-8rem)] flex-col">
-      <h1 className="mb-4 shrink-0 text-2xl font-bold text-gray-900">AI 챗봇 탐색</h1>
+      <div className="mb-4 shrink-0 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-gray-900">AI 챗봇 탐색</h1>
+        {messages.length > 0 && (
+          <button
+            onClick={resetSession}
+            className="text-xs text-gray-400 hover:text-gray-600"
+          >
+            대화 초기화
+          </button>
+        )}
+      </div>
 
       {/* Message history */}
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto rounded-xl border border-gray-200 bg-gray-50 px-4 py-4">

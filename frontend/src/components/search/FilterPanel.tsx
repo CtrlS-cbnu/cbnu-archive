@@ -1,22 +1,36 @@
+import { useState } from 'react'
+import { X } from 'lucide-react'
 import { useSearchStore } from '@/store/searchStore'
 import { Button } from '@/components/ui/Button'
 
-// Available filter options — will be replaced with API data when backend is ready
-const TECH_OPTIONS = ['React', 'Spring Boot', 'FastAPI', 'PostgreSQL', 'PyTorch', 'TypeScript', 'Python', 'Docker']
+const DOMAIN_OPTIONS = ['웹', '앱', '인공지능', '백엔드', '클라우드', '보안', '데이터분석', '임베디드']
 const SEMESTER_OPTIONS: (1 | 2)[] = [1, 2]
 const CURRENT_YEAR = new Date().getFullYear()
-const YEAR_OPTIONS = Array.from({ length: 5 }, (_, i) => CURRENT_YEAR - i)
+const MIN_YEAR = 2010
+// Year options from newest to oldest for the dropdown
+const YEAR_OPTIONS = Array.from({ length: CURRENT_YEAR - MIN_YEAR + 1 }, (_, i) => CURRENT_YEAR - i)
 
 export function FilterPanel() {
   const { filters, setFilter, resetFilters } = useSearchStore()
+  const [techInput, setTechInput] = useState('')
 
   const toggleArrayItem = <T,>(arr: T[], item: T): T[] =>
     arr.includes(item) ? arr.filter((v) => v !== item) : [...arr, item]
+
+  const addTechStack = (value: string) => {
+    const tag = value.trim()
+    // Deduplicate case-insensitively so 'React' and 'react' aren't both added
+    if (tag && !filters.techStacks.some((t) => t.toLowerCase() === tag.toLowerCase())) {
+      setFilter('techStacks', [...filters.techStacks, tag])
+    }
+    setTechInput('')
+  }
 
   const hasActiveFilter =
     filters.years.length > 0 ||
     filters.semester !== null ||
     filters.techStacks.length > 0 ||
+    filters.domains.length > 0 ||
     filters.isTeam !== null
 
   return (
@@ -31,24 +45,22 @@ export function FilterPanel() {
         )}
       </div>
 
-      {/* 연도 */}
+      {/* 연도 — 단일 연도 선택 드롭다운 (백엔드는 year 단일 값만 지원) */}
       <div>
         <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">수행 연도</p>
-        <div className="flex flex-wrap gap-1.5">
-          {YEAR_OPTIONS.map((year) => (
-            <button
-              key={year}
-              onClick={() => setFilter('years', toggleArrayItem(filters.years, year))}
-              className={`rounded-md border px-2.5 py-1 text-xs transition ${
-                filters.years.includes(year)
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-gray-200 text-gray-600 hover:border-gray-300'
-              }`}
-            >
-              {year}
-            </button>
+        <select
+          value={filters.years[0] ?? ''}
+          onChange={(e) => {
+            const v = e.target.value
+            setFilter('years', v ? [parseInt(v)] : [])
+          }}
+          className="w-full rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
+        >
+          <option value="">전체</option>
+          {YEAR_OPTIONS.map((y) => (
+            <option key={y} value={y}>{y}년</option>
           ))}
-        </div>
+        </select>
       </div>
 
       {/* 학기 */}
@@ -71,24 +83,63 @@ export function FilterPanel() {
         </div>
       </div>
 
-      {/* 기술 스택 */}
+      {/* 도메인 */}
       <div>
-        <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">기술 스택</p>
+        <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">도메인</p>
         <div className="flex flex-wrap gap-1.5">
-          {TECH_OPTIONS.map((tech) => (
+          {DOMAIN_OPTIONS.map((d) => (
             <button
-              key={tech}
-              onClick={() => setFilter('techStacks', toggleArrayItem(filters.techStacks, tech))}
+              key={d}
+              onClick={() => setFilter('domains', toggleArrayItem(filters.domains, d))}
               className={`rounded-md border px-2.5 py-1 text-xs transition ${
-                filters.techStacks.includes(tech)
+                filters.domains.includes(d)
                   ? 'border-primary-500 bg-primary-50 text-primary-700'
                   : 'border-gray-200 text-gray-600 hover:border-gray-300'
               }`}
             >
-              {tech}
+              {d}
             </button>
           ))}
         </div>
+      </div>
+
+      {/* 기술 스택 — free-text searchable input */}
+      <div>
+        <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">기술 스택</p>
+        {/* Inline search box: press Enter or comma to add a tag */}
+        <input
+          type="text"
+          value={techInput}
+          onChange={(e) => setTechInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ',') {
+              e.preventDefault()
+              addTechStack(techInput)
+            }
+          }}
+          placeholder="입력 후 Enter"
+          className="mb-2 w-full rounded-md border border-gray-200 px-2.5 py-1 text-xs focus:border-primary-500 focus:outline-none"
+        />
+        {/* Active tech stack tags with remove button */}
+        {filters.techStacks.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {filters.techStacks.map((tech) => (
+              <span
+                key={tech}
+                className="flex items-center gap-1 rounded-md border border-primary-500 bg-primary-50 px-2 py-0.5 text-xs text-primary-700"
+              >
+                {tech}
+                <button
+                  type="button"
+                  onClick={() => setFilter('techStacks', filters.techStacks.filter((t) => t !== tech))}
+                  className="hover:text-primary-900"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 팀 프로젝트 여부 */}

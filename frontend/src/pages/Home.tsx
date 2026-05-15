@@ -10,7 +10,7 @@ const DOMAINS = ['웹', '앱', '인공지능', '백엔드', '클라우드', '보
 
 export default function Home() {
   const navigate = useNavigate()
-  const { setKeyword, setFilter } = useSearchStore()
+  const { setKeyword, setFilter, setSearchType } = useSearchStore()
   const [query, setQuery] = useState('')
   const [recent, setRecent] = useState<ProjectSummary[]>([])
 
@@ -23,11 +23,14 @@ export default function Home() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
+    // Home search is always keyword mode — reset type so ProjectList doesn't get stuck on 'natural'
+    setSearchType('keyword')
     setKeyword(query.trim())
     navigate('/projects')
   }
 
   const handleDomain = (domain: string) => {
+    setSearchType('keyword')
     setFilter('domains', [domain])
     navigate('/projects')
   }
