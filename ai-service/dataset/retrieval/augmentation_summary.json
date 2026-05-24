@@ -1,0 +1,12 @@
+{
+  "source_count_original": 20,
+  "source_count_augmented": 100,
+  "corpus_count": 100,
+  "query_count": 50,
+  "qrels_count": 50,
+  "notes": [
+    "20 real GitHub metadata_source records were preserved.",
+    "80 synthetic local-test records were generated with similar schema and topics.",
+    "Use this dataset for pipeline stress testing, not as final benchmark evidence."
+  ]
+}

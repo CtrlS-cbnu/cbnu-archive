@@ -6484,5 +6484,4191 @@
       "tech_stack": [],
       "keywords": []
     }
+  },
+  {
+    "project_id": "open-curriculum/web-dev-path",
+    "title": "Web Dev Path",
+    "repo_url": "https://github.com/open-curriculum/web-dev-path",
+    "input": {
+      "short_summary": "A structured open-source curriculum for web development and computer science.",
+      "description": "A structured open-source curriculum for web development and computer science.",
+      "readme": "# Web Dev Path\n\n## Overview\n\nA structured open-source curriculum for web development and computer science.\n\nThis project focuses on education, curriculum, javascript, react, web-development. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: React, TypeScript, Node.js\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"typescript\": \"^5.0.0\",\n    \"node\": \">=20\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 3698,
+      "topics": [
+        "education",
+        "curriculum",
+        "javascript",
+        "react",
+        "web-development"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "education",
+      "tech_stack": [
+        "React",
+        "TypeScript",
+        "Node.js"
+      ],
+      "keywords": [
+        "education",
+        "curriculum",
+        "javascript"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "open-curriculum/python-data-path",
+    "title": "Python Data Path",
+    "repo_url": "https://github.com/open-curriculum/python-data-path",
+    "input": {
+      "short_summary": "A free project-based curriculum for Python, SQL, data analysis, and computer science.",
+      "description": "A free project-based curriculum for Python, SQL, data analysis, and computer science.",
+      "readme": "# Python Data Path\n\n## Overview\n\nA free project-based curriculum for Python, SQL, data analysis, and computer science.\n\nThis project focuses on education, python, data-analysis, curriculum. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, SQL\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 869,
+      "topics": [
+        "education",
+        "python",
+        "data-analysis",
+        "curriculum"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "education",
+      "tech_stack": [
+        "Python",
+        "SQL"
+      ],
+      "keywords": [
+        "education",
+        "python",
+        "data-analysis"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "edu-platform/coding-challenges",
+    "title": "Coding Challenges",
+    "repo_url": "https://github.com/edu-platform/coding-challenges",
+    "input": {
+      "short_summary": "Interactive coding challenges for JavaScript, algorithms, and interview preparation.",
+      "description": "Interactive coding challenges for JavaScript, algorithms, and interview preparation.",
+      "readme": "# Coding Challenges\n\n## Overview\n\nInteractive coding challenges for JavaScript, algorithms, and interview preparation.\n\nThis project focuses on coding-challenges, javascript, algorithms, education. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript, Node.js\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"node\": \">=20\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 9062,
+      "topics": [
+        "coding-challenges",
+        "javascript",
+        "algorithms",
+        "education"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "coding-challenges",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js"
+      ],
+      "keywords": [
+        "coding-challenges",
+        "javascript",
+        "algorithms"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "learn-lab/cs-foundations",
+    "title": "CS Foundations",
+    "repo_url": "https://github.com/learn-lab/cs-foundations",
+    "input": {
+      "short_summary": "Computer science foundations with self-paced lessons, quizzes, and projects.",
+      "description": "Computer science foundations with self-paced lessons, quizzes, and projects.",
+      "readme": "# CS Foundations\n\n## Overview\n\nComputer science foundations with self-paced lessons, quizzes, and projects.\n\nThis project focuses on computer-science, education, curriculum. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: HTML, JavaScript\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "HTML",
+      "stargazers_count": 8074,
+      "topics": [
+        "computer-science",
+        "education",
+        "curriculum"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "computer-science",
+      "tech_stack": [
+        "HTML",
+        "JavaScript"
+      ],
+      "keywords": [
+        "computer-science",
+        "education",
+        "curriculum"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "oss-learning/fullstack-bootcamp",
+    "title": "Fullstack Bootcamp",
+    "repo_url": "https://github.com/oss-learning/fullstack-bootcamp",
+    "input": {
+      "short_summary": "An open full-stack web development bootcamp with React, Node.js, APIs, and databases.",
+      "description": "An open full-stack web development bootcamp with React, Node.js, APIs, and databases.",
+      "readme": "# Fullstack Bootcamp\n\n## Overview\n\nAn open full-stack web development bootcamp with React, Node.js, APIs, and databases.\n\nThis project focuses on full-stack, react, nodejs, education. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: React, TypeScript, Node.js\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"typescript\": \"^5.0.0\",\n    \"node\": \">=20\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 7364,
+      "topics": [
+        "full-stack",
+        "react",
+        "nodejs",
+        "education"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "full-stack",
+      "tech_stack": [
+        "React",
+        "TypeScript",
+        "Node.js"
+      ],
+      "keywords": [
+        "full-stack",
+        "react",
+        "nodejs"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "architecture-lab/system-design-notes",
+    "title": "System Design Notes",
+    "repo_url": "https://github.com/architecture-lab/system-design-notes",
+    "input": {
+      "short_summary": "Notes and diagrams for learning scalable system design and architecture trade-offs.",
+      "description": "Notes and diagrams for learning scalable system design and architecture trade-offs.",
+      "readme": "# System Design Notes\n\n## Overview\n\nNotes and diagrams for learning scalable system design and architecture trade-offs.\n\nThis project focuses on system-design, scalability, architecture. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 4622,
+      "topics": [
+        "system-design",
+        "scalability",
+        "architecture"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "system-design",
+      "tech_stack": [
+        "Python"
+      ],
+      "keywords": [
+        "system-design",
+        "scalability",
+        "architecture"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "interview-prep/design-interview-kit",
+    "title": "Design Interview Kit",
+    "repo_url": "https://github.com/interview-prep/design-interview-kit",
+    "input": {
+      "short_summary": "A curated system design interview preparation kit with common questions and solutions.",
+      "description": "A curated system design interview preparation kit with common questions and solutions.",
+      "readme": "# Design Interview Kit\n\n## Overview\n\nA curated system design interview preparation kit with common questions and solutions.\n\nThis project focuses on system-design, design-interview, technical-interview. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 3408,
+      "topics": [
+        "system-design",
+        "design-interview",
+        "technical-interview"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "system-design",
+      "tech_stack": [
+        "Python"
+      ],
+      "keywords": [
+        "system-design",
+        "design-interview",
+        "technical-interview"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "scale-school/distributed-systems-guide",
+    "title": "Distributed Systems Guide",
+    "repo_url": "https://github.com/scale-school/distributed-systems-guide",
+    "input": {
+      "short_summary": "A guide to distributed systems concepts including replication, caching, queues, and consistency.",
+      "description": "A guide to distributed systems concepts including replication, caching, queues, and consistency.",
+      "readme": "# Distributed Systems Guide\n\n## Overview\n\nA guide to distributed systems concepts including replication, caching, queues, and consistency.\n\nThis project focuses on distributed-systems, scalability, system-design. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 17920,
+      "topics": [
+        "distributed-systems",
+        "scalability",
+        "system-design"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "distributed-systems",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "distributed-systems",
+        "scalability",
+        "system-design"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "backend-lab/scalable-backend-patterns",
+    "title": "Scalable Backend Patterns",
+    "repo_url": "https://github.com/backend-lab/scalable-backend-patterns",
+    "input": {
+      "short_summary": "Backend architecture patterns for scalable services, load balancing, caching, and queues.",
+      "description": "Backend architecture patterns for scalable services, load balancing, caching, and queues.",
+      "readme": "# Scalable Backend Patterns\n\n## Overview\n\nBackend architecture patterns for scalable services, load balancing, caching, and queues.\n\nThis project focuses on backend, system-design, scalability. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 2898,
+      "topics": [
+        "backend",
+        "system-design",
+        "scalability"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "backend",
+      "tech_stack": [
+        "Java",
+        "Spring Boot"
+      ],
+      "keywords": [
+        "backend",
+        "system-design",
+        "scalability"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "studyhub/architecture-flashcards",
+    "title": "Architecture Flashcards",
+    "repo_url": "https://github.com/studyhub/architecture-flashcards",
+    "input": {
+      "short_summary": "Flashcards for system design concepts, technical interview review, and architecture patterns.",
+      "description": "Flashcards for system design concepts, technical interview review, and architecture patterns.",
+      "readme": "# Architecture Flashcards\n\n## Overview\n\nFlashcards for system design concepts, technical interview review, and architecture patterns.\n\nThis project focuses on system-design, flashcards, interview. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {}\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 19399,
+      "topics": [
+        "system-design",
+        "flashcards",
+        "interview"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "system-design",
+      "tech_stack": [
+        "JavaScript"
+      ],
+      "keywords": [
+        "system-design",
+        "flashcards",
+        "interview"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "android-tools/screen-mirror-lite",
+    "title": "Screen Mirror Lite",
+    "repo_url": "https://github.com/android-tools/screen-mirror-lite",
+    "input": {
+      "short_summary": "A lightweight Android screen mirroring and recording tool for desktop environments.",
+      "description": "A lightweight Android screen mirroring and recording tool for desktop environments.",
+      "readme": "# Screen Mirror Lite\n\n## Overview\n\nA lightweight Android screen mirroring and recording tool for desktop environments.\n\nThis project focuses on android, screen-mirroring, recording. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C, FFmpeg, SDL2, Android\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Makefile",
+        "src/main.c"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C",
+      "stargazers_count": 13875,
+      "topics": [
+        "android",
+        "screen-mirroring",
+        "recording"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "android",
+      "tech_stack": [
+        "C",
+        "FFmpeg",
+        "SDL2",
+        "Android"
+      ],
+      "keywords": [
+        "android",
+        "screen-mirroring",
+        "recording"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "mobile-lab/device-streamer",
+    "title": "Device Streamer",
+    "repo_url": "https://github.com/mobile-lab/device-streamer",
+    "input": {
+      "short_summary": "A desktop tool to stream Android device screens with low latency.",
+      "description": "A desktop tool to stream Android device screens with low latency.",
+      "readme": "# Device Streamer\n\n## Overview\n\nA desktop tool to stream Android device screens with low latency.\n\nThis project focuses on android, streaming, screen-mirroring. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C++, Android\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "CMakeLists.txt",
+        "src/main.cpp"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C++",
+      "stargazers_count": 1091,
+      "topics": [
+        "android",
+        "streaming",
+        "screen-mirroring"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "android",
+      "tech_stack": [
+        "C++",
+        "Android"
+      ],
+      "keywords": [
+        "android",
+        "streaming",
+        "screen-mirroring"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "devtools/adb-display-capture",
+    "title": "ADB Display Capture",
+    "repo_url": "https://github.com/devtools/adb-display-capture",
+    "input": {
+      "short_summary": "Capture and control Android screens using ADB and native desktop rendering.",
+      "description": "Capture and control Android screens using ADB and native desktop rendering.",
+      "readme": "# ADB Display Capture\n\n## Overview\n\nCapture and control Android screens using ADB and native desktop rendering.\n\nThis project focuses on adb, android, screen-capture. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C, Android\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Makefile",
+        "src/main.c"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C",
+      "stargazers_count": 1026,
+      "topics": [
+        "adb",
+        "android",
+        "screen-capture"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "adb",
+      "tech_stack": [
+        "C",
+        "Android"
+      ],
+      "keywords": [
+        "adb",
+        "android",
+        "screen-capture"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "mirrorbox/mobile-screen-recorder",
+    "title": "Mobile Screen Recorder",
+    "repo_url": "https://github.com/mirrorbox/mobile-screen-recorder",
+    "input": {
+      "short_summary": "Android screen recording and mirroring utility for demos and testing.",
+      "description": "Android screen recording and mirroring utility for demos and testing.",
+      "readme": "# Mobile Screen Recorder\n\n## Overview\n\nAndroid screen recording and mirroring utility for demos and testing.\n\nThis project focuses on android, recording, testing. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, Android\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 3120,
+      "topics": [
+        "android",
+        "recording",
+        "testing"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "android",
+      "tech_stack": [
+        "Python",
+        "Android"
+      ],
+      "keywords": [
+        "android",
+        "recording",
+        "testing"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "desklink/android-control-panel",
+    "title": "Android Control Panel",
+    "repo_url": "https://github.com/desklink/android-control-panel",
+    "input": {
+      "short_summary": "Desktop control panel for Android device display, input, and debugging.",
+      "description": "Desktop control panel for Android device display, input, and debugging.",
+      "readme": "# Android Control Panel\n\n## Overview\n\nDesktop control panel for Android device display, input, and debugging.\n\nThis project focuses on android, desktop, debugging. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C#, Android\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Project.csproj",
+        "Program.cs"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C#",
+      "stargazers_count": 7214,
+      "topics": [
+        "android",
+        "desktop",
+        "debugging"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "android",
+      "tech_stack": [
+        "C#",
+        "Android"
+      ],
+      "keywords": [
+        "android",
+        "desktop",
+        "debugging"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "java-labs/spring-api-starter",
+    "title": "Spring API Starter",
+    "repo_url": "https://github.com/java-labs/spring-api-starter",
+    "input": {
+      "short_summary": "Starter template for building Java REST APIs with Spring Boot and PostgreSQL.",
+      "description": "Starter template for building Java REST APIs with Spring Boot and PostgreSQL.",
+      "readme": "# Spring API Starter\n\n## Overview\n\nStarter template for building Java REST APIs with Spring Boot and PostgreSQL.\n\nThis project focuses on spring-boot, java, rest-api. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot, PostgreSQL\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 7673,
+      "topics": [
+        "spring-boot",
+        "java",
+        "rest-api"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "spring-boot",
+      "tech_stack": [
+        "Java",
+        "Spring Boot",
+        "PostgreSQL"
+      ],
+      "keywords": [
+        "spring-boot",
+        "java",
+        "rest-api"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "backend-template/spring-commerce",
+    "title": "Spring Commerce",
+    "repo_url": "https://github.com/backend-template/spring-commerce",
+    "input": {
+      "short_summary": "E-commerce backend example using Spring Boot, JPA, MySQL, and REST APIs.",
+      "description": "E-commerce backend example using Spring Boot, JPA, MySQL, and REST APIs.",
+      "readme": "# Spring Commerce\n\n## Overview\n\nE-commerce backend example using Spring Boot, JPA, MySQL, and REST APIs.\n\nThis project focuses on spring-boot, e-commerce, backend. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot, MySQL\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 16609,
+      "topics": [
+        "spring-boot",
+        "e-commerce",
+        "backend"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "spring-boot",
+      "tech_stack": [
+        "Java",
+        "Spring Boot",
+        "MySQL"
+      ],
+      "keywords": [
+        "spring-boot",
+        "e-commerce",
+        "backend"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "cloud-native/spring-microservices",
+    "title": "Spring Microservices",
+    "repo_url": "https://github.com/cloud-native/spring-microservices",
+    "input": {
+      "short_summary": "Microservice examples for Java Spring Boot with service discovery and Docker.",
+      "description": "Microservice examples for Java Spring Boot with service discovery and Docker.",
+      "readme": "# Spring Microservices\n\n## Overview\n\nMicroservice examples for Java Spring Boot with service discovery and Docker.\n\nThis project focuses on spring-boot, microservices, docker. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot, Docker\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 19776,
+      "topics": [
+        "spring-boot",
+        "microservices",
+        "docker"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "spring-boot",
+      "tech_stack": [
+        "Java",
+        "Spring Boot",
+        "Docker"
+      ],
+      "keywords": [
+        "spring-boot",
+        "microservices",
+        "docker"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "bootcamp/spring-security-demo",
+    "title": "Spring Security Demo",
+    "repo_url": "https://github.com/bootcamp/spring-security-demo",
+    "input": {
+      "short_summary": "Authentication and authorization sample project using Spring Boot Security.",
+      "description": "Authentication and authorization sample project using Spring Boot Security.",
+      "readme": "# Spring Security Demo\n\n## Overview\n\nAuthentication and authorization sample project using Spring Boot Security.\n\nThis project focuses on spring-boot, security, authentication. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 919,
+      "topics": [
+        "spring-boot",
+        "security",
+        "authentication"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "spring-boot",
+      "tech_stack": [
+        "Java",
+        "Spring Boot"
+      ],
+      "keywords": [
+        "spring-boot",
+        "security",
+        "authentication"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "api-school/spring-crud-api",
+    "title": "Spring CRUD API",
+    "repo_url": "https://github.com/api-school/spring-crud-api",
+    "input": {
+      "short_summary": "CRUD API learning project using Spring Boot, JPA, and relational databases.",
+      "description": "CRUD API learning project using Spring Boot, JPA, and relational databases.",
+      "readme": "# Spring CRUD API\n\n## Overview\n\nCRUD API learning project using Spring Boot, JPA, and relational databases.\n\nThis project focuses on spring-boot, crud, api. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 18440,
+      "topics": [
+        "spring-boot",
+        "crud",
+        "api"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "spring-boot",
+      "tech_stack": [
+        "Java",
+        "Spring Boot"
+      ],
+      "keywords": [
+        "spring-boot",
+        "crud",
+        "api"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "ai-art/stable-diffusion-dashboard",
+    "title": "Stable Diffusion Dashboard",
+    "repo_url": "https://github.com/ai-art/stable-diffusion-dashboard",
+    "input": {
+      "short_summary": "Web dashboard for text-to-image generation using Stable Diffusion and Python.",
+      "description": "Web dashboard for text-to-image generation using Stable Diffusion and Python.",
+      "readme": "# Stable Diffusion Dashboard\n\n## Overview\n\nWeb dashboard for text-to-image generation using Stable Diffusion and Python.\n\nThis project focuses on stable-diffusion, image-generation, gradio. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, Gradio, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 6565,
+      "topics": [
+        "stable-diffusion",
+        "image-generation",
+        "gradio"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "stable-diffusion",
+      "tech_stack": [
+        "Python",
+        "Gradio",
+        "PyTorch"
+      ],
+      "keywords": [
+        "stable-diffusion",
+        "image-generation",
+        "gradio"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "vision-lab/diffusion-playground",
+    "title": "Diffusion Playground",
+    "repo_url": "https://github.com/vision-lab/diffusion-playground",
+    "input": {
+      "short_summary": "Experiment playground for image generation models and prompt workflows.",
+      "description": "Experiment playground for image generation models and prompt workflows.",
+      "readme": "# Diffusion Playground\n\n## Overview\n\nExperiment playground for image generation models and prompt workflows.\n\nThis project focuses on diffusion, image-generation, machine-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 17906,
+      "topics": [
+        "diffusion",
+        "image-generation",
+        "machine-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "diffusion",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "diffusion",
+        "image-generation",
+        "machine-learning"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "ml-ui/image-generation-webui",
+    "title": "Image Generation WebUI",
+    "repo_url": "https://github.com/ml-ui/image-generation-webui",
+    "input": {
+      "short_summary": "A browser-based UI for image generation, prompt editing, and model inference.",
+      "description": "A browser-based UI for image generation, prompt editing, and model inference.",
+      "readme": "# Image Generation WebUI\n\n## Overview\n\nA browser-based UI for image generation, prompt editing, and model inference.\n\nThis project focuses on image-generation, webui, ai. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, Gradio\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 13796,
+      "topics": [
+        "image-generation",
+        "webui",
+        "ai"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "image-generation",
+      "tech_stack": [
+        "Python",
+        "Gradio"
+      ],
+      "keywords": [
+        "image-generation",
+        "webui",
+        "ai"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "creative-ai/prompt-studio",
+    "title": "Prompt Studio",
+    "repo_url": "https://github.com/creative-ai/prompt-studio",
+    "input": {
+      "short_summary": "Prompt management and image generation interface for creative AI workflows.",
+      "description": "Prompt management and image generation interface for creative AI workflows.",
+      "readme": "# Prompt Studio\n\n## Overview\n\nPrompt management and image generation interface for creative AI workflows.\n\nThis project focuses on prompt-engineering, image-generation, ai. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript, React\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 7273,
+      "topics": [
+        "prompt-engineering",
+        "image-generation",
+        "ai"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "prompt-engineering",
+      "tech_stack": [
+        "TypeScript",
+        "React"
+      ],
+      "keywords": [
+        "prompt-engineering",
+        "image-generation",
+        "ai"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "genai-lab/local-diffusion-runner",
+    "title": "Local Diffusion Runner",
+    "repo_url": "https://github.com/genai-lab/local-diffusion-runner",
+    "input": {
+      "short_summary": "Local runner for diffusion models with image generation presets.",
+      "description": "Local runner for diffusion models with image generation presets.",
+      "readme": "# Local Diffusion Runner\n\n## Overview\n\nLocal runner for diffusion models with image generation presets.\n\nThis project focuses on diffusion, local-ai, image-generation. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 14769,
+      "topics": [
+        "diffusion",
+        "local-ai",
+        "image-generation"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "diffusion",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "diffusion",
+        "local-ai",
+        "image-generation"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "llm-lab/open-llm-runtime",
+    "title": "Open LLM Runtime",
+    "repo_url": "https://github.com/llm-lab/open-llm-runtime",
+    "input": {
+      "short_summary": "Runtime examples for serving large language models and chat completion APIs.",
+      "description": "Runtime examples for serving large language models and chat completion APIs.",
+      "readme": "# Open LLM Runtime\n\n## Overview\n\nRuntime examples for serving large language models and chat completion APIs.\n\nThis project focuses on llm, large-language-model, inference. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 19359,
+      "topics": [
+        "llm",
+        "large-language-model",
+        "inference"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "llm",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "llm",
+        "large-language-model",
+        "inference"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "nlp-stack/transformer-chat",
+    "title": "Transformer Chat",
+    "repo_url": "https://github.com/nlp-stack/transformer-chat",
+    "input": {
+      "short_summary": "Chatbot project based on transformer language models and prompt templates.",
+      "description": "Chatbot project based on transformer language models and prompt templates.",
+      "readme": "# Transformer Chat\n\n## Overview\n\nChatbot project based on transformer language models and prompt templates.\n\nThis project focuses on chatbot, transformer, nlp. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 9165,
+      "topics": [
+        "chatbot",
+        "transformer",
+        "nlp"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "chatbot",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "chatbot",
+        "transformer",
+        "nlp"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "genai-tools/llm-eval-suite",
+    "title": "LLM Eval Suite",
+    "repo_url": "https://github.com/genai-tools/llm-eval-suite",
+    "input": {
+      "short_summary": "Evaluation utilities for large language models, prompts, and retrieval workflows.",
+      "description": "Evaluation utilities for large language models, prompts, and retrieval workflows.",
+      "readme": "# LLM Eval Suite\n\n## Overview\n\nEvaluation utilities for large language models, prompts, and retrieval workflows.\n\nThis project focuses on llm, evaluation, rag. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 262,
+      "topics": [
+        "llm",
+        "evaluation",
+        "rag"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "llm",
+      "tech_stack": [
+        "Python"
+      ],
+      "keywords": [
+        "llm",
+        "evaluation",
+        "rag"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "rag-lab/document-qa-llm",
+    "title": "Document QA LLM",
+    "repo_url": "https://github.com/rag-lab/document-qa-llm",
+    "input": {
+      "short_summary": "Question answering over documents using embeddings, retrieval, and language models.",
+      "description": "Question answering over documents using embeddings, retrieval, and language models.",
+      "readme": "# Document QA LLM\n\n## Overview\n\nQuestion answering over documents using embeddings, retrieval, and language models.\n\nThis project focuses on rag, question-answering, document-search. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, FAISS\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 5281,
+      "topics": [
+        "rag",
+        "question-answering",
+        "document-search"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "rag",
+      "tech_stack": [
+        "Python",
+        "FAISS"
+      ],
+      "keywords": [
+        "rag",
+        "question-answering",
+        "document-search"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "model-hub/moe-transformer-demo",
+    "title": "MoE Transformer Demo",
+    "repo_url": "https://github.com/model-hub/moe-transformer-demo",
+    "input": {
+      "short_summary": "Mixture-of-experts transformer demo for language model inference.",
+      "description": "Mixture-of-experts transformer demo for language model inference.",
+      "readme": "# MoE Transformer Demo\n\n## Overview\n\nMixture-of-experts transformer demo for language model inference.\n\nThis project focuses on moe, transformer, llm. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 13898,
+      "topics": [
+        "moe",
+        "transformer",
+        "llm"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "moe",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "moe",
+        "transformer",
+        "llm"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "editor-lab/code-editor-lite",
+    "title": "Code Editor Lite",
+    "repo_url": "https://github.com/editor-lab/code-editor-lite",
+    "input": {
+      "short_summary": "A lightweight code editor with extensions, search, and TypeScript support.",
+      "description": "A lightweight code editor with extensions, search, and TypeScript support.",
+      "readme": "# Code Editor Lite\n\n## Overview\n\nA lightweight code editor with extensions, search, and TypeScript support.\n\nThis project focuses on code-editor, ide, typescript. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript, Electron\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 11199,
+      "topics": [
+        "code-editor",
+        "ide",
+        "typescript"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "code-editor",
+      "tech_stack": [
+        "TypeScript",
+        "Electron"
+      ],
+      "keywords": [
+        "code-editor",
+        "ide",
+        "typescript"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "devtools/project-workspace",
+    "title": "Project Workspace",
+    "repo_url": "https://github.com/devtools/project-workspace",
+    "input": {
+      "short_summary": "Developer workspace tool for code navigation, search, and task automation.",
+      "description": "Developer workspace tool for code navigation, search, and task automation.",
+      "readme": "# Project Workspace\n\n## Overview\n\nDeveloper workspace tool for code navigation, search, and task automation.\n\nThis project focuses on developer-tools, workspace, code-search. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript, React\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 9155,
+      "topics": [
+        "developer-tools",
+        "workspace",
+        "code-search"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "developer-tools",
+      "tech_stack": [
+        "TypeScript",
+        "React"
+      ],
+      "keywords": [
+        "developer-tools",
+        "workspace",
+        "code-search"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "ide-school/browser-code-editor",
+    "title": "Browser Code Editor",
+    "repo_url": "https://github.com/ide-school/browser-code-editor",
+    "input": {
+      "short_summary": "Browser-based code editor for tutorials and online programming exercises.",
+      "description": "Browser-based code editor for tutorials and online programming exercises.",
+      "readme": "# Browser Code Editor\n\n## Overview\n\nBrowser-based code editor for tutorials and online programming exercises.\n\nThis project focuses on code-editor, web-ide, education. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript, React\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 5144,
+      "topics": [
+        "code-editor",
+        "web-ide",
+        "education"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "code-editor",
+      "tech_stack": [
+        "TypeScript",
+        "React"
+      ],
+      "keywords": [
+        "code-editor",
+        "web-ide",
+        "education"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "tools/local-dev-dashboard",
+    "title": "Local Dev Dashboard",
+    "repo_url": "https://github.com/tools/local-dev-dashboard",
+    "input": {
+      "short_summary": "Dashboard for managing local development tasks, logs, and repositories.",
+      "description": "Dashboard for managing local development tasks, logs, and repositories.",
+      "readme": "# Local Dev Dashboard\n\n## Overview\n\nDashboard for managing local development tasks, logs, and repositories.\n\nThis project focuses on developer-tools, dashboard, automation. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript, Node.js\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"node\": \">=20\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 7105,
+      "topics": [
+        "developer-tools",
+        "dashboard",
+        "automation"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "developer-tools",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js"
+      ],
+      "keywords": [
+        "developer-tools",
+        "dashboard",
+        "automation"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "extensions/example-extension-pack",
+    "title": "Example Extension Pack",
+    "repo_url": "https://github.com/extensions/example-extension-pack",
+    "input": {
+      "short_summary": "Sample extension pack for code editor customization and developer productivity.",
+      "description": "Sample extension pack for code editor customization and developer productivity.",
+      "readme": "# Example Extension Pack\n\n## Overview\n\nSample extension pack for code editor customization and developer productivity.\n\nThis project focuses on extensions, developer-tools, productivity. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 11079,
+      "topics": [
+        "extensions",
+        "developer-tools",
+        "productivity"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "extensions",
+      "tech_stack": [
+        "TypeScript"
+      ],
+      "keywords": [
+        "extensions",
+        "developer-tools",
+        "productivity"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "feed-ai/recommendation-engine",
+    "title": "Recommendation Engine",
+    "repo_url": "https://github.com/feed-ai/recommendation-engine",
+    "input": {
+      "short_summary": "Feed ranking and recommendation system using machine learning features.",
+      "description": "Feed ranking and recommendation system using machine learning features.",
+      "readme": "# Recommendation Engine\n\n## Overview\n\nFeed ranking and recommendation system using machine learning features.\n\nThis project focuses on recommendation-system, feed-ranking, machine-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Scala, Python\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Scala",
+      "stargazers_count": 3399,
+      "topics": [
+        "recommendation-system",
+        "feed-ranking",
+        "machine-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "recommendation-system",
+      "tech_stack": [
+        "Scala",
+        "Python"
+      ],
+      "keywords": [
+        "recommendation-system",
+        "feed-ranking",
+        "machine-learning"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "social-ai/timeline-ranker",
+    "title": "Timeline Ranker",
+    "repo_url": "https://github.com/social-ai/timeline-ranker",
+    "input": {
+      "short_summary": "Timeline ranking service for social content recommendation.",
+      "description": "Timeline ranking service for social content recommendation.",
+      "readme": "# Timeline Ranker\n\n## Overview\n\nTimeline ranking service for social content recommendation.\n\nThis project focuses on ranking, recommendation, social-network. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Scala\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Scala",
+      "stargazers_count": 3089,
+      "topics": [
+        "ranking",
+        "recommendation",
+        "social-network"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "ranking",
+      "tech_stack": [
+        "Scala"
+      ],
+      "keywords": [
+        "ranking",
+        "recommendation",
+        "social-network"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "ml-platform/content-recommender",
+    "title": "Content Recommender",
+    "repo_url": "https://github.com/ml-platform/content-recommender",
+    "input": {
+      "short_summary": "Machine learning recommender for posts, videos, and personalized feeds.",
+      "description": "Machine learning recommender for posts, videos, and personalized feeds.",
+      "readme": "# Content Recommender\n\n## Overview\n\nMachine learning recommender for posts, videos, and personalized feeds.\n\nThis project focuses on recommendation, machine-learning, personalization. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 12499,
+      "topics": [
+        "recommendation",
+        "machine-learning",
+        "personalization"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "recommendation",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "recommendation",
+        "machine-learning",
+        "personalization"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "analytics-lab/feed-quality-model",
+    "title": "Feed Quality Model",
+    "repo_url": "https://github.com/analytics-lab/feed-quality-model",
+    "input": {
+      "short_summary": "Modeling pipeline for feed quality prediction and engagement ranking.",
+      "description": "Modeling pipeline for feed quality prediction and engagement ranking.",
+      "readme": "# Feed Quality Model\n\n## Overview\n\nModeling pipeline for feed quality prediction and engagement ranking.\n\nThis project focuses on feed-ranking, analytics, machine-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 3219,
+      "topics": [
+        "feed-ranking",
+        "analytics",
+        "machine-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "feed-ranking",
+      "tech_stack": [
+        "Python"
+      ],
+      "keywords": [
+        "feed-ranking",
+        "analytics",
+        "machine-learning"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "recsys-lab/graph-recommendation",
+    "title": "Graph Recommendation",
+    "repo_url": "https://github.com/recsys-lab/graph-recommendation",
+    "input": {
+      "short_summary": "Graph-based recommendation examples for social networks and content feeds.",
+      "description": "Graph-based recommendation examples for social networks and content feeds.",
+      "readme": "# Graph Recommendation\n\n## Overview\n\nGraph-based recommendation examples for social networks and content feeds.\n\nThis project focuses on graph, recommendation-system, machine-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, NetworkX\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 11813,
+      "topics": [
+        "graph",
+        "recommendation-system",
+        "machine-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "graph",
+      "tech_stack": [
+        "Python",
+        "NetworkX"
+      ],
+      "keywords": [
+        "graph",
+        "recommendation-system",
+        "machine-learning"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "data-format/schema-serializer",
+    "title": "Schema Serializer",
+    "repo_url": "https://github.com/data-format/schema-serializer",
+    "input": {
+      "short_summary": "Schema-based binary serialization format for structured data exchange.",
+      "description": "Schema-based binary serialization format for structured data exchange.",
+      "readme": "# Schema Serializer\n\n## Overview\n\nSchema-based binary serialization format for structured data exchange.\n\nThis project focuses on serialization, schema, data-format. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C++\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "CMakeLists.txt",
+        "src/main.cpp"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C++",
+      "stargazers_count": 11320,
+      "topics": [
+        "serialization",
+        "schema",
+        "data-format"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "serialization",
+      "tech_stack": [
+        "C++"
+      ],
+      "keywords": [
+        "serialization",
+        "schema",
+        "data-format"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "grpc-lab/protobuf-examples",
+    "title": "Protobuf Examples",
+    "repo_url": "https://github.com/grpc-lab/protobuf-examples",
+    "input": {
+      "short_summary": "Protocol Buffer examples for service communication and structured message schemas.",
+      "description": "Protocol Buffer examples for service communication and structured message schemas.",
+      "readme": "# Protobuf Examples\n\n## Overview\n\nProtocol Buffer examples for service communication and structured message schemas.\n\nThis project focuses on protobuf, grpc, serialization. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C++, gRPC\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "CMakeLists.txt",
+        "src/main.cpp"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C++",
+      "stargazers_count": 19832,
+      "topics": [
+        "protobuf",
+        "grpc",
+        "serialization"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "protobuf",
+      "tech_stack": [
+        "C++",
+        "gRPC"
+      ],
+      "keywords": [
+        "protobuf",
+        "grpc",
+        "serialization"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "platform/data-contract-toolkit",
+    "title": "Data Contract Toolkit",
+    "repo_url": "https://github.com/platform/data-contract-toolkit",
+    "input": {
+      "short_summary": "Tools for defining data contracts and cross-language message formats.",
+      "description": "Tools for defining data contracts and cross-language message formats.",
+      "readme": "# Data Contract Toolkit\n\n## Overview\n\nTools for defining data contracts and cross-language message formats.\n\nThis project focuses on data-contract, serialization, schema. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 8717,
+      "topics": [
+        "data-contract",
+        "serialization",
+        "schema"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "data-contract",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "data-contract",
+        "serialization",
+        "schema"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "interop/message-format-lab",
+    "title": "Message Format Lab",
+    "repo_url": "https://github.com/interop/message-format-lab",
+    "input": {
+      "short_summary": "Experiments with language-neutral message formats and API contracts.",
+      "description": "Experiments with language-neutral message formats and API contracts.",
+      "readme": "# Message Format Lab\n\n## Overview\n\nExperiments with language-neutral message formats and API contracts.\n\nThis project focuses on message-format, api, serialization. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 1473,
+      "topics": [
+        "message-format",
+        "api",
+        "serialization"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "message-format",
+      "tech_stack": [
+        "Java"
+      ],
+      "keywords": [
+        "message-format",
+        "api",
+        "serialization"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "binary-lab/compact-serializer",
+    "title": "Compact Serializer",
+    "repo_url": "https://github.com/binary-lab/compact-serializer",
+    "input": {
+      "short_summary": "Compact serializer for structured data and network communication.",
+      "description": "Compact serializer for structured data and network communication.",
+      "readme": "# Compact Serializer\n\n## Overview\n\nCompact serializer for structured data and network communication.\n\nThis project focuses on serialization, binary-format, networking. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Rust\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "Cargo.toml": "[package]\nname = \"compact-serializer\"\nversion = \"0.1.0\""
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Rust",
+      "stargazers_count": 15104,
+      "topics": [
+        "serialization",
+        "binary-format",
+        "networking"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "serialization",
+      "tech_stack": [
+        "Rust"
+      ],
+      "keywords": [
+        "serialization",
+        "binary-format",
+        "networking"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "profile-tools/readme-badge-stats",
+    "title": "Readme Badge Stats",
+    "repo_url": "https://github.com/profile-tools/readme-badge-stats",
+    "input": {
+      "short_summary": "Dynamically generated GitHub profile stats and README badges.",
+      "description": "Dynamically generated GitHub profile stats and README badges.",
+      "readme": "# Readme Badge Stats\n\n## Overview\n\nDynamically generated GitHub profile stats and README badges.\n\nThis project focuses on github-profile, readme, badges. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript, Node.js\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"node\": \">=20\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 17621,
+      "topics": [
+        "github-profile",
+        "readme",
+        "badges"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "github-profile",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js"
+      ],
+      "keywords": [
+        "github-profile",
+        "readme",
+        "badges"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "github-ui/contribution-card",
+    "title": "Contribution Card",
+    "repo_url": "https://github.com/github-ui/contribution-card",
+    "input": {
+      "short_summary": "Generate contribution cards and stats widgets for GitHub READMEs.",
+      "description": "Generate contribution cards and stats widgets for GitHub READMEs.",
+      "readme": "# Contribution Card\n\n## Overview\n\nGenerate contribution cards and stats widgets for GitHub READMEs.\n\nThis project focuses on github, stats, readme. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript, React\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 4140,
+      "topics": [
+        "github",
+        "stats",
+        "readme"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "github",
+      "tech_stack": [
+        "TypeScript",
+        "React"
+      ],
+      "keywords": [
+        "github",
+        "stats",
+        "readme"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "dev-profile/profile-widget-api",
+    "title": "Profile Widget API",
+    "repo_url": "https://github.com/dev-profile/profile-widget-api",
+    "input": {
+      "short_summary": "API service for dynamic developer profile widgets and repository badges.",
+      "description": "API service for dynamic developer profile widgets and repository badges.",
+      "readme": "# Profile Widget API\n\n## Overview\n\nAPI service for dynamic developer profile widgets and repository badges.\n\nThis project focuses on api, badges, developer-profile. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript, Node.js\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"node\": \">=20\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 12453,
+      "topics": [
+        "api",
+        "badges",
+        "developer-profile"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "api",
+      "tech_stack": [
+        "JavaScript",
+        "Node.js"
+      ],
+      "keywords": [
+        "api",
+        "badges",
+        "developer-profile"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "oss-card/repo-stats-card",
+    "title": "Repo Stats Card",
+    "repo_url": "https://github.com/oss-card/repo-stats-card",
+    "input": {
+      "short_summary": "Repository statistics card generator for open-source project README files.",
+      "description": "Repository statistics card generator for open-source project README files.",
+      "readme": "# Repo Stats Card\n\n## Overview\n\nRepository statistics card generator for open-source project README files.\n\nThis project focuses on repo-stats, readme, github. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: TypeScript\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/App.tsx",
+        "src/main.ts"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {\n    \"typescript\": \"^5.0.0\"\n  }\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "TypeScript",
+      "stargazers_count": 2632,
+      "topics": [
+        "repo-stats",
+        "readme",
+        "github"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "repo-stats",
+      "tech_stack": [
+        "TypeScript"
+      ],
+      "keywords": [
+        "repo-stats",
+        "readme",
+        "github"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "badge-lab/markdown-stats",
+    "title": "Markdown Stats",
+    "repo_url": "https://github.com/badge-lab/markdown-stats",
+    "input": {
+      "short_summary": "Markdown badge generator for coding stats and project dashboards.",
+      "description": "Markdown badge generator for coding stats and project dashboards.",
+      "readme": "# Markdown Stats\n\n## Overview\n\nMarkdown badge generator for coding stats and project dashboards.\n\nThis project focuses on markdown, badges, stats. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {}\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 18139,
+      "topics": [
+        "markdown",
+        "badges",
+        "stats"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "markdown",
+      "tech_stack": [
+        "JavaScript"
+      ],
+      "keywords": [
+        "markdown",
+        "badges",
+        "stats"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "windows-tools/productivity-kit",
+    "title": "Productivity Kit",
+    "repo_url": "https://github.com/windows-tools/productivity-kit",
+    "input": {
+      "short_summary": "A collection of Windows productivity utilities for power users.",
+      "description": "A collection of Windows productivity utilities for power users.",
+      "readme": "# Productivity Kit\n\n## Overview\n\nA collection of Windows productivity utilities for power users.\n\nThis project focuses on windows, productivity, utilities. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C#, .NET\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Project.csproj",
+        "Program.cs"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C#",
+      "stargazers_count": 9656,
+      "topics": [
+        "windows",
+        "productivity",
+        "utilities"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "windows",
+      "tech_stack": [
+        "C#",
+        ".NET"
+      ],
+      "keywords": [
+        "windows",
+        "productivity",
+        "utilities"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "desktop-lab/window-manager",
+    "title": "Window Manager",
+    "repo_url": "https://github.com/desktop-lab/window-manager",
+    "input": {
+      "short_summary": "Window layout and desktop productivity utility for Windows.",
+      "description": "Window layout and desktop productivity utility for Windows.",
+      "readme": "# Window Manager\n\n## Overview\n\nWindow layout and desktop productivity utility for Windows.\n\nThis project focuses on windows, desktop, window-management. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C#, .NET\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Project.csproj",
+        "Program.cs"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C#",
+      "stargazers_count": 11900,
+      "topics": [
+        "windows",
+        "desktop",
+        "window-management"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "windows",
+      "tech_stack": [
+        "C#",
+        ".NET"
+      ],
+      "keywords": [
+        "windows",
+        "desktop",
+        "window-management"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "utility-box/keyboard-shortcut-tools",
+    "title": "Keyboard Shortcut Tools",
+    "repo_url": "https://github.com/utility-box/keyboard-shortcut-tools",
+    "input": {
+      "short_summary": "Keyboard shortcut tools and launcher utilities for desktop workflows.",
+      "description": "Keyboard shortcut tools and launcher utilities for desktop workflows.",
+      "readme": "# Keyboard Shortcut Tools\n\n## Overview\n\nKeyboard shortcut tools and launcher utilities for desktop workflows.\n\nThis project focuses on keyboard, launcher, productivity. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C#, .NET\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Project.csproj",
+        "Program.cs"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C#",
+      "stargazers_count": 18968,
+      "topics": [
+        "keyboard",
+        "launcher",
+        "productivity"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "keyboard",
+      "tech_stack": [
+        "C#",
+        ".NET"
+      ],
+      "keywords": [
+        "keyboard",
+        "launcher",
+        "productivity"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "poweruser/screen-tools",
+    "title": "Screen Tools",
+    "repo_url": "https://github.com/poweruser/screen-tools",
+    "input": {
+      "short_summary": "Screen ruler, color picker, and desktop helper tools for Windows users.",
+      "description": "Screen ruler, color picker, and desktop helper tools for Windows users.",
+      "readme": "# Screen Tools\n\n## Overview\n\nScreen ruler, color picker, and desktop helper tools for Windows users.\n\nThis project focuses on screen-tools, windows, utilities. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C#, .NET\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Project.csproj",
+        "Program.cs"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C#",
+      "stargazers_count": 6350,
+      "topics": [
+        "screen-tools",
+        "windows",
+        "utilities"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "screen-tools",
+      "tech_stack": [
+        "C#",
+        ".NET"
+      ],
+      "keywords": [
+        "screen-tools",
+        "windows",
+        "utilities"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "win-lab/quick-launcher",
+    "title": "Quick Launcher",
+    "repo_url": "https://github.com/win-lab/quick-launcher",
+    "input": {
+      "short_summary": "Fast launcher and productivity command palette for Windows.",
+      "description": "Fast launcher and productivity command palette for Windows.",
+      "readme": "# Quick Launcher\n\n## Overview\n\nFast launcher and productivity command palette for Windows.\n\nThis project focuses on launcher, windows, productivity. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: C#, .NET\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "Project.csproj",
+        "Program.cs"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "C#",
+      "stargazers_count": 2329,
+      "topics": [
+        "launcher",
+        "windows",
+        "productivity"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "launcher",
+      "tech_stack": [
+        "C#",
+        ".NET"
+      ],
+      "keywords": [
+        "launcher",
+        "windows",
+        "productivity"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "network-tools/proxy-core",
+    "title": "Proxy Core",
+    "repo_url": "https://github.com/network-tools/proxy-core",
+    "input": {
+      "short_summary": "Go-based network proxy core with routing and tunneling features.",
+      "description": "Go-based network proxy core with routing and tunneling features.",
+      "readme": "# Proxy Core\n\n## Overview\n\nGo-based network proxy core with routing and tunneling features.\n\nThis project focuses on proxy, networking, tunneling. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 1551,
+      "topics": [
+        "proxy",
+        "networking",
+        "tunneling"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "proxy",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "proxy",
+        "networking",
+        "tunneling"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "netlab/secure-tunnel",
+    "title": "Secure Tunnel",
+    "repo_url": "https://github.com/netlab/secure-tunnel",
+    "input": {
+      "short_summary": "Network tunneling and secure proxy experiments for developers.",
+      "description": "Network tunneling and secure proxy experiments for developers.",
+      "readme": "# Secure Tunnel\n\n## Overview\n\nNetwork tunneling and secure proxy experiments for developers.\n\nThis project focuses on tunnel, security, networking. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 7517,
+      "topics": [
+        "tunnel",
+        "security",
+        "networking"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "tunnel",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "tunnel",
+        "security",
+        "networking"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "transport/xray-routing-demo",
+    "title": "Xray Routing Demo",
+    "repo_url": "https://github.com/transport/xray-routing-demo",
+    "input": {
+      "short_summary": "Routing rule examples for proxy traffic and network tools.",
+      "description": "Routing rule examples for proxy traffic and network tools.",
+      "readme": "# Xray Routing Demo\n\n## Overview\n\nRouting rule examples for proxy traffic and network tools.\n\nThis project focuses on routing, proxy, network. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 9532,
+      "topics": [
+        "routing",
+        "proxy",
+        "network"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "routing",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "routing",
+        "proxy",
+        "network"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "gateway-lab/protocol-router",
+    "title": "Protocol Router",
+    "repo_url": "https://github.com/gateway-lab/protocol-router",
+    "input": {
+      "short_summary": "Protocol routing gateway for network traffic experiments.",
+      "description": "Protocol routing gateway for network traffic experiments.",
+      "readme": "# Protocol Router\n\n## Overview\n\nProtocol routing gateway for network traffic experiments.\n\nThis project focuses on protocol, gateway, networking. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 2664,
+      "topics": [
+        "protocol",
+        "gateway",
+        "networking"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "protocol",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "protocol",
+        "gateway",
+        "networking"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "edge-tools/network-diagnostics",
+    "title": "Network Diagnostics",
+    "repo_url": "https://github.com/edge-tools/network-diagnostics",
+    "input": {
+      "short_summary": "Tools for network debugging, proxy testing, and connection diagnostics.",
+      "description": "Tools for network debugging, proxy testing, and connection diagnostics.",
+      "readme": "# Network Diagnostics\n\n## Overview\n\nTools for network debugging, proxy testing, and connection diagnostics.\n\nThis project focuses on network-diagnostics, proxy, debugging. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Go\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "go.mod",
+        "main.go"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "go.mod": "module example.com/project\ngo 1.22"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Go",
+      "stargazers_count": 7678,
+      "topics": [
+        "network-diagnostics",
+        "proxy",
+        "debugging"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "network-diagnostics",
+      "tech_stack": [
+        "Go"
+      ],
+      "keywords": [
+        "network-diagnostics",
+        "proxy",
+        "debugging"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "elixir-tools/http-client-kit",
+    "title": "HTTP Client Kit",
+    "repo_url": "https://github.com/elixir-tools/http-client-kit",
+    "input": {
+      "short_summary": "Composable HTTP client middleware for Elixir applications.",
+      "description": "Composable HTTP client middleware for Elixir applications.",
+      "readme": "# HTTP Client Kit\n\n## Overview\n\nComposable HTTP client middleware for Elixir applications.\n\nThis project focuses on http-client, middleware, elixir. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Elixir\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "mix.exs",
+        "lib/client.ex"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Elixir",
+      "stargazers_count": 3359,
+      "topics": [
+        "http-client",
+        "middleware",
+        "elixir"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "http-client",
+      "tech_stack": [
+        "Elixir"
+      ],
+      "keywords": [
+        "http-client",
+        "middleware",
+        "elixir"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "web-lab/api-client-middleware",
+    "title": "API Client Middleware",
+    "repo_url": "https://github.com/web-lab/api-client-middleware",
+    "input": {
+      "short_summary": "Middleware-based API client examples with adapters and request pipelines.",
+      "description": "Middleware-based API client examples with adapters and request pipelines.",
+      "readme": "# API Client Middleware\n\n## Overview\n\nMiddleware-based API client examples with adapters and request pipelines.\n\nThis project focuses on api-client, middleware, http. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Elixir\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "mix.exs",
+        "lib/client.ex"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Elixir",
+      "stargazers_count": 12505,
+      "topics": [
+        "api-client",
+        "middleware",
+        "http"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "api-client",
+      "tech_stack": [
+        "Elixir"
+      ],
+      "keywords": [
+        "api-client",
+        "middleware",
+        "http"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "functional-web/elixir-requester",
+    "title": "Elixir Requester",
+    "repo_url": "https://github.com/functional-web/elixir-requester",
+    "input": {
+      "short_summary": "Functional HTTP request library for Elixir services.",
+      "description": "Functional HTTP request library for Elixir services.",
+      "readme": "# Elixir Requester\n\n## Overview\n\nFunctional HTTP request library for Elixir services.\n\nThis project focuses on http, elixir, client. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Elixir\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "mix.exs",
+        "lib/client.ex"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Elixir",
+      "stargazers_count": 9158,
+      "topics": [
+        "http",
+        "elixir",
+        "client"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "http",
+      "tech_stack": [
+        "Elixir"
+      ],
+      "keywords": [
+        "http",
+        "elixir",
+        "client"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "beam-lab/http-adapter-demo",
+    "title": "HTTP Adapter Demo",
+    "repo_url": "https://github.com/beam-lab/http-adapter-demo",
+    "input": {
+      "short_summary": "HTTP adapter patterns for BEAM ecosystem applications.",
+      "description": "HTTP adapter patterns for BEAM ecosystem applications.",
+      "readme": "# HTTP Adapter Demo\n\n## Overview\n\nHTTP adapter patterns for BEAM ecosystem applications.\n\nThis project focuses on beam, http-client, adapter. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Elixir\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "mix.exs",
+        "lib/client.ex"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Elixir",
+      "stargazers_count": 14907,
+      "topics": [
+        "beam",
+        "http-client",
+        "adapter"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "beam",
+      "tech_stack": [
+        "Elixir"
+      ],
+      "keywords": [
+        "beam",
+        "http-client",
+        "adapter"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "api-tools/composable-client",
+    "title": "Composable Client",
+    "repo_url": "https://github.com/api-tools/composable-client",
+    "input": {
+      "short_summary": "Composable middleware stack for external API communication.",
+      "description": "Composable middleware stack for external API communication.",
+      "readme": "# Composable Client\n\n## Overview\n\nComposable middleware stack for external API communication.\n\nThis project focuses on middleware, api, http-client. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Elixir\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "mix.exs",
+        "lib/client.ex"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Elixir",
+      "stargazers_count": 12004,
+      "topics": [
+        "middleware",
+        "api",
+        "http-client"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "middleware",
+      "tech_stack": [
+        "Elixir"
+      ],
+      "keywords": [
+        "middleware",
+        "api",
+        "http-client"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "tutorials/project-based-python",
+    "title": "Project Based Python",
+    "repo_url": "https://github.com/tutorials/project-based-python",
+    "input": {
+      "short_summary": "Curated project-based Python tutorials for learning by building applications.",
+      "description": "Curated project-based Python tutorials for learning by building applications.",
+      "readme": "# Project Based Python\n\n## Overview\n\nCurated project-based Python tutorials for learning by building applications.\n\nThis project focuses on project-based-learning, python, tutorials. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 5379,
+      "topics": [
+        "project-based-learning",
+        "python",
+        "tutorials"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "project-based-learning",
+      "tech_stack": [
+        "Python"
+      ],
+      "keywords": [
+        "project-based-learning",
+        "python",
+        "tutorials"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "learn-by-building/web-projects",
+    "title": "Web Projects",
+    "repo_url": "https://github.com/learn-by-building/web-projects",
+    "input": {
+      "short_summary": "Collection of project tutorials for building web applications from scratch.",
+      "description": "Collection of project tutorials for building web applications from scratch.",
+      "readme": "# Web Projects\n\n## Overview\n\nCollection of project tutorials for building web applications from scratch.\n\nThis project focuses on project-based-learning, web-development, tutorials. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: JavaScript\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "src/index.js"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "package.json": "{\n  \"dependencies\": {}\n}"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "JavaScript",
+      "stargazers_count": 12180,
+      "topics": [
+        "project-based-learning",
+        "web-development",
+        "tutorials"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "project-based-learning",
+      "tech_stack": [
+        "JavaScript"
+      ],
+      "keywords": [
+        "project-based-learning",
+        "web-development",
+        "tutorials"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "hands-on/mobile-app-tutorials",
+    "title": "Mobile App Tutorials",
+    "repo_url": "https://github.com/hands-on/mobile-app-tutorials",
+    "input": {
+      "short_summary": "Project-based tutorials for mobile application development.",
+      "description": "Project-based tutorials for mobile application development.",
+      "readme": "# Mobile App Tutorials\n\n## Overview\n\nProject-based tutorials for mobile application development.\n\nThis project focuses on mobile-development, tutorials, project-based-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Kotlin, Android\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Kotlin",
+      "stargazers_count": 11691,
+      "topics": [
+        "mobile-development",
+        "tutorials",
+        "project-based-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "mobile-development",
+      "tech_stack": [
+        "Kotlin",
+        "Android"
+      ],
+      "keywords": [
+        "mobile-development",
+        "tutorials",
+        "project-based-learning"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "study-path/backend-projects",
+    "title": "Backend Projects",
+    "repo_url": "https://github.com/study-path/backend-projects",
+    "input": {
+      "short_summary": "Backend development projects for APIs, databases, and authentication.",
+      "description": "Backend development projects for APIs, databases, and authentication.",
+      "readme": "# Backend Projects\n\n## Overview\n\nBackend development projects for APIs, databases, and authentication.\n\nThis project focuses on backend, api, project-based-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Java, Spring Boot\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "pom.xml",
+        "src/main/java/App.java"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "pom.xml": "<project><dependencies><dependency>spring-boot-starter-web</dependency></dependencies></project>"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Java",
+      "stargazers_count": 6915,
+      "topics": [
+        "backend",
+        "api",
+        "project-based-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "backend",
+      "tech_stack": [
+        "Java",
+        "Spring Boot"
+      ],
+      "keywords": [
+        "backend",
+        "api",
+        "project-based-learning"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "learning-lab/ml-projects",
+    "title": "ML Projects",
+    "repo_url": "https://github.com/learning-lab/ml-projects",
+    "input": {
+      "short_summary": "Machine learning projects for hands-on model training and evaluation.",
+      "description": "Machine learning projects for hands-on model training and evaluation.",
+      "readme": "# ML Projects\n\n## Overview\n\nMachine learning projects for hands-on model training and evaluation.\n\nThis project focuses on machine-learning, tutorials, projects. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 8798,
+      "topics": [
+        "machine-learning",
+        "tutorials",
+        "projects"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "machine-learning",
+      "tech_stack": [
+        "Python",
+        "PyTorch"
+      ],
+      "keywords": [
+        "machine-learning",
+        "tutorials",
+        "projects"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "awesome-lists/awesome-windows",
+    "title": "Awesome Windows",
+    "repo_url": "https://github.com/awesome-lists/awesome-windows",
+    "input": {
+      "short_summary": "Curated list of Windows applications and developer productivity tools.",
+      "description": "Curated list of Windows applications and developer productivity tools.",
+      "readme": "# Awesome Windows\n\n## Overview\n\nCurated list of Windows applications and developer productivity tools.\n\nThis project focuses on awesome-list, windows, productivity. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: documentation\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": null,
+      "stargazers_count": 2389,
+      "topics": [
+        "awesome-list",
+        "windows",
+        "productivity"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "awesome-list",
+      "tech_stack": [],
+      "keywords": [
+        "awesome-list",
+        "windows",
+        "productivity"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "awesome-lists/awesome-linux-desktop",
+    "title": "Awesome Linux Desktop",
+    "repo_url": "https://github.com/awesome-lists/awesome-linux-desktop",
+    "input": {
+      "short_summary": "Curated list of Linux desktop applications, tools, and utilities.",
+      "description": "Curated list of Linux desktop applications, tools, and utilities.",
+      "readme": "# Awesome Linux Desktop\n\n## Overview\n\nCurated list of Linux desktop applications, tools, and utilities.\n\nThis project focuses on awesome-list, linux, desktop. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: documentation\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": null,
+      "stargazers_count": 5657,
+      "topics": [
+        "awesome-list",
+        "linux",
+        "desktop"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "awesome-list",
+      "tech_stack": [],
+      "keywords": [
+        "awesome-list",
+        "linux",
+        "desktop"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "mac-tools/developer-mac-setup",
+    "title": "Developer Mac Setup",
+    "repo_url": "https://github.com/mac-tools/developer-mac-setup",
+    "input": {
+      "short_summary": "Guide and tool list for setting up a productive macOS development environment.",
+      "description": "Guide and tool list for setting up a productive macOS development environment.",
+      "readme": "# Developer Mac Setup\n\n## Overview\n\nGuide and tool list for setting up a productive macOS development environment.\n\nThis project focuses on macos, developer-tools, productivity. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: documentation\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": null,
+      "stargazers_count": 17552,
+      "topics": [
+        "macos",
+        "developer-tools",
+        "productivity"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "macos",
+      "tech_stack": [],
+      "keywords": [
+        "macos",
+        "developer-tools",
+        "productivity"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "awesome-lists/awesome-devtools",
+    "title": "Awesome DevTools",
+    "repo_url": "https://github.com/awesome-lists/awesome-devtools",
+    "input": {
+      "short_summary": "Curated list of developer tools, terminal utilities, and productivity apps.",
+      "description": "Curated list of developer tools, terminal utilities, and productivity apps.",
+      "readme": "# Awesome DevTools\n\n## Overview\n\nCurated list of developer tools, terminal utilities, and productivity apps.\n\nThis project focuses on developer-tools, awesome-list, productivity. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: documentation\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": null,
+      "stargazers_count": 8071,
+      "topics": [
+        "developer-tools",
+        "awesome-list",
+        "productivity"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "developer-tools",
+      "tech_stack": [],
+      "keywords": [
+        "developer-tools",
+        "awesome-list",
+        "productivity"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "app-index/mac-productivity-apps",
+    "title": "Mac Productivity Apps",
+    "repo_url": "https://github.com/app-index/mac-productivity-apps",
+    "input": {
+      "short_summary": "Index of macOS productivity applications and workflow automation tools.",
+      "description": "Index of macOS productivity applications and workflow automation tools.",
+      "readme": "# Mac Productivity Apps\n\n## Overview\n\nIndex of macOS productivity applications and workflow automation tools.\n\nThis project focuses on macos, productivity, apps. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Swift\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {},
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Swift",
+      "stargazers_count": 5404,
+      "topics": [
+        "macos",
+        "productivity",
+        "apps"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "macos",
+      "tech_stack": [
+        "Swift"
+      ],
+      "keywords": [
+        "macos",
+        "productivity",
+        "apps"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "safety-ai/ppe-detection-yolo",
+    "title": "PPE Detection YOLO",
+    "repo_url": "https://github.com/safety-ai/ppe-detection-yolo",
+    "input": {
+      "short_summary": "YOLO-based personal protective equipment detection for helmet and vest safety monitoring.",
+      "description": "YOLO-based personal protective equipment detection for helmet and vest safety monitoring.",
+      "readme": "# PPE Detection YOLO\n\n## Overview\n\nYOLO-based personal protective equipment detection for helmet and vest safety monitoring.\n\nThis project focuses on ppe-detection, yolo, safety, computer-vision. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, YOLO, OpenCV\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 15197,
+      "topics": [
+        "ppe-detection",
+        "yolo",
+        "safety",
+        "computer-vision"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "ppe-detection",
+      "tech_stack": [
+        "Python",
+        "YOLO",
+        "OpenCV"
+      ],
+      "keywords": [
+        "ppe-detection",
+        "yolo",
+        "safety"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "vision-lab/helmet-detection",
+    "title": "Helmet Detection",
+    "repo_url": "https://github.com/vision-lab/helmet-detection",
+    "input": {
+      "short_summary": "Computer vision project for detecting safety helmets in industrial images.",
+      "description": "Computer vision project for detecting safety helmets in industrial images.",
+      "readme": "# Helmet Detection\n\n## Overview\n\nComputer vision project for detecting safety helmets in industrial images.\n\nThis project focuses on helmet, object-detection, safety. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, OpenCV, PyTorch\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 12483,
+      "topics": [
+        "helmet",
+        "object-detection",
+        "safety"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "helmet",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "PyTorch"
+      ],
+      "keywords": [
+        "helmet",
+        "object-detection",
+        "safety"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "archive-lab/code-search-rag",
+    "title": "Code Search RAG",
+    "repo_url": "https://github.com/archive-lab/code-search-rag",
+    "input": {
+      "short_summary": "Natural language code search platform using embeddings, RAG, and project metadata.",
+      "description": "Natural language code search platform using embeddings, RAG, and project metadata.",
+      "readme": "# Code Search RAG\n\n## Overview\n\nNatural language code search platform using embeddings, RAG, and project metadata.\n\nThis project focuses on rag, code-search, embeddings. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, FAISS, FastAPI\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 8895,
+      "topics": [
+        "rag",
+        "code-search",
+        "embeddings"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "rag",
+      "tech_stack": [
+        "Python",
+        "FAISS",
+        "FastAPI"
+      ],
+      "keywords": [
+        "rag",
+        "code-search",
+        "embeddings"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "city-data/business-district-analysis",
+    "title": "Business District Analysis",
+    "repo_url": "https://github.com/city-data/business-district-analysis",
+    "input": {
+      "short_summary": "Commercial district analysis using floating population and store-area statistics.",
+      "description": "Commercial district analysis using floating population and store-area statistics.",
+      "readme": "# Business District Analysis\n\n## Overview\n\nCommercial district analysis using floating population and store-area statistics.\n\nThis project focuses on business-district-analysis, data-analysis, visualization. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, Pandas\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 18300,
+      "topics": [
+        "business-district-analysis",
+        "data-analysis",
+        "visualization"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "business-district-analysis",
+      "tech_stack": [
+        "Python",
+        "Pandas"
+      ],
+      "keywords": [
+        "business-district-analysis",
+        "data-analysis",
+        "visualization"
+      ]
+    },
+    "synthetic": true
+  },
+  {
+    "project_id": "air-quality/haze-prediction",
+    "title": "Haze Prediction",
+    "repo_url": "https://github.com/air-quality/haze-prediction",
+    "input": {
+      "short_summary": "Air-quality prediction project for haze detection using PM10, PM2.5, and weather variables.",
+      "description": "Air-quality prediction project for haze detection using PM10, PM2.5, and weather variables.",
+      "readme": "# Haze Prediction\n\n## Overview\n\nAir-quality prediction project for haze detection using PM10, PM2.5, and weather variables.\n\nThis project focuses on air-quality, haze-prediction, machine-learning. It is useful for students and developers who want a practical project reference.\n\n## Features\n\n- Clear project structure\n- Practical examples\n- Searchable metadata\n- Technology stack: Python, scikit-learn, Pandas\n\n## Usage\n\nClone the repository, install dependencies, and follow the README guide.\n",
+      "report_text": "",
+      "file_names": [
+        "README.md",
+        "LICENSE",
+        ".gitignore",
+        "requirements.txt",
+        "src/main.py",
+        "tests/test_main.py"
+      ],
+      "folder_paths": [
+        "src",
+        "docs",
+        "tests"
+      ],
+      "config_texts": {
+        "requirements.txt": "sentence-transformers\nfastapi\nnumpy"
+      },
+      "course_name": "synthetic_github_repo",
+      "semester": "",
+      "team_size": null
+    },
+    "repo_meta": {
+      "default_branch": "main",
+      "language": "Python",
+      "stargazers_count": 7246,
+      "topics": [
+        "air-quality",
+        "haze-prediction",
+        "machine-learning"
+      ],
+      "private": false
+    },
+    "gold": {
+      "topic": "air-quality",
+      "tech_stack": [
+        "Python",
+        "scikit-learn",
+        "Pandas"
+      ],
+      "keywords": [
+        "air-quality",
+        "haze-prediction",
+        "machine-learning"
+      ]
+    },
+    "synthetic": true
   }
 ]

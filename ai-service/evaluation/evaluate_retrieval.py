@@ -36,7 +36,7 @@ def ndcg_at_k(results, qrels_map, k):
     return dcg(predicted_rels) / ideal if ideal else 0.0
 
 def main():
-    qrels = load_json(ROOT / "dataset/retrieval/qrels.json")
+    qrels = load_json(ROOT / "dataset/retrieval/qrels_100.json")
     predictions = load_json(ROOT / "dataset/retrieval/predictions.json")
 
     recall_scores, precision_scores, mrr_scores, ndcg_scores = [], [], [], []

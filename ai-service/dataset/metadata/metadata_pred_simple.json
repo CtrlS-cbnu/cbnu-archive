@@ -1,0 +1,260 @@
+[
+  {
+    "project_id": "freeCodeCamp/freeCodeCamp",
+    "pred": {
+      "title": "freeCodeCamp",
+      "summary": "[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech.",
+      "language": "TypeScript",
+      "keywords": [
+        "computer science",
+        "machine learning",
+        "coding challenges"
+      ]
+    }
+  },
+  {
+    "project_id": "donnemartin/system-design-primer",
+    "pred": {
+      "title": "system-design-primer",
+      "summary": "*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/don",
+      "language": "Python",
+      "keywords": [
+        "system design",
+        "design interview",
+        "technical interview"
+      ]
+    }
+  },
+  {
+    "project_id": "ossu/computer-science",
+    "pred": {
+      "title": "computer-science",
+      "summary": "<div align=\"center\" style=\"text-align: center\"> <img src=\"images/ossu-logo.webp\" alt=\"Open Source Society logo\"/> <h3>Open Source Society University</h3> <p> Path to a free self-taught education in Computer Science! </p> <p> <a href=\"https://github.com/sindresorhus/awesome\"> <img alt=\"Awesome\" src=\"",
+      "language": "HTML",
+      "keywords": [
+        "computer science",
+        "computer-science",
+        "path"
+      ]
+    }
+  },
+  {
+    "project_id": "Genymobile/scrcpy",
+    "pred": {
+      "title": "scrcpy",
+      "summary": "**This GitHub repo (<https://github.com/Genymobile/scrcpy>) is the only official source for the project. Do not download releases from random websites, even if their name contains `scrcpy`.** <img src=\"app/data/icon.svg\" width=\"128\" height=\"128\" alt=\"scrcpy\" align=\"right\" /> _pronounced \"**scr**een",
+      "language": "C",
+      "keywords": [
+        "scrcpy",
+        "display",
+        "and"
+      ]
+    }
+  },
+  {
+    "project_id": "spring-projects/spring-boot",
+    "pred": {
+      "title": "spring-boot",
+      "summary": "= Spring Boot image:https://github.com/spring-projects/spring-boot/actions/workflows/build-and-deploy-snapshot.yml/badge.svg?branch=main[\"Build Status\", link=\"https://github.com/spring-projects/spring-boot/actions/workflows/build-and-deploy-snapshot.yml?query=branch%3Amain\"] image:https://img.shield",
+      "language": "Java",
+      "keywords": [
+        "spring-boot",
+        "spring",
+        "boot"
+      ]
+    }
+  },
+  {
+    "project_id": "ashishps1/awesome-system-design-resources",
+    "pred": {
+      "title": "awesome-system-design-resources",
+      "summary": "<p align=\"center\"> <img src=\"diagrams/system-design-github.png\" width=\"400\" height=\"250\"> </p> This repository contains free resources to learn System Design concepts and prepare for interviews. 👉 Subscribe to my [AlgoMaster Newsletter](https://bit.ly/amghsd) and get a **FREE System Design Interview",
+      "language": "Java",
+      "keywords": [
+        "system design",
+        "design interview",
+        "awesome-system-design-resources"
+      ]
+    }
+  },
+  {
+    "project_id": "shadowsocks/shadowsocks-windows",
+    "pred": {
+      "title": "shadowsocks-windows",
+      "summary": "<img src=\"shadowsocks-csharp/Resources/ssw128.png\" alt=\"[logo]\" width=\"48\"/> Shadowsocks for Windows ======================= [中文说明] 1. System proxy configuration 2.",
+      "language": "C#",
+      "keywords": [
+        "shadowsocks-windows",
+        "port",
+        "shadowsocks"
+      ]
+    }
+  },
+  {
+    "project_id": "protocolbuffers/protobuf",
+    "pred": {
+      "title": "protobuf",
+      "summary": "Protocol Buffers - Google's data interchange format =================================================== Copyright 2008 Google LLC Overview -------- Protocol Buffers (a.k.a., protobuf) are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data. You can learn",
+      "language": "C++",
+      "keywords": [
+        "protobuf",
+        "protocol",
+        "buffers"
+      ]
+    }
+  },
+  {
+    "project_id": "carbon-language/carbon-lang",
+    "pred": {
+      "title": "carbon-lang",
+      "summary": "<!-- Part of the Carbon Language project, under the Apache License v2.0 with LLVM Exceptions. See /LICENSE for license information.",
+      "language": "C++",
+      "keywords": [
+        "carbon-lang",
+        "carbon",
+        "language"
+      ]
+    }
+  },
+  {
+    "project_id": "AUTOMATIC1111/stable-diffusion-webui",
+    "pred": {
+      "title": "stable-diffusion-webui",
+      "summary": "A web interface for Stable Diffusion, implemented using Gradio library. [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features): - Original txt2img and img2img modes - One click install and run script (but you still must install python and git)",
+      "language": "Python",
+      "keywords": [
+        "stable-diffusion-webui",
+        "stable",
+        "diffusion"
+      ]
+    }
+  },
+  {
+    "project_id": "deepseek-ai/DeepSeek-V3",
+    "pred": {
+      "title": "DeepSeek-V3",
+      "summary": "<!-- markdownlint-disable first-line-h1 --> <!-- markdownlint-disable html --> <!-- markdownlint-disable no-duplicate-header --> <div align=\"center\"> <img src=\"https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/logo.svg?raw=true\" width=\"60%\" alt=\"DeepSeek-V3\" /> </div> <hr> <div align=\"cen",
+      "language": "Python",
+      "keywords": [
+        "deepseek-v3"
+      ]
+    }
+  },
+  {
+    "project_id": "anuraghazra/github-readme-stats",
+    "pred": {
+      "title": "github-readme-stats",
+      "summary": "<div align=\"center\"> <img src=\"https://res.cloudinary.com/anuraghazra/image/upload/v1594908242/logo_ccswme.svg\" width=\"100px\" alt=\"GitHub Readme Stats\" /> <h1 style=\"font-size: 28px; margin: 10px 0;\">GitHub Readme Stats</h1> <p>Get dynamically generated GitHub stats on your READMEs!</p> </div> <p al",
+      "language": "JavaScript",
+      "keywords": [
+        "github-readme-stats",
+        "zap",
+        "dynamically"
+      ]
+    }
+  },
+  {
+    "project_id": "microsoft/vscode",
+    "pred": {
+      "title": "vscode",
+      "summary": "This repository (\"`Code - OSS`\") is where we (Microsoft) develop the [Visual Studio Code](https://code.visualstudio.com) product together with the community. Not only do we work on code and issues here, but we also publish our [roadmap](https://github.com/microsoft/vscode/wiki/Roadmap), [monthly ite",
+      "language": "TypeScript",
+      "keywords": [
+        "vscode",
+        "visual",
+        "studio"
+      ]
+    }
+  },
+  {
+    "project_id": "microsoft/PowerToys",
+    "pred": {
+      "title": "PowerToys",
+      "summary": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: light)\" srcset=\"./doc/images/readme/pt-hero.light.png\" /> <img src=\"./doc/images/readme/pt-hero.dark.png\" /> </picture> </p> <h1 align=\"center\"> <span>Microsoft PowerToys</span> </h1> <p align=\"center\"> <span align=\"center\">Microsoft",
+      "language": "C#",
+      "keywords": [
+        "powertoys",
+        "microsoft",
+        "collection"
+      ]
+    }
+  },
+  {
+    "project_id": "twitter/the-algorithm",
+    "pred": {
+      "title": "the-algorithm",
+      "summary": "X's Recommendation Algorithm is a set of services and jobs that are responsible for serving feeds of posts and other content across all X product surfaces (e.g. For You Timeline, Search, Explore, Notifications).",
+      "language": "Scala",
+      "keywords": [
+        "machine learning",
+        "the-algorithm",
+        "for"
+      ]
+    }
+  },
+  {
+    "project_id": "XTLS/Xray-core",
+    "pred": {
+      "title": "Xray-core",
+      "summary": "[Project X](https://github.com/XTLS) originates from XTLS protocol, providing a set of network tools such as [Xray-core](https://github.com/XTLS/Xray-core) and [REALITY](https://github.com/XTLS/REALITY). [README](https://github.com/XTLS/Xray-core#readme) is open, so feel free to submit your project",
+      "language": "Go",
+      "keywords": [
+        "xray-core",
+        "xray",
+        "penetrates"
+      ]
+    }
+  },
+  {
+    "project_id": "teslamotors/light-show",
+    "pred": {
+      "title": "light-show",
+      "summary": "Welcome to the Tesla Light Show xLights guide! You can create and run your own light shows on Tesla vehicles.",
+      "language": "Python",
+      "keywords": [
+        "light-show",
+        "tesla",
+        "light"
+      ]
+    }
+  },
+  {
+    "project_id": "elixir-tesla/tesla",
+    "pred": {
+      "title": "tesla",
+      "summary": "`Tesla` is an HTTP client that leverages middleware to streamline HTTP requests and responses over a common interface for various adapters. It simplifies HTTP communication by providing a flexible and composable middleware stack.",
+      "language": "Elixir",
+      "keywords": [
+        "tesla",
+        "the",
+        "flexible"
+      ]
+    }
+  },
+  {
+    "project_id": "practical-tutorials/project-based-learning",
+    "pred": {
+      "title": "project-based-learning",
+      "summary": "A list of programming tutorials in which aspiring software developers learn how to build an application from scratch. These tutorials are divided into different primary programming languages.",
+      "language": null,
+      "keywords": [
+        "project-based-learning",
+        "curated",
+        "list"
+      ]
+    }
+  },
+  {
+    "project_id": "jaywcjlove/awesome-mac",
+    "pred": {
+      "title": "awesome-mac",
+      "summary": "<div align=\"center\" markdown=\"1\"> <sup>Special thanks to:</sup> <br> <br> <a href=\"https://screensage.pro/\"> <img alt=\"ScreenSage Pro\" width=\"400\" src=\"https://jaywcjlove.github.io/sponsor/screensage.png\"> </a> <br> <a href=\"https://screensage.pro/\">ScreenSage Pro, record beautiful screen recordings",
+      "language": "Swift",
+      "keywords": [
+        "awesome-mac",
+        "this",
+        "dedicated"
+      ]
+    }
+  }
+]
