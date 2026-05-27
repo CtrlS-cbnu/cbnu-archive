@@ -14,6 +14,7 @@ import com.ctrl.cbnu_archive.project.domain.Project;
 import com.ctrl.cbnu_archive.project.exception.ProjectException;
 import com.ctrl.cbnu_archive.project.repository.ProjectRepository;
 import java.io.IOException;
+import java.io.InputStream;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
@@ -92,6 +93,24 @@ public class FileService {
         validateProjectAccess(projectFile.getProjectId(), currentUserId, isAdmin);
         fileStoragePort.delete(projectFile.getStorageKey());
         fileRepository.delete(projectFile);
+    }
+
+    public InputStream downloadFileStream(Long fileId, Long currentUserId, boolean isAdmin) {
+        Objects.requireNonNull(fileId, "fileId must not be null");
+        ProjectFile projectFile = fileRepository.findById(fileId)
+                .orElseThrow(() -> new FileException(ErrorCode.FILE_NOT_FOUND, "파일을 찾을 수 없습니다."));
+        validateProjectAccess(projectFile.getProjectId(), currentUserId, isAdmin);
+        try {
+            return fileStoragePort.download(projectFile.getStorageKey());
+        } catch (IllegalArgumentException e) {
+            throw new FileException(ErrorCode.FILE_NOT_FOUND, "파일 데이터를 찾을 수 없습니다.");
+        }
+    }
+
+    public String getOriginalFilename(Long fileId) {
+        return fileRepository.findById(fileId)
+                .orElseThrow(() -> new FileException(ErrorCode.FILE_NOT_FOUND, "파일을 찾을 수 없습니다."))
+                .getFileName();
     }
 
     private Project validateProjectAccess(Long projectId, Long currentUserId, boolean isAdmin) {
