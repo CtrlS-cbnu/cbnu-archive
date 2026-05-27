@@ -35,6 +35,10 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private UserRole role = UserRole.USER;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserStatus status = UserStatus.PENDING;
+
     protected User() {
     }
 
@@ -44,6 +48,7 @@ public class User extends BaseTimeEntity {
         this.name = Objects.requireNonNull(name, "name must not be null");
         this.studentNumber = studentNumber;
         this.role = role == null ? UserRole.USER : role;
+        this.status = (this.role == UserRole.ADMIN) ? UserStatus.ACTIVE : UserStatus.PENDING;
     }
 
     public static User create(String email, String password, String name, String studentNumber) {
@@ -76,6 +81,18 @@ public class User extends BaseTimeEntity {
 
     public UserRole getRole() {
         return role;
+    }
+
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void activate() {
+        this.status = UserStatus.ACTIVE;
+    }
+
+    public void rejectUser() {
+        this.status = UserStatus.REJECTED;
     }
 
     public void updatePassword(String encodedPassword) {
