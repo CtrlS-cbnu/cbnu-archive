@@ -2,7 +2,15 @@ package com.ctrl.cbnu_archive.project.service;
 
 import com.ctrl.cbnu_archive.auth.domain.User;
 import com.ctrl.cbnu_archive.auth.repository.UserRepository;
+import com.ctrl.cbnu_archive.global.domain.AuditLog;
+import com.ctrl.cbnu_archive.global.dto.AuditLogResponse;
+import com.ctrl.cbnu_archive.global.repository.AuditLogRepository;
 import com.ctrl.cbnu_archive.project.domain.Project;
+import com.ctrl.cbnu_archive.project.domain.ProjectStatus;
+import com.ctrl.cbnu_archive.project.dto.AdminApproveRequest;
+import com.ctrl.cbnu_archive.project.dto.AdminRejectRequest;
+import com.ctrl.cbnu_archive.project.dto.AdminRevisionRequest;
+import com.ctrl.cbnu_archive.project.dto.AdminStatsResponse;
 import com.ctrl.cbnu_archive.project.dto.AiRecommendResponse;
 import com.ctrl.cbnu_archive.project.dto.ProjectCreateRequest;
 import com.ctrl.cbnu_archive.project.dto.ProjectResponse;
@@ -33,6 +41,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,6 +57,7 @@ public class ProjectService {
     private final AiSummaryPort aiSummaryPort;
     private final AiRecommendationPort aiRecommendationPort;
     private final ApplicationEventPublisher eventPublisher;
+    private final AuditLogRepository auditLogRepository;
 
     public ProjectService(
             ProjectRepository repository,
@@ -57,7 +67,8 @@ public class ProjectService {
             EmbeddingPort embeddingPort,
             AiSummaryPort aiSummaryPort,
             AiRecommendationPort aiRecommendationPort,
-            ApplicationEventPublisher eventPublisher
+            ApplicationEventPublisher eventPublisher,
+            AuditLogRepository auditLogRepository
     ) {
         this.repository = repository;
         this.userRepository = userRepository;
@@ -67,6 +78,7 @@ public class ProjectService {
         this.aiSummaryPort = aiSummaryPort;
         this.aiRecommendationPort = aiRecommendationPort;
         this.eventPublisher = eventPublisher;
+        this.auditLogRepository = auditLogRepository;
     }
 
     public ProjectResponse createProject(ProjectCreateRequest request, Long authorId) {
@@ -144,6 +156,60 @@ public class ProjectService {
         validateProjectOwnerOrAdmin(project, currentUser, isAdmin, "프로젝트 삭제 권한이 없습니다.");
         repository.deleteById(id);
         eventPublisher.publishEvent(new ProjectDeleteEvent(id));
+    }
+
+    public List<ProjectResponse> getMyProjects(Long userId) {
+        return repository.findAllByAuthorId(userId).stream()
+                .map(ProjectMapper::toResponse)
+                .collect(Collectors.toList());
+    }
+
+    public List<String> getAllTechStacks() {
+        return repository.findDistinctTechStacks();
+    }
+
+    public List<ProjectResponse> getPendingProjects() {
+        return repository.findByStatus(ProjectStatus.PENDING_APPROVAL).stream()
+                .map(ProjectMapper::toResponse)
+                .collect(Collectors.toList());
+    }
+
+    public ProjectResponse approveProject(Long id, AdminApproveRequest request, Long adminUserId) {
+        Project project = repository.findById(id).orElseThrow(() -> new ProjectNotFoundException(id));
+        project.approve(request.visibility());
+        Project saved = repository.save(project);
+        auditLogRepository.save(AuditLog.of(adminUserId, "APPROVE_PROJECT", "PROJECT", id, null));
+        return ProjectMapper.toResponse(saved);
+    }
+
+    public ProjectResponse rejectProject(Long id, AdminRejectRequest request, Long adminUserId) {
+        Project project = repository.findById(id).orElseThrow(() -> new ProjectNotFoundException(id));
+        project.reject();
+        Project saved = repository.save(project);
+        auditLogRepository.save(AuditLog.of(adminUserId, "REJECT_PROJECT", "PROJECT", id, request.reason()));
+        return ProjectMapper.toResponse(saved);
+    }
+
+    public ProjectResponse requestRevision(Long id, AdminRevisionRequest request, Long adminUserId) {
+        Project project = repository.findById(id).orElseThrow(() -> new ProjectNotFoundException(id));
+        project.requestRevision();
+        Project saved = repository.save(project);
+        String detail = request.fields() != null ? String.join(", ", request.fields()) : null;
+        auditLogRepository.save(AuditLog.of(adminUserId, "REQUEST_REVISION", "PROJECT", id, detail));
+        return ProjectMapper.toResponse(saved);
+    }
+
+    public AdminStatsResponse getStats() {
+        long total = repository.count();
+        long pending = repository.countByStatus(ProjectStatus.PENDING_APPROVAL);
+        long rejected = repository.countByStatus(ProjectStatus.REJECTED);
+        List<String> topTags = repository.findDistinctTechStacks().stream().limit(10).collect(Collectors.toList());
+        return new AdminStatsResponse(total, pending, rejected, 0L, topTags);
+    }
+
+    public Page<AuditLogResponse> getAuditLogs(Pageable pageable) {
+        return auditLogRepository.findAllByOrderByCreatedAtDesc(pageable)
+                .map(AuditLogResponse::fromEntity);
     }
 
     private void publishIndexEvent(Project project) {

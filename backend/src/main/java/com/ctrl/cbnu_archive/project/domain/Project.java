@@ -6,6 +6,8 @@ import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -50,6 +52,12 @@ public class Project extends BaseTimeEntity {
     private String domain;
     @Column(name = "is_team")
     private Boolean isTeam;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ProjectStatus status = ProjectStatus.PENDING_APPROVAL;
+
+    private String visibility;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
@@ -157,6 +165,27 @@ public class Project extends BaseTimeEntity {
 
     public void updateSummary(String summary) {
         this.summary = summary;
+    }
+
+    public ProjectStatus getStatus() {
+        return status;
+    }
+
+    public String getVisibility() {
+        return visibility;
+    }
+
+    public void approve(String visibility) {
+        this.status = ProjectStatus.APPROVED;
+        this.visibility = visibility;
+    }
+
+    public void reject() {
+        this.status = ProjectStatus.REJECTED;
+    }
+
+    public void requestRevision() {
+        this.status = ProjectStatus.REVISION_REQUESTED;
     }
 
     public void updateDetails(String title,

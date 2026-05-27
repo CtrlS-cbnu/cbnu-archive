@@ -44,8 +44,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/v1/auth/logout").authenticated()
                         .requestMatchers("/api/v1/auth/signup", "/api/v1/auth/login", "/api/v1/auth/reissue", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html", "/h2-console/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/projects/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/tech-stacks").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/projects", "/api/v1/projects/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/projects/recommend").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/v1/search/natural").permitAll()
+                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/v1/files/**").authenticated()
                         .requestMatchers("/api/v1/projects/**").authenticated()
                         .anyRequest().authenticated()
