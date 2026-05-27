@@ -1,0 +1,642 @@
+{
+  "q001": [
+    {
+      "doc_id": "freeCodeCamp/freeCodeCamp",
+      "relevance": 3
+    },
+    {
+      "doc_id": "open-curriculum/web-dev-path",
+      "relevance": 2
+    },
+    {
+      "doc_id": "edu-platform/coding-challenges",
+      "relevance": 2
+    },
+    {
+      "doc_id": "oss-learning/fullstack-bootcamp",
+      "relevance": 1
+    }
+  ],
+  "q002": [
+    {
+      "doc_id": "open-curriculum/python-data-path",
+      "relevance": 3
+    },
+    {
+      "doc_id": "learning-lab/ml-projects",
+      "relevance": 2
+    },
+    {
+      "doc_id": "freeCodeCamp/freeCodeCamp",
+      "relevance": 2
+    }
+  ],
+  "q003": [
+    {
+      "doc_id": "ossu/computer-science",
+      "relevance": 3
+    },
+    {
+      "doc_id": "learn-lab/cs-foundations",
+      "relevance": 2
+    },
+    {
+      "doc_id": "freeCodeCamp/freeCodeCamp",
+      "relevance": 2
+    }
+  ],
+  "q004": [
+    {
+      "doc_id": "donnemartin/system-design-primer",
+      "relevance": 3
+    },
+    {
+      "doc_id": "interview-prep/design-interview-kit",
+      "relevance": 2
+    },
+    {
+      "doc_id": "ashishps1/awesome-system-design-resources",
+      "relevance": 2
+    },
+    {
+      "doc_id": "studyhub/architecture-flashcards",
+      "relevance": 1
+    }
+  ],
+  "q005": [
+    {
+      "doc_id": "backend-lab/scalable-backend-patterns",
+      "relevance": 3
+    },
+    {
+      "doc_id": "scale-school/distributed-systems-guide",
+      "relevance": 2
+    },
+    {
+      "doc_id": "architecture-lab/system-design-notes",
+      "relevance": 2
+    }
+  ],
+  "q006": [
+    {
+      "doc_id": "scale-school/distributed-systems-guide",
+      "relevance": 3
+    },
+    {
+      "doc_id": "donnemartin/system-design-primer",
+      "relevance": 2
+    },
+    {
+      "doc_id": "architecture-lab/system-design-notes",
+      "relevance": 2
+    }
+  ],
+  "q007": [
+    {
+      "doc_id": "Genymobile/scrcpy",
+      "relevance": 3
+    },
+    {
+      "doc_id": "android-tools/screen-mirror-lite",
+      "relevance": 2
+    },
+    {
+      "doc_id": "mobile-lab/device-streamer",
+      "relevance": 2
+    },
+    {
+      "doc_id": "mirrorbox/mobile-screen-recorder",
+      "relevance": 1
+    }
+  ],
+  "q008": [
+    {
+      "doc_id": "devtools/adb-display-capture",
+      "relevance": 3
+    },
+    {
+      "doc_id": "Genymobile/scrcpy",
+      "relevance": 2
+    },
+    {
+      "doc_id": "desklink/android-control-panel",
+      "relevance": 2
+    }
+  ],
+  "q009": [
+    {
+      "doc_id": "spring-projects/spring-boot",
+      "relevance": 3
+    },
+    {
+      "doc_id": "java-labs/spring-api-starter",
+      "relevance": 2
+    },
+    {
+      "doc_id": "api-school/spring-crud-api",
+      "relevance": 2
+    }
+  ],
+  "q010": [
+    {
+      "doc_id": "backend-template/spring-commerce",
+      "relevance": 3
+    },
+    {
+      "doc_id": "spring-projects/spring-boot",
+      "relevance": 2
+    }
+  ],
+  "q011": [
+    {
+      "doc_id": "cloud-native/spring-microservices",
+      "relevance": 3
+    },
+    {
+      "doc_id": "spring-projects/spring-boot",
+      "relevance": 2
+    }
+  ],
+  "q012": [
+    {
+      "doc_id": "AUTOMATIC1111/stable-diffusion-webui",
+      "relevance": 3
+    },
+    {
+      "doc_id": "ai-art/stable-diffusion-dashboard",
+      "relevance": 2
+    },
+    {
+      "doc_id": "ml-ui/image-generation-webui",
+      "relevance": 2
+    }
+  ],
+  "q013": [
+    {
+      "doc_id": "creative-ai/prompt-studio",
+      "relevance": 3
+    },
+    {
+      "doc_id": "genai-lab/local-diffusion-runner",
+      "relevance": 2
+    },
+    {
+      "doc_id": "vision-lab/diffusion-playground",
+      "relevance": 2
+    }
+  ],
+  "q014": [
+    {
+      "doc_id": "deepseek-ai/DeepSeek-V3",
+      "relevance": 3
+    },
+    {
+      "doc_id": "llm-lab/open-llm-runtime",
+      "relevance": 2
+    },
+    {
+      "doc_id": "model-hub/moe-transformer-demo",
+      "relevance": 2
+    }
+  ],
+  "q015": [
+    {
+      "doc_id": "rag-lab/document-qa-llm",
+      "relevance": 3
+    },
+    {
+      "doc_id": "genai-tools/llm-eval-suite",
+      "relevance": 2
+    }
+  ],
+  "q016": [
+    {
+      "doc_id": "nlp-stack/transformer-chat",
+      "relevance": 3
+    },
+    {
+      "doc_id": "deepseek-ai/DeepSeek-V3",
+      "relevance": 2
+    }
+  ],
+  "q017": [
+    {
+      "doc_id": "microsoft/vscode",
+      "relevance": 3
+    },
+    {
+      "doc_id": "editor-lab/code-editor-lite",
+      "relevance": 2
+    },
+    {
+      "doc_id": "ide-school/browser-code-editor",
+      "relevance": 2
+    }
+  ],
+  "q018": [
+    {
+      "doc_id": "devtools/project-workspace",
+      "relevance": 3
+    },
+    {
+      "doc_id": "tools/local-dev-dashboard",
+      "relevance": 2
+    },
+    {
+      "doc_id": "microsoft/vscode",
+      "relevance": 2
+    }
+  ],
+  "q019": [
+    {
+      "doc_id": "twitter/the-algorithm",
+      "relevance": 3
+    },
+    {
+      "doc_id": "feed-ai/recommendation-engine",
+      "relevance": 2
+    },
+    {
+      "doc_id": "social-ai/timeline-ranker",
+      "relevance": 2
+    },
+    {
+      "doc_id": "analytics-lab/feed-quality-model",
+      "relevance": 1
+    }
+  ],
+  "q020": [
+    {
+      "doc_id": "recsys-lab/graph-recommendation",
+      "relevance": 3
+    },
+    {
+      "doc_id": "ml-platform/content-recommender",
+      "relevance": 2
+    }
+  ],
+  "q021": [
+    {
+      "doc_id": "protocolbuffers/protobuf",
+      "relevance": 3
+    },
+    {
+      "doc_id": "grpc-lab/protobuf-examples",
+      "relevance": 2
+    },
+    {
+      "doc_id": "data-format/schema-serializer",
+      "relevance": 2
+    }
+  ],
+  "q022": [
+    {
+      "doc_id": "platform/data-contract-toolkit",
+      "relevance": 3
+    },
+    {
+      "doc_id": "interop/message-format-lab",
+      "relevance": 2
+    },
+    {
+      "doc_id": "binary-lab/compact-serializer",
+      "relevance": 2
+    }
+  ],
+  "q023": [
+    {
+      "doc_id": "anuraghazra/github-readme-stats",
+      "relevance": 3
+    },
+    {
+      "doc_id": "profile-tools/readme-badge-stats",
+      "relevance": 2
+    },
+    {
+      "doc_id": "github-ui/contribution-card",
+      "relevance": 2
+    },
+    {
+      "doc_id": "badge-lab/markdown-stats",
+      "relevance": 1
+    }
+  ],
+  "q024": [
+    {
+      "doc_id": "dev-profile/profile-widget-api",
+      "relevance": 3
+    },
+    {
+      "doc_id": "github-ui/contribution-card",
+      "relevance": 2
+    }
+  ],
+  "q025": [
+    {
+      "doc_id": "microsoft/PowerToys",
+      "relevance": 3
+    },
+    {
+      "doc_id": "windows-tools/productivity-kit",
+      "relevance": 2
+    },
+    {
+      "doc_id": "poweruser/screen-tools",
+      "relevance": 2
+    },
+    {
+      "doc_id": "win-lab/quick-launcher",
+      "relevance": 1
+    }
+  ],
+  "q026": [
+    {
+      "doc_id": "desktop-lab/window-manager",
+      "relevance": 3
+    },
+    {
+      "doc_id": "utility-box/keyboard-shortcut-tools",
+      "relevance": 2
+    },
+    {
+      "doc_id": "win-lab/quick-launcher",
+      "relevance": 2
+    }
+  ],
+  "q027": [
+    {
+      "doc_id": "XTLS/Xray-core",
+      "relevance": 3
+    },
+    {
+      "doc_id": "network-tools/proxy-core",
+      "relevance": 2
+    },
+    {
+      "doc_id": "netlab/secure-tunnel",
+      "relevance": 2
+    }
+  ],
+  "q028": [
+    {
+      "doc_id": "transport/xray-routing-demo",
+      "relevance": 3
+    },
+    {
+      "doc_id": "gateway-lab/protocol-router",
+      "relevance": 2
+    },
+    {
+      "doc_id": "edge-tools/network-diagnostics",
+      "relevance": 2
+    }
+  ],
+  "q029": [
+    {
+      "doc_id": "elixir-tesla/tesla",
+      "relevance": 3
+    },
+    {
+      "doc_id": "elixir-tools/http-client-kit",
+      "relevance": 2
+    },
+    {
+      "doc_id": "web-lab/api-client-middleware",
+      "relevance": 2
+    }
+  ],
+  "q030": [
+    {
+      "doc_id": "beam-lab/http-adapter-demo",
+      "relevance": 3
+    },
+    {
+      "doc_id": "api-tools/composable-client",
+      "relevance": 2
+    },
+    {
+      "doc_id": "functional-web/elixir-requester",
+      "relevance": 2
+    }
+  ],
+  "q031": [
+    {
+      "doc_id": "practical-tutorials/project-based-learning",
+      "relevance": 3
+    },
+    {
+      "doc_id": "tutorials/project-based-python",
+      "relevance": 2
+    },
+    {
+      "doc_id": "learning-lab/ml-projects",
+      "relevance": 2
+    }
+  ],
+  "q032": [
+    {
+      "doc_id": "learn-by-building/web-projects",
+      "relevance": 3
+    },
+    {
+      "doc_id": "practical-tutorials/project-based-learning",
+      "relevance": 2
+    }
+  ],
+  "q033": [
+    {
+      "doc_id": "study-path/backend-projects",
+      "relevance": 3
+    },
+    {
+      "doc_id": "api-school/spring-crud-api",
+      "relevance": 2
+    }
+  ],
+  "q034": [
+    {
+      "doc_id": "jaywcjlove/awesome-mac",
+      "relevance": 3
+    },
+    {
+      "doc_id": "mac-tools/developer-mac-setup",
+      "relevance": 2
+    },
+    {
+      "doc_id": "app-index/mac-productivity-apps",
+      "relevance": 2
+    }
+  ],
+  "q035": [
+    {
+      "doc_id": "awesome-lists/awesome-devtools",
+      "relevance": 3
+    },
+    {
+      "doc_id": "mac-tools/developer-mac-setup",
+      "relevance": 2
+    },
+    {
+      "doc_id": "awesome-lists/awesome-linux-desktop",
+      "relevance": 2
+    }
+  ],
+  "q036": [
+    {
+      "doc_id": "carbon-language/carbon-lang",
+      "relevance": 3
+    }
+  ],
+  "q037": [
+    {
+      "doc_id": "shadowsocks/shadowsocks-windows",
+      "relevance": 3
+    },
+    {
+      "doc_id": "network-tools/proxy-core",
+      "relevance": 2
+    }
+  ],
+  "q038": [
+    {
+      "doc_id": "teslamotors/light-show",
+      "relevance": 3
+    }
+  ],
+  "q039": [
+    {
+      "doc_id": "jaywcjlove/awesome-mac",
+      "relevance": 3
+    },
+    {
+      "doc_id": "app-index/mac-productivity-apps",
+      "relevance": 2
+    },
+    {
+      "doc_id": "awesome-lists/awesome-devtools",
+      "relevance": 2
+    }
+  ],
+  "q040": [
+    {
+      "doc_id": "microsoft/vscode",
+      "relevance": 3
+    },
+    {
+      "doc_id": "extensions/example-extension-pack",
+      "relevance": 2
+    }
+  ],
+  "q041": [
+    {
+      "doc_id": "creative-ai/prompt-studio",
+      "relevance": 3
+    },
+    {
+      "doc_id": "AUTOMATIC1111/stable-diffusion-webui",
+      "relevance": 2
+    },
+    {
+      "doc_id": "vision-lab/diffusion-playground",
+      "relevance": 2
+    }
+  ],
+  "q042": [
+    {
+      "doc_id": "deepseek-ai/DeepSeek-V3",
+      "relevance": 3
+    },
+    {
+      "doc_id": "genai-tools/llm-eval-suite",
+      "relevance": 2
+    },
+    {
+      "doc_id": "rag-lab/document-qa-llm",
+      "relevance": 2
+    }
+  ],
+  "q043": [
+    {
+      "doc_id": "protocolbuffers/protobuf",
+      "relevance": 3
+    },
+    {
+      "doc_id": "grpc-lab/protobuf-examples",
+      "relevance": 2
+    },
+    {
+      "doc_id": "data-format/schema-serializer",
+      "relevance": 2
+    }
+  ],
+  "q044": [
+    {
+      "doc_id": "desklink/android-control-panel",
+      "relevance": 3
+    },
+    {
+      "doc_id": "Genymobile/scrcpy",
+      "relevance": 2
+    },
+    {
+      "doc_id": "devtools/adb-display-capture",
+      "relevance": 2
+    }
+  ],
+  "q045": [
+    {
+      "doc_id": "api-school/spring-crud-api",
+      "relevance": 3
+    },
+    {
+      "doc_id": "java-labs/spring-api-starter",
+      "relevance": 2
+    },
+    {
+      "doc_id": "backend-template/spring-commerce",
+      "relevance": 2
+    }
+  ],
+  "q046": [
+    {
+      "doc_id": "safety-ai/ppe-detection-yolo",
+      "relevance": 3
+    },
+    {
+      "doc_id": "vision-lab/helmet-detection",
+      "relevance": 2
+    }
+  ],
+  "q047": [
+    {
+      "doc_id": "archive-lab/code-search-rag",
+      "relevance": 3
+    },
+    {
+      "doc_id": "rag-lab/document-qa-llm",
+      "relevance": 2
+    }
+  ],
+  "q048": [
+    {
+      "doc_id": "city-data/business-district-analysis",
+      "relevance": 3
+    }
+  ],
+  "q049": [
+    {
+      "doc_id": "air-quality/haze-prediction",
+      "relevance": 3
+    }
+  ],
+  "q050": [
+    {
+      "doc_id": "safety-ai/ppe-detection-yolo",
+      "relevance": 3
+    },
+    {
+      "doc_id": "vision-lab/helmet-detection",
+      "relevance": 2
+    }
+  ]
+}

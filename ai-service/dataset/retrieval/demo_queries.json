@@ -1,0 +1,74 @@
+{
+  "description": "4주차 자연어 검색 데모 시나리오",
+  "scenarios": [
+    {
+      "query": "React로 만든 추천 시스템 프로젝트 찾아줘",
+      "expected_analysis": {
+        "tech_stack_terms": [
+          "React"
+        ],
+        "topic_terms": [
+          "recommendation",
+          "recommendation system"
+        ]
+      },
+      "expected_behavior": "React 기술 스택과 recommendation 관련 키워드가 모두 일치하는 프로젝트를 상위 노출"
+    },
+    {
+      "query": "시스템 디자인 면접 준비에 도움 되는 자료",
+      "expected_analysis": {
+        "topic_terms": [
+          "system design"
+        ],
+        "keyword_terms": [
+          "면접",
+          "준비",
+          "도움",
+          "자료"
+        ]
+      },
+      "expected_behavior": "system design, design interview, scalability 키워드를 가진 프로젝트를 상위 노출"
+    },
+    {
+      "query": "Python으로 만든 자연어 처리 챗봇",
+      "expected_analysis": {
+        "tech_stack_terms": [
+          "Python"
+        ],
+        "topic_terms": [
+          "natural language processing",
+          "chatbot"
+        ]
+      },
+      "expected_behavior": "Python + NLP/chatbot 조건이 동시에 맞는 프로젝트를 상위 노출"
+    },
+    {
+      "query": "YOLO 기반 안전장비 탐지 프로젝트",
+      "expected_analysis": {
+        "tech_stack_terms": [
+          "YOLO"
+        ],
+        "topic_terms": [
+          "ppe detection",
+          "safety"
+        ]
+      },
+      "expected_behavior": "YOLO, safety, helmet, PPE 관련 메타데이터를 가진 프로젝트를 상위 노출"
+    },
+    {
+      "query": "Unity와 MediaPipe를 사용한 감정 학습 게임",
+      "expected_analysis": {
+        "tech_stack_terms": [
+          "Unity",
+          "MediaPipe"
+        ],
+        "topic_terms": [
+          "emotion",
+          "game",
+          "education"
+        ]
+      },
+      "expected_behavior": "Unity/MediaPipe와 emotion/game/education 키워드가 일치하는 프로젝트를 상위 노출"
+    }
+  ]
+}
