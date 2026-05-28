@@ -6,7 +6,8 @@ import java.util.List;
 public record SearchRequest(
         String keyword,
         List<String> techStacks,
-        Integer year,
+        Integer yearFrom,
+        Integer yearTo,
         String semester,
         String difficulty,
         String domain,
@@ -15,6 +16,6 @@ public record SearchRequest(
         int size
 ) {
     public SearchQuery toSearchQuery() {
-        return new SearchQuery(keyword, techStacks, year, semester, difficulty, domain, isTeam, page, size);
+        return new SearchQuery(keyword, techStacks, yearFrom, yearTo, semester, difficulty, domain, isTeam, page, size);
     }
 }

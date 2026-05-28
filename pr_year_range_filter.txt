@@ -1,0 +1,56 @@
+## 제목
+[FEAT(backend)] 프로젝트 검색 연도 범위 필터 추가 (yearFrom / yearTo)
+
+---
+
+## Summary
+
+- `GET /api/v1/projects` 쿼리 파라미터에 `yearFrom`, `yearTo` 추가
+- 기존 단일 연도(`year`) 필터를 범위 필터(BETWEEN)로 교체
+- 백엔드 전용 변경 — 프론트엔드 코드 무수정
+
+## 변경 파일
+
+| 파일 | 변경 내용 |
+|------|-----------|
+| `project/dto/SearchRequest.java` | `year` → `yearFrom`, `yearTo` 필드 교체 및 `toSearchQuery()` 업데이트 |
+| `project/service/port/SearchQuery.java` | `year` → `yearFrom`, `yearTo` 필드 교체 |
+| `project/service/adapter/mock/MockProjectSearchAdapter.java` | 연도 범위 필터 메서드 `matchesYearRange()` 추가 |
+
+## 동작 방식
+
+| 요청 예시 | 결과 |
+|-----------|------|
+| `?yearFrom=2022&yearTo=2024` | 2022 ≤ year ≤ 2024 |
+| `?yearFrom=2023` | year ≥ 2023 |
+| `?yearTo=2023` | year ≤ 2023 |
+| (파라미터 없음) | 연도 필터 없음 (전체) |
+
+## 필터 로직 (`matchesYearRange`)
+
+- `yearFrom`, `yearTo` 둘 다 null → 전체 통과
+- `actual`(프로젝트 연도)이 null → 제외
+- `yearFrom`만 있으면 `actual >= yearFrom`
+- `yearTo`만 있으면 `actual <= yearTo`
+- 둘 다 있으면 `yearFrom <= actual <= yearTo`
+
+## 프론트엔드 연동 안내
+
+기존 `year` 파라미터 대신 `yearFrom` / `yearTo` 쿼리 파라미터로 변경 필요.
+
+```
+// 변경 전
+GET /api/v1/projects?year=2023
+
+// 변경 후
+GET /api/v1/projects?yearFrom=2023&yearTo=2023   // 단일 연도
+GET /api/v1/projects?yearFrom=2022&yearTo=2024   // 범위
+```
+
+## Test plan
+
+- [ ] `yearFrom=2022&yearTo=2024` 요청 시 해당 범위 프로젝트만 반환되는지 확인
+- [ ] `yearFrom`만 전달 시 해당 연도 이상 프로젝트만 반환되는지 확인
+- [ ] `yearTo`만 전달 시 해당 연도 이하 프로젝트만 반환되는지 확인
+- [ ] 파라미터 없을 시 전체 프로젝트 반환되는지 확인
+- [ ] 기존 다른 필터(keyword, techStacks, semester 등)와 함께 사용 시 정상 동작 확인
