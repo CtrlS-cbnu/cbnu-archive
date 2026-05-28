@@ -45,7 +45,7 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
         List<ProjectSearchResult> candidates = indexStore.values().stream()
                 .filter(doc -> matchesKeyword(doc, query.keyword()))
                 .filter(doc -> matchesListFilter(doc.techStacks(), query.techStacks()))
-                .filter(doc -> matchesValue(doc.year(), query.year()))
+                .filter(doc -> matchesYearRange(doc.year(), query.yearFrom(), query.yearTo()))
                 .filter(doc -> matchesSemester(doc.semester(), query.semester()))
                 .filter(doc -> matchesValue(doc.difficulty(), query.difficulty()))
                 .filter(doc -> matchesValue(doc.domain(), query.domain()))
@@ -97,6 +97,22 @@ public class MockProjectSearchAdapter implements ProjectSearchPort {
         return values.stream().map(String::toLowerCase).collect(Collectors.toSet()).containsAll(
                 filter.stream().map(String::toLowerCase).collect(Collectors.toSet())
         );
+    }
+
+    private boolean matchesYearRange(Integer actual, Integer yearFrom, Integer yearTo) {
+        if (yearFrom == null && yearTo == null) {
+            return true;
+        }
+        if (actual == null) {
+            return false;
+        }
+        if (yearFrom != null && actual < yearFrom) {
+            return false;
+        }
+        if (yearTo != null && actual > yearTo) {
+            return false;
+        }
+        return true;
     }
 
     private boolean matchesValue(Object actual, Object expected) {

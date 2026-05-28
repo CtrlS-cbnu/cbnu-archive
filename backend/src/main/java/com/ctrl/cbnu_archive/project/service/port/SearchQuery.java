@@ -5,7 +5,8 @@ import java.util.List;
 public record SearchQuery(
         String keyword,
         List<String> techStacks,
-        Integer year,
+        Integer yearFrom,
+        Integer yearTo,
         String semester,
         String difficulty,
         String domain,
