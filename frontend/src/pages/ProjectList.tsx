@@ -31,9 +31,9 @@ export default function ProjectList() {
     try {
       const result = await searchKeyword({
         keyword: kw || undefined,
-        // Backend supports only a single year filter; send undefined when a range is selected
-        // so results are not filtered by year (all years shown)
-        year: filters.years.length === 1 ? filters.years[0] : undefined,
+        // Pass yearFrom / yearTo directly — backend now supports range filter
+        yearFrom: filters.yearFrom ?? undefined,
+        yearTo: filters.yearTo ?? undefined,
         semester: filters.semester === 1 ? 'FIRST' : filters.semester === 2 ? 'SECOND' : undefined,
         domain: filters.domains[0],
         techStacks: filters.techStacks.length > 0 ? filters.techStacks : undefined,

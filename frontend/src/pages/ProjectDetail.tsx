@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import { Download, FileText, Pencil, Trash2, ChevronLeft } from 'lucide-react'
 import { getProjectDetail, deleteProject, getRecommendations } from '@/api/projects'
-import { getDownloadUrl } from '@/api/files'
+import { downloadFile } from '@/api/files'
 import { useAuthStore } from '@/store/authStore'
 import type { ProjectDetail as ProjectDetailType } from '@/types/project'
 import type { RecommendationItem } from '@/types/project'
@@ -237,15 +237,9 @@ function FileDownloadRow({ file }: { file: import('@/types/file').ProjectFile })
   const handleDownload = async () => {
     setLoading(true)
     try {
-      const { downloadUrl } = await getDownloadUrl(file.id)
-      // Mock storage URLs are fake and cannot be resolved externally
-      if (downloadUrl.includes('mock-storage')) {
-        alert('파일 다운로드 기능은 현재 서버 업데이트 후 이용 가능합니다.\n빠른 시일 내에 지원될 예정입니다.')
-        return
-      }
-      window.open(downloadUrl, '_blank', 'noopener,noreferrer')
+      await downloadFile(file.id, file.originalName)
     } catch {
-      alert('파일 URL을 가져오지 못했습니다. 잠시 후 다시 시도해주세요.')
+      alert('파일 다운로드에 실패했습니다. 잠시 후 다시 시도해주세요.')
     } finally {
       setLoading(false)
     }
