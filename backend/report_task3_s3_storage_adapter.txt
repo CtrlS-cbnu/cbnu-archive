@@ -1,0 +1,110 @@
+작업 제목: FileStoragePort S3 실 어댑터 구현
+작업일: 2026-05-28
+담당: 백엔드
+
+
+── 배경 및 문제점 ──────────────────────────────────────────────
+
+FileStoragePort 인터페이스는 정의되어 있었으나, 실제 구현체가 없어
+MockFileStorageAdapter(JVM 메모리 내 Map에 파일 저장)만 존재했다.
+메모리 기반 구현이므로 서버 재시작 시 모든 파일이 삭제되고,
+다중 인스턴스 환경에서는 인스턴스 간 파일 공유가 불가능하다.
+운영 환경에서는 영속적인 외부 오브젝트 스토리지 연동이 필수다.
+
+
+── 작업 내용 ───────────────────────────────────────────────────
+
+1) build.gradle 의존성 추가
+   - AWS SDK v2 BOM (software.amazon.awssdk:bom:2.27.0)
+   - software.amazon.awssdk:s3           - S3 동기 클라이언트
+   - software.amazon.awssdk:s3-transfer-manager - 대용량 멀티파트 전송 (향후 활용)
+
+2) 신규 파일: S3FileStorageAdapter.java
+   경로: file/service/adapter/s3/S3FileStorageAdapter.java
+   활성 조건: app.adapter.storage=s3
+
+   구현 메서드:
+     upload(path, InputStream, size, contentType) -> String(저장 키)
+       - PutObjectRequest로 S3에 업로드
+       - contentType null 시 application/octet-stream 기본 적용
+
+     download(storedKey) -> InputStream
+       - GetObjectRequest로 S3에서 스트림 반환
+       - 호출자가 스트림 닫기 책임 (FileService에서 처리)
+
+     delete(storedKey)
+       - DeleteObjectRequest로 S3 오브젝트 삭제
+
+     generatePresignedUrl(storedKey, Duration) -> String(URL)
+       - S3Presigner로 임시 서명 URL 생성 (FileService에서 15분 TTL 적용)
+       - 프론트엔드가 이 URL로 직접 S3에서 파일 다운로드 가능
+
+   인증 방식:
+     AWS 기본 자격증명 체인(DefaultCredentialsProvider) 자동 적용
+       1순위: 환경변수 AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
+       2순위: ~/.aws/credentials 파일
+       3순위: EC2/ECS IAM 인스턴스 프로파일
+     -> 코드에 자격증명 하드코딩 없음, 배포 환경에 맞게 자동 선택
+
+3) application-prod.yml 변경
+   storage 어댑터: mock -> s3
+   S3 설정 추가:
+     app.storage.s3.bucket : ${S3_BUCKET:cbnu-archive-files}
+     app.storage.s3.region : ${S3_REGION:ap-northeast-2}  (기본: 서울 리전)
+
+
+── 변경된 파일 목록 ─────────────────────────────────────────────
+
+수정:
+  backend/build.gradle
+    (AWS SDK v2 BOM + s3 + s3-transfer-manager 의존성 추가)
+  backend/src/main/resources/application-prod.yml
+    (storage: mock -> s3, S3 버킷/리전 설정 추가)
+
+신규:
+  backend/src/main/java/.../file/service/adapter/s3/S3FileStorageAdapter.java
+
+
+── prod 프로파일 어댑터 최종 상태 ──────────────────────────────
+
+  ai-summary:        ai   (실 AI 서비스 /metadata/analyze)
+  ai-recommendation: ai   (실 AI 서비스 /search)
+  embedding:         ai   (실 AI 서비스 /embed)
+  storage:           s3   (AWS S3)  ← 이번 작업으로 전환
+  vector:            mock (실 VectorDB 어댑터 미구현)
+  search:            mock (실 검색엔진 어댑터 미구현)
+
+
+── 환경변수 (운영 배포 시 필수 추가) ────────────────────────────
+
+S3_BUCKET=<버킷 이름>
+S3_REGION=ap-northeast-2   (서울 리전 기본값)
+AWS_ACCESS_KEY_ID=<액세스 키>          (또는 IAM 인스턴스 프로파일 사용)
+AWS_SECRET_ACCESS_KEY=<시크릿 키>
+
+
+── 사전 준비 사항 (인프라) ──────────────────────────────────────
+
+S3 버킷 생성
+  - 버킷 이름: S3_BUCKET 환경변수 값과 동일하게 설정
+  - 리전: ap-northeast-2 (서울) 권장
+  - 퍼블릭 액세스 차단: 활성화 (Presigned URL로만 접근)
+
+IAM 정책 (최소 권한):
+  s3:PutObject
+  s3:GetObject
+  s3:DeleteObject
+  s3:GetObjectAcl
+  Resource: arn:aws:s3:::<버킷이름>/projects/*
+
+CORS 설정 (브라우저에서 Presigned URL로 직접 업로드할 경우):
+  AllowedOrigins: 프론트엔드 도메인
+  AllowedMethods: GET, PUT
+  AllowedHeaders: *
+
+
+── 검증 ────────────────────────────────────────────────────────
+
+./gradlew compileJava 통과 (컴파일 오류 없음)
+dev 프로파일: MockFileStorageAdapter 그대로 사용 (기존 동작 유지)
+prod 프로파일: S3FileStorageAdapter 활성화, S3 버킷에 실제 저장
