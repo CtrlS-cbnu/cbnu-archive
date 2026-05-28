@@ -1,0 +1,121 @@
+작업 제목: ProjectSearchPort PostgreSQL 실 어댑터 구현 (JPA Specification 기반)
+작업일: 2026-05-28
+담당: 백엔드
+
+
+── 배경 및 문제점 ──────────────────────────────────────────────
+
+ProjectSearchPort는 프로젝트 키워드/필터 검색을 담당하는 인터페이스다.
+기존 MockProjectSearchAdapter는 JVM 메모리 내 ConcurrentHashMap에
+인덱스된 데이터를 저장하고 검색했다.
+
+문제점:
+  - 서버 재시작 시 인덱스가 초기화되어 검색 불가
+  - 다중 인스턴스 배포 시 인스턴스 간 인덱스 불일치
+  - Elasticsearch 등 별도 검색 엔진 없이 실 운영 불가
+
+해결 방향:
+  Elasticsearch 같은 별도 인프라 없이, 이미 사용 중인 PostgreSQL의
+  JPA Specification(Criteria API)을 활용해 검색 어댑터를 구현했다.
+  추가 서비스 의존성 없이 운영 가능하다.
+
+
+── 작업 내용 ───────────────────────────────────────────────────
+
+1) ProjectRepository에 JpaSpecificationExecutor 추가
+   - JpaRepository<Project, Long>에 JpaSpecificationExecutor<Project> 추가 상속
+   - 이를 통해 findAll(Specification, Pageable) 메서드 사용 가능
+
+2) 신규 파일: ProjectSpecification.java
+   경로: project/repository/ProjectSpecification.java
+   역할: 각 필터 조건을 JPA Specification 객체로 정의
+
+   포함된 스펙:
+     approved()              - 상태가 APPROVED인 프로젝트만 검색
+     hasKeyword(keyword)     - title / summary / description / domain 에 LIKE 검색
+     hasAllTechStacks(list)  - 지정된 기술 스택을 모두 보유한 프로젝트 (EXISTS 서브쿼리 AND)
+     yearFrom(year)          - project_year >= yearFrom
+     yearTo(year)            - project_year <= yearTo
+     hasSemester(semester)   - semester 일치 (FIRST/1, SECOND/2 정규화 포함)
+     hasDifficulty(str)      - difficulty 일치
+     hasDomain(str)          - domain 일치
+     isTeam(bool)            - isTeam 일치
+
+   기술 스택 필터 구현 방식:
+     "지정한 기술 스택을 모두 포함"하는 프로젝트를 찾기 위해
+     각 기술 스택마다 EXISTS 서브쿼리를 생성하고 AND로 결합.
+     예) React, TypeScript 두 개 지정 시:
+       WHERE EXISTS (SELECT 1 FROM project_tech_stack WHERE project_id=p.id AND LOWER(tech_stack)='react')
+         AND EXISTS (SELECT 1 FROM project_tech_stack WHERE project_id=p.id AND LOWER(tech_stack)='typescript')
+
+3) 신규 파일: PostgresProjectSearchAdapter.java
+   경로: project/service/adapter/postgres/PostgresProjectSearchAdapter.java
+   활성 조건: app.adapter.search=postgres
+
+   구현 메서드:
+     index(ProjectIndexDocument) - no-op
+       데이터는 JPA를 통해 projects 테이블에 이미 저장되므로 별도 인덱싱 불필요
+
+     delete(Long projectId) - no-op
+       삭제는 JPA(ProjectRepository.deleteById)가 처리하므로 중복 작업 없음
+
+     search(SearchQuery) -> List<ProjectSearchResult>
+       buildSpec()으로 Specification 조합 후
+       projectRepository.findAll(spec, PageRequest) 호출
+       결과를 ProjectSearchResult 레코드로 변환하여 반환
+       score 필드: 1.0f 고정 (관련도 점수 미지원, 향후 확장 가능)
+
+4) application-prod.yml 변경
+   search: mock -> search: postgres
+
+
+── 설계 결정 사항 ────────────────────────────────────────────────
+
+Elasticsearch 대신 PostgreSQL JPA Specification을 선택한 이유:
+  - 현재 프로젝트 데이터 규모(대학 과제 수백~수천 건)에서 PostgreSQL로 충분
+  - 추가 인프라(Elasticsearch 클러스터) 없이 기존 DB 하나로 운영 가능
+  - 향후 데이터가 수십만 건 이상으로 증가하면 Elasticsearch 어댑터로 교체 가능
+    (포트 인터페이스가 동일하므로 어댑터만 교체하면 됨)
+
+index()/delete() no-op 처리:
+  Mock 어댑터는 별도 인덱스 저장소를 유지했지만,
+  PostgreSQL 어댑터는 JPA가 이미 DB를 최신 상태로 유지하므로
+  별도 인덱싱이 불필요하다. ProjectIndexEventListener에서 호출되는
+  searchPort.index()는 no-op으로 처리되어 불필요한 DB 연산을 방지한다.
+
+
+── 변경된 파일 목록 ─────────────────────────────────────────────
+
+수정:
+  backend/src/main/java/.../project/repository/ProjectRepository.java
+    (JpaSpecificationExecutor<Project> 추가)
+  backend/src/main/resources/application-prod.yml
+    (search: mock -> search: postgres)
+
+신규:
+  backend/src/main/java/.../project/repository/ProjectSpecification.java
+  backend/src/main/java/.../project/service/adapter/postgres/PostgresProjectSearchAdapter.java
+
+
+── prod 프로파일 어댑터 최종 상태 ──────────────────────────────
+
+  ai-summary:        ai       (실 AI 서비스 /metadata/analyze)
+  ai-recommendation: ai       (실 AI 서비스 /search)
+  embedding:         ai       (실 AI 서비스 /embed)
+  storage:           s3       (AWS S3)
+  search:            postgres (JPA Specification + PostgreSQL)  ← 이번 작업
+  vector:            mock     (실 VectorDB 어댑터 미구현)
+
+
+── 검증 ────────────────────────────────────────────────────────
+
+./gradlew compileJava 통과 (컴파일 오류 없음)
+dev 프로파일: MockProjectSearchAdapter 그대로 사용 (기존 동작 유지)
+prod 프로파일: PostgresProjectSearchAdapter 활성화, JPA + PostgreSQL 검색
+
+
+── 향후 과제 ────────────────────────────────────────────────────
+
+VectorSearchPort 실 어댑터 구현
+  - pgvector PostgreSQL 확장 사용 시: V2 Flyway 마이그레이션으로 vector 컬럼 추가 필요
+  - 외부 벡터 DB(Pinecone 등) 사용 시: 별도 어댑터 구현 필요
