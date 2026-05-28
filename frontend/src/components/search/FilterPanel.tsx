@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 import { useSearchStore } from '@/store/searchStore'
+import { getTechStacks } from '@/api/projects'
 import { Button } from '@/components/ui/Button'
 
 const DOMAIN_OPTIONS = ['웹', '앱', '인공지능', '백엔드', '클라우드', '보안', '데이터분석', '임베디드']
@@ -13,6 +14,12 @@ const YEAR_OPTIONS = Array.from({ length: CURRENT_YEAR - MIN_YEAR + 1 }, (_, i) 
 export function FilterPanel() {
   const { filters, setFilter, resetFilters } = useSearchStore()
   const [techInput, setTechInput] = useState('')
+  const [techStackOptions, setTechStackOptions] = useState<string[]>([])
+
+  // Fetch all known tech stacks from backend for datalist autocomplete
+  useEffect(() => {
+    getTechStacks().then(setTechStackOptions).catch(() => {})
+  }, [])
 
   const toggleArrayItem = <T,>(arr: T[], item: T): T[] =>
     arr.includes(item) ? arr.filter((v) => v !== item) : [...arr, item]
@@ -27,7 +34,8 @@ export function FilterPanel() {
   }
 
   const hasActiveFilter =
-    filters.years.length > 0 ||
+    filters.yearFrom !== null ||
+    filters.yearTo !== null ||
     filters.semester !== null ||
     filters.techStacks.length > 0 ||
     filters.domains.length > 0 ||
@@ -45,22 +53,32 @@ export function FilterPanel() {
         )}
       </div>
 
-      {/* 연도 — 단일 연도 선택 드롭다운 (백엔드는 year 단일 값만 지원) */}
+      {/* 수행 연도 — from / to 범위 선택 */}
       <div>
         <p className="mb-2 text-xs font-medium text-gray-500 uppercase tracking-wide">수행 연도</p>
-        <select
-          value={filters.years[0] ?? ''}
-          onChange={(e) => {
-            const v = e.target.value
-            setFilter('years', v ? [parseInt(v)] : [])
-          }}
-          className="w-full rounded-md border border-gray-200 px-2 py-1 text-xs focus:border-primary-500 focus:outline-none"
-        >
-          <option value="">전체</option>
-          {YEAR_OPTIONS.map((y) => (
-            <option key={y} value={y}>{y}년</option>
-          ))}
-        </select>
+        <div className="flex items-center gap-1">
+          <select
+            value={filters.yearFrom ?? ''}
+            onChange={(e) => setFilter('yearFrom', e.target.value ? parseInt(e.target.value) : null)}
+            className="flex-1 rounded-md border border-gray-200 px-1.5 py-1 text-xs focus:border-primary-500 focus:outline-none"
+          >
+            <option value="">시작</option>
+            {YEAR_OPTIONS.map((y) => (
+              <option key={y} value={y}>{y}</option>
+            ))}
+          </select>
+          <span className="text-xs text-gray-400">~</span>
+          <select
+            value={filters.yearTo ?? ''}
+            onChange={(e) => setFilter('yearTo', e.target.value ? parseInt(e.target.value) : null)}
+            className="flex-1 rounded-md border border-gray-200 px-1.5 py-1 text-xs focus:border-primary-500 focus:outline-none"
+          >
+            <option value="">종료</option>
+            {YEAR_OPTIONS.map((y) => (
+              <option key={y} value={y}>{y}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* 학기 */}
@@ -109,6 +127,7 @@ export function FilterPanel() {
         {/* Inline search box: press Enter or comma to add a tag */}
         <input
           type="text"
+          list="tech-stack-list"
           value={techInput}
           onChange={(e) => setTechInput(e.target.value)}
           onKeyDown={(e) => {
@@ -120,6 +139,9 @@ export function FilterPanel() {
           placeholder="입력 후 Enter"
           className="mb-2 w-full rounded-md border border-gray-200 px-2.5 py-1 text-xs focus:border-primary-500 focus:outline-none"
         />
+        <datalist id="tech-stack-list">
+          {techStackOptions.map((t) => <option key={t} value={t} />)}
+        </datalist>
         {/* Active tech stack tags with remove button */}
         {filters.techStacks.length > 0 && (
           <div className="flex flex-wrap gap-1.5">

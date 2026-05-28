@@ -46,3 +46,16 @@ export const getDownloadUrl = (fileId: number) =>
   api
     .get<ApiResponse<{ downloadUrl: string }>>(`/api/v1/files/${fileId}`)
     .then((r) => r.data.data)
+
+// Stream-download a file from the backend and trigger a browser save dialog
+export const downloadFile = async (fileId: number, fileName: string): Promise<void> => {
+  const response = await api.get(`/api/v1/files/${fileId}/download`, { responseType: 'blob' })
+  const url = window.URL.createObjectURL(new Blob([response.data]))
+  const link = document.createElement('a')
+  link.href = url
+  link.setAttribute('download', fileName)
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+  window.URL.revokeObjectURL(url)
+}

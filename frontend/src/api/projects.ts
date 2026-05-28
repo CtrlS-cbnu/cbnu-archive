@@ -53,3 +53,6 @@ export const getRecommendations = (projectId: number) =>
   api
     .get<ApiResponse<RecommendationResult>>(`/api/v1/projects/${projectId}/recommendations`)
     .then((r) => r.data.data)
+
+export const getTechStacks = () =>
+  api.get<ApiResponse<string[]>>('/api/v1/tech-stacks').then((r) => r.data.data)

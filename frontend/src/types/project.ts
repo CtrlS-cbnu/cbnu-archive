@@ -32,6 +32,7 @@ export interface BackendProjectResponse {
   domain: string
   authorId: number
   authorName: string
+  status: ProjectStatus
   createdAt: string
   updatedAt: string
 }
@@ -117,7 +118,8 @@ export interface RecommendationResult {
 export interface KeywordSearchParams {
   keyword?: string
   techStacks?: string[]
-  year?: number
+  yearFrom?: number
+  yearTo?: number
   semester?: string
   difficulty?: string
   domain?: string

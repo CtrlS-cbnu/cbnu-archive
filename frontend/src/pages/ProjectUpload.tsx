@@ -1,10 +1,11 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Upload, X, Plus, FileText, AlertCircle } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import { api } from '@/api/axiosInstance'
+import { getTechStacks } from '@/api/projects'
 import type { ApiResponse } from '@/types/api'
 import type { BackendProjectResponse } from '@/types/project'
 
@@ -57,6 +58,12 @@ export default function ProjectUpload() {
 
   const [attachedFiles, setAttachedFiles] = useState<AttachedFile[]>([])
   const [techInput, setTechInput] = useState('')
+  const [techStackOptions, setTechStackOptions] = useState<string[]>([])
+
+  // Fetch known tech stacks for datalist autocomplete
+  useEffect(() => {
+    getTechStacks().then(setTechStackOptions).catch(() => {})
+  }, [])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
@@ -260,9 +267,13 @@ export default function ProjectUpload() {
               value={techInput}
               onChange={(e) => setTechInput(e.target.value)}
               onKeyDown={handleTechKeyDown}
+              list="tech-stack-list-upload"
               placeholder="입력 후 Enter"
               className="min-w-24 flex-1 border-none bg-transparent text-sm outline-none"
             />
+            <datalist id="tech-stack-list-upload">
+              {techStackOptions.map((t) => <option key={t} value={t} />)}
+            </datalist>
           </div>
           <p className="mt-1 text-xs text-gray-400">Enter 또는 쉼표(,)로 태그 추가</p>
         </div>
