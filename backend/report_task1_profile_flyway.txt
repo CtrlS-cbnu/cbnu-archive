@@ -1,0 +1,91 @@
+작업 제목: Spring Profile 분리 (dev/prod) + Flyway V1 마이그레이션 스크립트 작성
+작업일: 2026-05-28
+담당: 백엔드
+
+
+── 배경 및 문제점 ──────────────────────────────────────────────
+
+기존 application.yml 하나에 H2 인메모리 DB, ddl-auto: create-drop, 모든 어댑터 mock,
+Flyway disabled 설정이 한꺼번에 들어 있었다.
+이 상태에서는 개발/운영 환경 전환 시 파일을 직접 수정해야 했고,
+실수로 운영 DB에 create-drop이 적용될 위험이 있었다.
+또한 Flyway 마이그레이션 폴더(db/migration)가 .gitkeep만 있는 빈 상태였기 때문에
+PostgreSQL을 실제로 연결해도 테이블이 자동으로 생성되지 않는 문제가 있었다.
+
+
+── 작업 내용 ───────────────────────────────────────────────────
+
+1) application.yml (공통 설정)
+   - JWT secret, access/refresh 만료 시간
+   - CORS 허용 오리진
+   - AI 서비스 base-url
+   - 멀티파트 업로드 크기 제한
+   - 프로파일 기본값: dev (환경변수 SPRING_PROFILES_ACTIVE 로 오버라이드 가능)
+   - 민감값(JWT secret, AI URL)은 환경변수 우선 참조로 변경
+     예: ${JWT_SECRET:기존_기본값}
+
+2) application-dev.yml (개발 환경)
+   - DB: H2 인메모리 (jdbc:h2:mem:testdb)
+   - ddl-auto: create-drop  (앱 재시작 시 스키마 재생성)
+   - show-sql: true, format_sql: true
+   - Flyway: disabled
+   - H2 콘솔: /h2-console 활성화
+   - 모든 어댑터(ai-summary, ai-recommendation, embedding, vector, search, storage): mock
+
+3) application-prod.yml (운영 환경)
+   - DB: PostgreSQL (환경변수로 URL/계정 주입)
+     DB_URL      기본값: jdbc:postgresql://localhost:5432/cbnu_archive
+     DB_USERNAME 기본값: postgres
+     DB_PASSWORD 기본값: (빈 값, 반드시 설정 필요)
+   - ddl-auto: validate  (Flyway가 스키마 관리, JPA는 검증만)
+   - show-sql: false
+   - Flyway: enabled, classpath:db/migration
+   - AI 어댑터: ai-summary=ai, ai-recommendation=ai  (실 AI 서비스 연동)
+   - embedding, vector, search, storage: 아직 실 어댑터 미구현으로 mock 유지
+
+4) db/migration/V1__init.sql (Flyway 초기 스키마)
+   생성 테이블 목록:
+   - users            : 회원 (이메일, 비밀번호, 이름, 학번, 역할, 상태, 생성/수정일)
+   - projects         : 프로젝트 (제목, 요약, 설명, README, 년도, 학기, 난이도, 도메인, 팀여부, 상태, 공개범위, 작성자FK)
+   - project_tech_stack : 프로젝트-기술스택 N:1 (project_id FK + CASCADE DELETE)
+   - project_files    : 첨부파일 (파일명, 타입, 크기, 스토리지키, 업로드일, 프로젝트FK + CASCADE DELETE)
+   - audit_logs       : 관리자 감사 로그 (행위자, 액션, 엔티티타입/ID, 상세, 생성일)
+
+   인덱스:
+   - users(email), users(status)
+   - projects(author_id), projects(status), projects(project_year), projects(domain)
+   - project_tech_stack(project_id)
+   - project_files(project_id)
+   - audit_logs(actor_user_id), audit_logs(created_at DESC), audit_logs(entity_type, entity_id)
+
+   초기 데이터:
+   - ADMIN 계정 1건 (admin@cbnu.ac.kr / admin1234 BCrypt 해시)
+   - 운영 배포 전 비밀번호 변경 필요 (주석으로 명시)
+
+
+── 변경된 파일 목록 ─────────────────────────────────────────────
+
+수정:
+  backend/src/main/resources/application.yml
+
+신규:
+  backend/src/main/resources/application-dev.yml
+  backend/src/main/resources/application-prod.yml
+  backend/src/main/resources/db/migration/V1__init.sql
+
+
+── 환경변수 정리 (운영 배포 시 필수) ────────────────────────────
+
+SPRING_PROFILES_ACTIVE=prod
+JWT_SECRET=<충분히 긴 Base64 인코딩 비밀 키>
+AI_BASE_URL=http://<AI서비스 호스트>:8000
+DB_URL=jdbc:postgresql://<호스트>:5432/cbnu_archive
+DB_USERNAME=<DB 계정>
+DB_PASSWORD=<DB 비밀번호>
+
+
+── 검증 ────────────────────────────────────────────────────────
+
+./gradlew compileJava 통과 (컴파일 오류 없음)
+H2 인메모리 모드(dev profile)는 기존과 동일하게 동작
+운영(prod) profile은 PostgreSQL + Flyway 활성화, AI 어댑터 실 연동 상태로 기동
