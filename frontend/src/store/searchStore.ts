@@ -2,7 +2,8 @@ import { create } from 'zustand'
 import type { SortOption } from '@/types/project'
 
 interface SearchFilters {
-  years: number[]
+  yearFrom: number | null
+  yearTo: number | null
   semester: 1 | 2 | null
   subjects: string[]
   techStacks: string[]
@@ -25,7 +26,8 @@ interface SearchState {
 }
 
 const DEFAULT_FILTERS: SearchFilters = {
-  years: [],
+  yearFrom: null,
+  yearTo: null,
   semester: null,
   subjects: [],
   techStacks: [],

@@ -14,7 +14,7 @@ export const toSummary = (p: BackendProjectResponse): ProjectSummary => ({
   teamName: p.authorName ?? '',
   techStacks: p.techStacks,
   tags: [],
-  status: 'APPROVED',   // backend does not expose status in list; default for display
+  status: p.status,
   viewCount: 0,
   downloadCount: 0,
   createdAt: p.createdAt,

@@ -27,6 +27,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 1,
     authorName: '코딩마스터즈',
     createdAt: '2024-06-01T12:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2024-06-01T12:00:00Z',
   },
   {
@@ -43,6 +44,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 2,
     authorName: '이서연',
     createdAt: '2024-06-10T09:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2024-06-10T09:00:00Z',
   },
   {
@@ -59,6 +61,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 3,
     authorName: '넷이서하나',
     createdAt: '2024-01-15T10:30:00Z',
+    status: 'APPROVED',
     updatedAt: '2024-01-15T10:30:00Z',
   },
   {
@@ -75,6 +78,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 4,
     authorName: '쿼리마스터',
     createdAt: '2024-12-10T08:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2024-12-10T08:00:00Z',
   },
   {
@@ -91,6 +95,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 5,
     authorName: '비전팀',
     createdAt: '2023-06-20T14:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2023-06-20T14:00:00Z',
   },
   {
@@ -107,6 +112,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 6,
     authorName: '마켓팀',
     createdAt: '2025-06-05T10:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2025-06-05T10:00:00Z',
   },
   {
@@ -123,6 +129,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 7,
     authorName: '박지훈',
     createdAt: '2024-12-18T09:30:00Z',
+    status: 'APPROVED',
     updatedAt: '2024-12-18T09:30:00Z',
   },
   {
@@ -139,6 +146,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 8,
     authorName: 'AutoReview',
     createdAt: '2025-05-30T11:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2025-05-30T11:00:00Z',
   },
   {
@@ -155,6 +163,7 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
     authorId: 9,
     authorName: '동아리팀',
     createdAt: '2023-12-05T13:00:00Z',
+    status: 'APPROVED',
     updatedAt: '2023-12-05T13:00:00Z',
   },
 ]
