@@ -1,6 +1,7 @@
 package com.ctrl.cbnu_archive.project.dto;
 
 import com.ctrl.cbnu_archive.project.domain.Project;
+import com.ctrl.cbnu_archive.project.domain.ProjectStatus;
 import com.ctrl.cbnu_archive.project.service.port.ProjectSearchResult;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,6 +17,8 @@ public record ProjectResponse(
         String semester,
         String difficulty,
         String domain,
+        ProjectStatus status,
+        String visibility,
         Long authorId,
         String authorName,
         LocalDateTime createdAt,
@@ -33,6 +36,8 @@ public record ProjectResponse(
                 project.getSemester(),
                 project.getDifficulty(),
                 project.getDomain(),
+                project.getStatus(),
+                project.getVisibility(),
                 project.getAuthorId(),
                 project.getAuthorName(),
                 project.getCreatedAt(),
@@ -52,6 +57,8 @@ public record ProjectResponse(
                 result.semester(),
                 result.difficulty(),
                 result.domain(),
+                null,
+                null,
                 null,
                 null,
                 null,

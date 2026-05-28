@@ -13,6 +13,7 @@ public enum ErrorCode {
     EXPIRED_TOKEN(HttpStatus.UNAUTHORIZED, "A004", "만료된 토큰"),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "U001", "사용자를 찾을 수 없습니다"),
     DUPLICATE_EMAIL(HttpStatus.CONFLICT, "U002", "이미 존재하는 이메일"),
+    USER_NOT_ACTIVE(HttpStatus.FORBIDDEN, "U003", "계정이 활성화되지 않았습니다. 관리자 승인을 기다려주세요."),
     PROJECT_NOT_FOUND(HttpStatus.NOT_FOUND, "P001", "프로젝트를 찾을 수 없습니다"),
     NOT_PROJECT_OWNER(HttpStatus.FORBIDDEN, "P002", "프로젝트 작성자만 수정/삭제할 수 있습니다"),
     FILE_UPLOAD_FAILED(HttpStatus.INTERNAL_SERVER_ERROR, "F001", "파일 업로드 실패"),

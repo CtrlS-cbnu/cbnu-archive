@@ -7,8 +7,14 @@ import com.ctrl.cbnu_archive.global.response.ApiResponse;
 import com.ctrl.cbnu_archive.global.security.jwt.CustomUserDetails;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.io.InputStream;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -66,5 +72,21 @@ public class FileController {
     ) {
         fileService.deleteFile(fileId, userDetails.getId(), userDetails.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN")));
         return ApiResponse.success(null);
+    }
+
+    @Operation(summary = "파일 다운로드", description = "파일 바이트를 직접 스트리밍합니다. 인증 필수.")
+    @GetMapping("/{fileId}/download")
+    public ResponseEntity<InputStreamResource> downloadFile(
+            @AuthenticationPrincipal CustomUserDetails userDetails,
+            @PathVariable Long fileId
+    ) {
+        boolean isAdmin = userDetails.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+        InputStream is = fileService.downloadFileStream(fileId, userDetails.getId(), isAdmin);
+        String filename = fileService.getOriginalFilename(fileId);
+        String encodedFilename = URLEncoder.encode(filename, StandardCharsets.UTF_8).replace("+", "%20");
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename*=UTF-8''" + encodedFilename)
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(new InputStreamResource(is));
     }
 }

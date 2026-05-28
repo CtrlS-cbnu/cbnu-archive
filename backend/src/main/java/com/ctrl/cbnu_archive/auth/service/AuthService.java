@@ -1,6 +1,7 @@
 package com.ctrl.cbnu_archive.auth.service;
 
 import com.ctrl.cbnu_archive.auth.domain.User;
+import com.ctrl.cbnu_archive.auth.domain.UserStatus;
 import com.ctrl.cbnu_archive.auth.dto.LoginRequest;
 import com.ctrl.cbnu_archive.auth.dto.SignUpRequest;
 import com.ctrl.cbnu_archive.auth.dto.TokenResponse;
@@ -47,6 +48,9 @@ public class AuthService {
                 .orElseThrow(() -> new AuthException(ErrorCode.USER_NOT_FOUND));
         if (!passwordEncoder.matches(request.password(), user.getPassword())) {
             throw new AuthException(ErrorCode.INVALID_INPUT, "이메일 또는 비밀번호가 일치하지 않습니다.");
+        }
+        if (user.getStatus() != UserStatus.ACTIVE) {
+            throw new AuthException(ErrorCode.USER_NOT_ACTIVE);
         }
         String accessToken = jwtTokenProvider.generateAccessToken(user.getId(), user.getEmail(), user.getRole());
         String refreshToken = jwtTokenProvider.generateRefreshToken(user.getId());

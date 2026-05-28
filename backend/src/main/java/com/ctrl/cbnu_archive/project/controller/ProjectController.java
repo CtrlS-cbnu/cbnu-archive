@@ -12,6 +12,7 @@ import com.ctrl.cbnu_archive.project.service.ProjectService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -74,6 +75,20 @@ public class ProjectController {
     ) {
         projectService.deleteProject(id, userDetails.getId(), userDetails.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN")));
         return ApiResponse.success(null);
+    }
+
+    @Operation(summary = "내 프로젝트 목록", description = "로그인한 사용자가 등록한 프로젝트 목록을 조회합니다.")
+    @GetMapping("/my")
+    public ApiResponse<List<ProjectResponse>> getMyProjects(
+            @AuthenticationPrincipal CustomUserDetails userDetails
+    ) {
+        return ApiResponse.success(projectService.getMyProjects(userDetails.getId()));
+    }
+
+    @Operation(summary = "기술 스택 목록", description = "전체 기술 스택 목록을 조회합니다.")
+    @GetMapping("/tech-stacks")
+    public ApiResponse<List<String>> getTechStacks() {
+        return ApiResponse.success(projectService.getAllTechStacks());
     }
 
     @Operation(summary = "AI 추천", description = "자연어 질의를 통해 프로젝트 추천을 제공합니다.")
