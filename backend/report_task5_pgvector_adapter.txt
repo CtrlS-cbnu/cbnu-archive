@@ -1,0 +1,135 @@
+작업 제목: VectorSearchPort pgvector 실 어댑터 구현
+작업일: 2026-05-28
+담당: 백엔드
+
+
+── 배경 및 문제점 ──────────────────────────────────────────────
+
+VectorSearchPort 인터페이스는 텍스트 임베딩 벡터를 저장/검색하는 역할을 한다.
+기존 MockVectorSearchAdapter는 JVM 메모리 내 ConcurrentHashMap에 벡터를 저장해
+코사인 유사도를 Java 코드로 직접 계산했다.
+
+문제점:
+  - 서버 재시작 시 모든 벡터 데이터 소실
+  - 다중 인스턴스 배포 시 인스턴스 간 벡터 인덱스 불일치
+  - Java 기반 선형 탐색(O(n)) 방식으로 대용량 데이터에서 성능 저하
+
+해결 방향:
+  PostgreSQL의 pgvector 확장을 사용해 벡터를 DB에 영속 저장하고
+  ANN(Approximate Nearest Neighbor) 인덱스(HNSW)로 빠른 유사도 검색을 제공한다.
+  추가 벡터 DB(Pinecone, Weaviate 등) 없이 기존 PostgreSQL에 통합 가능하다.
+
+
+── 작업 내용 ───────────────────────────────────────────────────
+
+1) Flyway 마이그레이션 추가: V2__add_vector_store.sql
+   경로: db/migration/V2__add_vector_store.sql
+
+   실행 내용:
+     CREATE EXTENSION IF NOT EXISTS vector
+       -> pgvector 확장 활성화 (PostgreSQL 슈퍼유저 권한 필요)
+
+     CREATE TABLE project_vectors
+       컬럼:
+         project_id BIGINT PRIMARY KEY  (projects 테이블 FK, CASCADE DELETE)
+         embedding  vector(384)         (384차원 임베딩 벡터)
+         metadata   JSONB               (title, difficulty, domain 등 부가 정보)
+
+     CREATE INDEX idx_project_vectors_hnsw
+       -> HNSW 인덱스, vector_cosine_ops 사용 (pgvector 0.5.0 이상 필요)
+       -> 코사인 유사도 기반 ANN 검색에 최적화
+
+   차원(384) 기준:
+     sentence-transformers/all-MiniLM-L6-v2 모델의 출력 차원과 동일
+     AI 서비스 모델 변경 시 새 Flyway 마이그레이션으로 차원 재정의 필요
+
+2) 신규 파일: PgVectorSearchAdapter.java
+   경로: project/service/adapter/pgvector/PgVectorSearchAdapter.java
+   활성 조건: app.adapter.vector=pgvector
+
+   구현 메서드:
+     upsert(projectId, float[], metadata)
+       - INSERT ... ON CONFLICT (project_id) DO UPDATE 로 upsert 처리
+       - float[] -> "[0.1,0.2,...]" 문자열 변환 후 CAST(? AS vector) 로 DB 저장
+       - metadata(Map) -> Jackson으로 JSON 직렬화 후 CAST(? AS jsonb) 저장
+       - 빈 임베딩(length=0) 수신 시 warn 로그 후 건너뜀
+
+     searchSimilar(float[] queryEmbedding, int topK)
+       - 코사인 유사도: 1 - (embedding <=> query_vector)
+         (pgvector의 <=> 연산자는 코사인 거리, 1에서 빼면 유사도)
+       - ORDER BY embedding <=> query_vector LIMIT topK
+       - 결과를 VectorMatch(projectId, score, metadata=Map.of()) 로 반환
+       - 빈 쿼리 벡터 수신 시 빈 리스트 반환
+
+     delete(projectId)
+       - DELETE FROM project_vectors WHERE project_id = ?
+
+   구현 특징:
+     - 별도 pgvector Java 라이브러리 없이 JdbcTemplate + 네이티브 SQL만 사용
+       -> 의존성 최소화, JDBC 레벨에서 CAST(? AS vector) 문법으로 직접 처리
+     - ObjectMapper(Jackson)는 Spring Boot 자동 구성으로 주입
+       -> 별도 Bean 정의 불필요
+
+3) application-prod.yml 변경
+   vector: mock -> vector: pgvector
+
+
+── SQL 핵심 쿼리 ─────────────────────────────────────────────────
+
+UPSERT:
+  INSERT INTO project_vectors (project_id, embedding, metadata)
+  VALUES (?, CAST(? AS vector), CAST(? AS jsonb))
+  ON CONFLICT (project_id) DO UPDATE
+  SET embedding = EXCLUDED.embedding, metadata = EXCLUDED.metadata
+
+유사도 검색:
+  SELECT project_id,
+         1 - (embedding <=> CAST(? AS vector)) AS score
+  FROM project_vectors
+  ORDER BY embedding <=> CAST(? AS vector)
+  LIMIT ?
+
+
+── 변경된 파일 목록 ─────────────────────────────────────────────
+
+신규:
+  backend/src/main/resources/db/migration/V2__add_vector_store.sql
+  backend/src/main/java/.../adapter/pgvector/PgVectorSearchAdapter.java
+
+수정:
+  backend/src/main/resources/application-prod.yml
+    (vector: mock -> vector: pgvector)
+
+
+── prod 프로파일 어댑터 최종 상태 (전체 완료) ────────────────────
+
+  ai-summary:        ai        (실 AI 서비스 /metadata/analyze)
+  ai-recommendation: ai        (실 AI 서비스 /search)
+  embedding:         ai        (실 AI 서비스 /embed)
+  storage:           s3        (AWS S3)
+  search:            postgres  (JPA Specification + PostgreSQL ILIKE)
+  vector:            pgvector  (PostgreSQL pgvector 확장)  ← 이번 작업
+
+  모든 어댑터가 실 구현으로 전환 완료.
+  dev 프로파일은 전체 mock 유지 (기존 동작 그대로).
+
+
+── 인프라 사전 요구사항 (운영 배포 전 체크리스트) ─────────────────
+
+  PostgreSQL 서버에 pgvector 확장 설치
+    Ubuntu/Debian: apt-get install postgresql-16-pgvector
+    Docker 이미지: pgvector/pgvector:pg16 사용 권장
+
+  Flyway 마이그레이션 실행 시 DB 계정에 CREATE EXTENSION 권한 필요
+    GRANT CREATE ON DATABASE cbnu_archive TO <db_user>;
+    또는 슈퍼유저 계정으로 'CREATE EXTENSION vector;' 선실행 후 Flyway 마이그레이션 진행
+
+  pgvector 버전 0.5.0 이상 권장 (HNSW 인덱스 지원)
+    버전 확인: SELECT extversion FROM pg_extension WHERE extname = 'vector';
+
+
+── 검증 ────────────────────────────────────────────────────────
+
+./gradlew compileJava 통과 (컴파일 오류 없음)
+dev 프로파일: MockVectorSearchAdapter 그대로 사용 (기존 동작 유지)
+prod 프로파일: PgVectorSearchAdapter 활성화, PostgreSQL project_vectors 테이블 사용

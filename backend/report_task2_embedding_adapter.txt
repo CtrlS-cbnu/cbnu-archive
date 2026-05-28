@@ -1,0 +1,87 @@
+작업 제목: EmbeddingPort 실 AI 서비스 어댑터 구현
+작업일: 2026-05-28
+담당: 백엔드
+
+
+── 배경 및 문제점 ──────────────────────────────────────────────
+
+EmbeddingPort 인터페이스는 정의되어 있었으나, 실제 구현체가 없어
+MockEmbeddingAdapter(텍스트 해시 기반 가짜 벡터)만 사용 가능한 상태였다.
+
+EmbeddingPort는 두 곳에서 사용된다.
+  1) ProjectIndexEventListener - 프로젝트 등록/수정 시 텍스트를 벡터로 변환해 VectorStore에 저장
+  2) ProjectService.recommendByQuery() - 사용자 자연어 쿼리를 벡터로 변환해 유사 프로젝트 검색
+
+가짜 벡터로는 벡터 유사도 검색이 의미 없으므로 실 AI 서비스 연동 어댑터가 필요했다.
+
+
+── 작업 내용 ───────────────────────────────────────────────────
+
+신규 파일: AiServiceEmbeddingAdapter.java
+경로: project/service/adapter/ai/AiServiceEmbeddingAdapter.java
+활성 조건: app.adapter.embedding=ai
+
+구현 메서드:
+  embed(String text) -> float[]
+    - POST {ai-base-url}/embed  body: {"text": "..."}
+    - 응답: {"embedding": [0.12, 0.34, ...]}
+    - 파싱 실패 또는 연결 오류 시 빈 배열(float[0]) 반환 후 warn 로그
+
+  embedBatch(List<String> texts) -> List<float[]>
+    - POST {ai-base-url}/embed  body: {"texts": ["...", "..."]}
+    - 응답: {"embeddings": [[...], [...]]}
+    - 파싱 실패 또는 연결 오류 시 빈 리스트 반환 후 warn 로그
+
+설계 결정 사항:
+  - 응답에서 차원(dimension)을 하드코딩하지 않고 파싱 시 실제 배열 크기를 그대로 사용
+    -> AI 서비스 모델 교체 시 어댑터 수정 불필요
+  - RestClientException 발생 시 예외를 상위로 전파하지 않고 빈 결과 + warn 로그 처리
+    -> 인덱싱 실패가 사용자 요청 전체를 막지 않도록 방어적 설계
+  - AI 서비스 base-url은 기존 ${app.ai.base-url} 프로퍼티 공유
+    -> AiServiceSummaryAdapter, AiServiceRecommendationAdapter와 동일한 설정 재사용
+
+가정한 AI 서비스 API 스펙:
+  단건:  POST /embed   {"text": "입력 텍스트"}
+         응답          {"embedding": [float, float, ...]}
+  배치:  POST /embed   {"texts": ["텍스트1", "텍스트2"]}
+         응답          {"embeddings": [[float, ...], [float, ...]]}
+
+  실제 AI 서비스 스펙이 다를 경우 parseEmbedding() / parseBatchEmbeddings() 내부만
+  수정하면 되므로 변경 범위가 최소화된다.
+
+
+── application-prod.yml 변경 ────────────────────────────────────
+
+변경 전: embedding: mock
+변경 후: embedding: ai
+
+prod 프로파일 기준 현재 어댑터 활성 상태:
+  ai-summary:       ai   (실 AI 서비스 /metadata/analyze)
+  ai-recommendation:ai   (실 AI 서비스 /search)
+  embedding:        ai   (실 AI 서비스 /embed)  ← 이번 작업으로 전환
+  vector:           mock (실 VectorDB 어댑터 미구현)
+  search:           mock (실 검색엔진 어댑터 미구현)
+  storage:          mock (실 파일스토리지 어댑터 미구현)
+
+
+── 변경된 파일 목록 ─────────────────────────────────────────────
+
+신규:
+  backend/src/main/java/.../adapter/ai/AiServiceEmbeddingAdapter.java
+
+수정:
+  backend/src/main/resources/application-prod.yml
+    (embedding: mock -> embedding: ai)
+
+
+── 검증 ────────────────────────────────────────────────────────
+
+./gradlew compileJava 통과 (컴파일 오류 없음)
+dev 프로파일: MockEmbeddingAdapter 그대로 사용 (기존 동작 유지)
+prod 프로파일: AiServiceEmbeddingAdapter 활성화, AI 서비스 호출
+
+
+── 향후 과제 ────────────────────────────────────────────────────
+
+AI 서비스의 실제 /embed 엔드포인트 스펙 확인 후 필요 시 파싱 로직 보정
+VectorSearchPort 실 어댑터 구현 (현재 mock - pgvector 또는 외부 벡터 DB 연동 필요)
