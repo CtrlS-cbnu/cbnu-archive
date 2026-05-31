@@ -4,6 +4,7 @@ import { getProjectDetail } from '@/api/projects'
 import { approveProject, rejectProject, requestRevision } from '@/api/admin'
 import type { ProjectDetail } from '@/types/project'
 import { CheckCircle, XCircle, RefreshCw, ArrowLeft } from 'lucide-react'
+import { ADMIN_PATH } from '@/config'
 
 type ActionTab = 'approve' | 'reject' | 'revision'
 
@@ -44,7 +45,7 @@ export default function AdminReview() {
         await requestRevision(projectId, message)
       }
       // Navigate back to admin list after a successful action
-      navigate('/admin')
+      navigate(`/${ADMIN_PATH}`)
     } catch {
       setActionError('처리 중 오류가 발생했습니다. 다시 시도해 주세요.')
     } finally {
@@ -67,7 +68,7 @@ export default function AdminReview() {
   return (
     <div className="max-w-2xl">
       <button
-        onClick={() => navigate('/admin')}
+        onClick={() => navigate(`/${ADMIN_PATH}`)}
         className="mb-6 flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-800"
       >
         <ArrowLeft className="h-4 w-4" />

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/store/authStore'
 import { logout } from '@/api/auth'
+import { ADMIN_PATH } from '@/config'
 
 export function GNB() {
   const { role } = useAuthStore()
@@ -36,7 +37,7 @@ export function GNB() {
                 내 프로젝트
               </Link>
               {role === 'ADMIN' && (
-                <Link to="/admin" className="text-primary-100 hover:text-white transition-colors">
+                <Link to={`/${ADMIN_PATH}`} className="text-primary-100 hover:text-white transition-colors">
                   관리
                 </Link>
               )}

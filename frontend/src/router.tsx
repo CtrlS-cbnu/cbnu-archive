@@ -14,6 +14,7 @@ import AdminPendingList from '@/pages/admin/AdminPendingList'
 import AdminReview from '@/pages/admin/AdminReview'
 import AdminStats from '@/pages/admin/AdminStats'
 import AdminMetadata from '@/pages/admin/AdminMetadata'
+import { ADMIN_PATH } from '@/config'
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
 
       // ADMIN 전용
       {
-        path: 'admin',
+        path: ADMIN_PATH,
         element: <RequireAuth role="ADMIN" />,
         children: [
           { index: true, element: <AdminPendingList /> },

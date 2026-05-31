@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getPendingProjects } from '@/api/admin'
 import type { ProjectSummary } from '@/types/project'
 import { ClipboardList, ArrowRight, FolderOpen } from 'lucide-react'
+import { ADMIN_PATH } from '@/config'
 
 export default function AdminPendingList() {
   const [projects, setProjects] = useState<ProjectSummary[]>([])
@@ -73,7 +74,7 @@ export default function AdminPendingList() {
                   </td>
                   <td className="px-5 py-4">
                     <Link
-                      to={`/admin/review/${p.id}`}
+                      to={`/${ADMIN_PATH}/review/${p.id}`}
                       className="flex items-center gap-1 text-primary-600 hover:text-primary-800 hover:underline"
                     >
                       심사하기
