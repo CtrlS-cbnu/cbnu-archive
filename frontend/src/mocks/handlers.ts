@@ -1,5 +1,6 @@
 import { http, HttpResponse } from 'msw'
 import type { BackendProjectResponse, BackendPage } from '@/types/project'
+import type { AdminStats, AuditLog } from '@/types/admin'
 
 // ---------------------------------------------------------------------------
 // Helper: wrap data in the same ApiResponse envelope that the real backend sends
@@ -316,4 +317,111 @@ export const handlers = [
       llm_answer: `"${body.query}"에 관련된 ${results.length}개의 프로젝트를 찾았습니다. (MSW 목 응답)`,
     })
   }),
+
+  // --------------------------------------------------------------------------
+  // Admin project management mocks
+  // --------------------------------------------------------------------------
+
+  // In-memory pending list — starts with 2 mock PENDING_APPROVAL entries
+  // PATCH approve/reject mutate this array so the UI reflects state changes
+  // --------------------------------------------------------------------------
+  (() => {
+    const pendingProjects: BackendProjectResponse[] = [
+      {
+        id: 101,
+        title: 'Kotlin + Room DB 가계부 앱',
+        summary: '월별 수입/지출을 기록하고 차트로 분석하는 Android 가계부 앱',
+        description: 'Kotlin과 Room DB를 사용하여 제작한 개인 가계부 앱입니다.',
+        readme: '',
+        year: 2025,
+        semester: 'FIRST',
+        techStacks: ['Kotlin', 'Room DB', 'Android', 'MPAndroidChart'],
+        difficulty: '중급',
+        domain: '모바일프로그래밍',
+        authorId: 10,
+        authorName: '김민준',
+        status: 'PENDING_APPROVAL',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      },
+      {
+        id: 102,
+        title: 'FastAPI + Redis 실시간 랭킹 시스템',
+        summary: '게임 또는 커머스 플랫폼용 실시간 점수 랭킹 REST API',
+        description: 'FastAPI와 Redis Sorted Set으로 구현한 실시간 랭킹 시스템',
+        readme: '',
+        year: 2025,
+        semester: 'FIRST',
+        techStacks: ['Python', 'FastAPI', 'Redis', 'Docker'],
+        difficulty: '중급',
+        domain: '백엔드',
+        authorId: 11,
+        authorName: '이지원',
+        status: 'PENDING_APPROVAL',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      },
+    ]
+
+    const mockAuditLogs: AuditLog[] = [
+      { id: 1, actorUserId: 999, action: 'APPROVE', entityType: 'PROJECT', entityId: 3, detail: '승인 처리', createdAt: new Date().toISOString() },
+      { id: 2, actorUserId: 999, action: 'REJECT', entityType: 'PROJECT', entityId: 4, detail: '내용 불충분', createdAt: new Date().toISOString() },
+    ]
+
+    return [
+      http.get('/api/v1/admin/projects/pending', () => ok(pendingProjects)),
+
+      http.patch('/api/v1/admin/projects/:id/approve', ({ params }) => {
+        const id = Number(params.id)
+        const idx = pendingProjects.findIndex((p) => p.id === id)
+        if (idx !== -1) {
+          pendingProjects[idx] = { ...pendingProjects[idx], status: 'APPROVED' }
+          mockAuditLogs.unshift({ id: Date.now(), actorUserId: 999, action: 'APPROVE', entityType: 'PROJECT', entityId: id, detail: '승인 처리 (MSW)', createdAt: new Date().toISOString() })
+        }
+        return ok(pendingProjects[idx] ?? { id })
+      }),
+
+      http.patch('/api/v1/admin/projects/:id/reject', ({ params }) => {
+        const id = Number(params.id)
+        const idx = pendingProjects.findIndex((p) => p.id === id)
+        if (idx !== -1) {
+          pendingProjects[idx] = { ...pendingProjects[idx], status: 'REJECTED' }
+          mockAuditLogs.unshift({ id: Date.now(), actorUserId: 999, action: 'REJECT', entityType: 'PROJECT', entityId: id, detail: '반려 처리 (MSW)', createdAt: new Date().toISOString() })
+        }
+        return ok(pendingProjects[idx] ?? { id })
+      }),
+
+      http.patch('/api/v1/admin/projects/:id/request-revision', ({ params }) => {
+        const id = Number(params.id)
+        const idx = pendingProjects.findIndex((p) => p.id === id)
+        if (idx !== -1) {
+          pendingProjects[idx] = { ...pendingProjects[idx], status: 'REVISION_REQUESTED' }
+          mockAuditLogs.unshift({ id: Date.now(), actorUserId: 999, action: 'REVISION_REQUESTED', entityType: 'PROJECT', entityId: id, detail: '수정 요청 (MSW)', createdAt: new Date().toISOString() })
+        }
+        return ok(pendingProjects[idx] ?? { id })
+      }),
+
+      http.get('/api/v1/admin/projects/stats', () => {
+        const stats: AdminStats = {
+          totalProjects: 11,
+          pendingCount: pendingProjects.filter((p) => p.status === 'PENDING_APPROVAL').length,
+          rejectedCount: 1,
+          totalDownloads: 247,
+          topTags: ['React', 'Python', 'Spring Boot', 'TypeScript', 'Flutter'],
+        }
+        return ok(stats)
+      }),
+
+      http.get('/api/v1/admin/projects/audit-logs', () => {
+        const page: BackendPage<AuditLog> = {
+          content: mockAuditLogs,
+          totalElements: mockAuditLogs.length,
+          totalPages: 1,
+          number: 0,
+          size: 20,
+        }
+        return ok(page)
+      }),
+    ]
+  })(),
 ]

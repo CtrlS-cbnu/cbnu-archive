@@ -33,6 +33,7 @@ export interface BackendProjectResponse {
   authorId: number
   authorName: string
   status: ProjectStatus
+  visibility?: string   // set after admin approval
   createdAt: string
   updatedAt: string
 }
