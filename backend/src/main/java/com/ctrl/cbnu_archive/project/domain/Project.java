@@ -13,7 +13,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
@@ -31,13 +30,13 @@ public class Project extends BaseTimeEntity {
     @Column(nullable = false)
     private String title;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String summary;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String description;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String readme;
 
     @ElementCollection
