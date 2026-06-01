@@ -1,6 +1,6 @@
 import { api } from './axiosInstance'
 import type { ApiResponse } from '@/types/api'
-import type { AuditLog, AdminStats } from '@/types/admin'
+import type { AuditLog, AdminStats, PendingUser } from '@/types/admin'
 import type { BackendPage, BackendProjectResponse } from '@/types/project'
 import { toSummary } from './_adapters'
 
@@ -33,3 +33,22 @@ export const getAuditLogs = (page = 0, size = 20) =>
   api
     .get<ApiResponse<BackendPage<AuditLog>>>('/api/v1/admin/projects/audit-logs', { params: { page, size } })
     .then((r) => r.data.data)
+
+// Fetch all users awaiting registration approval from admin
+export const getPendingUsers = () =>
+  api
+    .get<ApiResponse<PendingUser[]>>('/api/v1/admin/users/pending')
+    .then((r) => r.data.data)
+
+// Approve a user's registration request
+export const approveUser = (userId: number) =>
+  api
+    .post<ApiResponse<PendingUser>>(`/api/v1/admin/users/${userId}/approve`)
+    .then((r) => r.data.data)
+
+// Reject a user's registration request with an optional reason
+export const rejectUser = (userId: number, reason?: string) =>
+  api
+    .post<ApiResponse<void>>(`/api/v1/admin/users/${userId}/reject`, { reason })
+    .then((r) => r.data.data)
+

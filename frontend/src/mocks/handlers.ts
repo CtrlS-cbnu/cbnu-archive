@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 import type { BackendProjectResponse, BackendPage } from '@/types/project'
-import type { AdminStats, AuditLog } from '@/types/admin'
+import type { AdminStats, AuditLog, PendingUser } from '@/types/admin'
 
 // ---------------------------------------------------------------------------
 // Helper: wrap data in the same ApiResponse envelope that the real backend sends
@@ -325,7 +325,12 @@ export const handlers = [
   // In-memory pending list — starts with 2 mock PENDING_APPROVAL entries
   // PATCH approve/reject mutate this array so the UI reflects state changes
   // --------------------------------------------------------------------------
-  (() => {
+  ...(() => {
+    const pendingUsers: PendingUser[] = [
+      { id: 201, email: 'student1@cbnu.ac.kr', name: '홍길동', studentNumber: '2022010203', role: 'USER', status: 'PENDING' },
+      { id: 202, email: 'student2@cbnu.ac.kr', name: '성춘향', studentNumber: '2023020304', role: 'USER', status: 'PENDING' },
+    ]
+
     const pendingProjects: BackendProjectResponse[] = [
       {
         id: 101,
@@ -421,6 +426,46 @@ export const handlers = [
           size: 20,
         }
         return ok(page)
+      }),
+
+      // Admin user management mocks
+      http.get('/api/v1/admin/users/pending', () => ok(pendingUsers)),
+
+      http.post('/api/v1/admin/users/:id/approve', ({ params }) => {
+        const id = Number(params.id)
+        const idx = pendingUsers.findIndex((u) => u.id === id)
+        if (idx !== -1) {
+          pendingUsers[idx] = { ...pendingUsers[idx], status: 'ACTIVE' }
+          mockAuditLogs.unshift({
+            id: Date.now(),
+            actorUserId: 999,
+            action: 'APPROVE',
+            entityType: 'USER',
+            entityId: id,
+            detail: '회원 승인 처리 (MSW)',
+            createdAt: new Date().toISOString()
+          })
+        }
+        return ok(pendingUsers[idx] ?? { id })
+      }),
+
+      http.post('/api/v1/admin/users/:id/reject', async ({ params, request }) => {
+        const id = Number(params.id)
+        const body = (await request.json() as { reason?: string }) || {}
+        const idx = pendingUsers.findIndex((u) => u.id === id)
+        if (idx !== -1) {
+          pendingUsers[idx] = { ...pendingUsers[idx], status: 'REJECTED' }
+          mockAuditLogs.unshift({
+            id: Date.now(),
+            actorUserId: 999,
+            action: 'REJECT',
+            entityType: 'USER',
+            entityId: id,
+            detail: `회원 거절 처리 (사유: ${body.reason || '없음'}) (MSW)`,
+            createdAt: new Date().toISOString()
+          })
+        }
+        return ok(null)
       }),
     ]
   })(),
