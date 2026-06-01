@@ -17,3 +17,14 @@ export interface AdminStats {
   totalDownloads: number
   topTags: string[]
 }
+
+// Matches backend UserResponse record for pending users
+export interface PendingUser {
+  id: number
+  email: string
+  name: string
+  studentNumber: string
+  role: 'USER' | 'ADMIN'
+  status: 'PENDING' | 'ACTIVE' | 'REJECTED'
+}
+
