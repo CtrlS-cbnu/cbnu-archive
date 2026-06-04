@@ -62,3 +62,4 @@ venv/
 env/
 .pytest_cache/
 .coverageinfra/db/generated_seed_from_metadata.sql
+infra/db/generated_seed_from_metadata.sql
