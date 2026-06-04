@@ -61,4 +61,4 @@ __pycache__/
 venv/
 env/
 .pytest_cache/
-.coverage
+.coverageinfra/db/generated_seed_from_metadata.sql
