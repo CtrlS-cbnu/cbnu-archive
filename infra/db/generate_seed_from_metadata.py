@@ -25,6 +25,56 @@ def short_text(value, limit):
     return value
 
 
+def map_domain(language, title, summary):
+    text = f"{title} {summary} {language}".lower()
+
+    if any(word in text for word in [
+        "ai", "artificial intelligence", "machine learning", "deep learning",
+        "llm", "rag", "diffusion", "transformer", "model", "recommendation",
+        "computer vision", "image generation", "chatbot", "neural"
+    ]):
+        return "인공지능"
+
+    if any(word in text for word in [
+        "spring", "api", "server", "backend", "jpa", "database",
+        "java", "go", "rest", "microservice", "crud"
+    ]):
+        return "백엔드"
+
+    if any(word in text for word in [
+        "react", "typescript", "javascript", "html", "css",
+        "web", "frontend", "dashboard", "ui", "browser"
+    ]):
+        return "웹"
+
+    if any(word in text for word in [
+        "android", "kotlin", "mobile", "ios", "app"
+    ]):
+        return "앱"
+
+    if any(word in text for word in [
+        "data", "sql", "analytics", "analysis", "pandas", "pipeline"
+    ]):
+        return "데이터분석"
+
+    if any(word in text for word in [
+        "security", "auth", "xray", "vulnerability", "password", "token"
+    ]):
+        return "보안"
+
+    if any(word in text for word in [
+        "cloud", "docker", "kubernetes", "devops", "deploy"
+    ]):
+        return "클라우드"
+
+    if any(word in text for word in [
+        "embedded", "iot", "arduino", "raspberry", "firmware"
+    ]):
+        return "임베디드"
+
+    return "웹"
+
+
 def make_test_embedding(index, dim=384):
     values = [0.0] * dim
 
@@ -61,6 +111,7 @@ def main():
         repo_url = source.get("repo_url") or ""
         storage_key = f"metadata/{project_key.replace('/', '_')}.json"
 
+        domain = map_domain(language, title, summary)
         embedding = make_test_embedding(idx)
 
         lines.append(f"""
@@ -88,7 +139,7 @@ SELECT
     2026,
     '1학기',
     'MEDIUM',
-    {sql_text(language)},
+    {sql_text(domain)},
     TRUE,
     'APPROVED',
     'PUBLIC',
@@ -98,6 +149,12 @@ SELECT
 WHERE NOT EXISTS (
     SELECT 1 FROM projects WHERE title = {sql_text(title)}
 );
+""")
+
+        lines.append(f"""
+UPDATE projects
+SET domain = {sql_text(domain)}
+WHERE title = {sql_text(title)};
 """)
 
         lines.append(f"""
@@ -140,6 +197,7 @@ ON CONFLICT (storage_key) DO NOTHING;
                 "repo_url": repo_url,
                 "repo_name": title,
                 "language": language,
+                "domain": domain,
             },
             ensure_ascii=False,
         )
