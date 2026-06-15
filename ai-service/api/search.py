@@ -2,44 +2,59 @@ from __future__ import annotations
 
 from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import Any
+
+from services.rag_service import RAGService
 
 router = APIRouter(prefix="/search", tags=["search"])
 
-
-class ProjectContext(BaseModel):
-    projectId: int | None = None
-    project_id: int | None = None
-    title: str | None = None
-    summary: str | None = None
-    techStacks: list[str] | None = None
-    tech_stack: list[str] | None = None
-    score: float | None = None
+rag_service = RAGService()
 
 
 class SearchRequest(BaseModel):
     query: str
     top_k: int = 5
-    project_ids: list[int] = []
-    retrievedDocs: list[ProjectContext] = []
-    retrieved_docs: list[ProjectContext] = []
+
+
+# 실제론 DB/벡터DB에서 가져와야 함
+DUMMY_PROJECTS = [
+    {
+        "project_id": 101,
+        "title": "AI 인터렉션 기반 교내 프로젝트 지식 아카이브",
+        "topic": "프로젝트 아카이브",
+        "tech_stack": ["React", "Spring Boot", "PostgreSQL", "OpenSearch", "Python", "RAG", "LLM"],
+        "keywords": ["검색", "추천", "자연어", "아카이브"],
+        "difficulty": "고급",
+        "project_type": "팀 프로젝트",
+        "embedding": [0.01] * 384,
+    },
+    {
+        "project_id": 102,
+        "title": "헬스케어 이미지 분류 시스템",
+        "topic": "헬스케어",
+        "tech_stack": ["PyTorch", "OpenCV", "Python"],
+        "keywords": ["헬스케어", "이미지 분류", "딥러닝"],
+        "difficulty": "중급",
+        "project_type": "캡스톤",
+        "embedding": [0.02] * 384,
+    },
+    {
+        "project_id": 103,
+        "title": "추천 시스템 기반 도서 추천 플랫폼",
+        "topic": "추천 시스템",
+        "tech_stack": ["FastAPI", "PostgreSQL", "Python"],
+        "keywords": ["추천", "도서", "검색"],
+        "difficulty": "중급",
+        "project_type": "수업 과제",
+        "embedding": [0.03] * 384,
+    },
+]
 
 
 @router.post("")
-def search_projects(request: SearchRequest) -> dict[str, Any]:
-    docs = request.retrievedDocs or request.retrieved_docs
-
-    if docs:
-        recommended_ids = []
-        for doc in docs[:request.top_k]:
-            project_id = doc.projectId if doc.projectId is not None else doc.project_id
-            if project_id is not None:
-                recommended_ids.append(project_id)
-    else:
-        recommended_ids = request.project_ids[:request.top_k]
-
-    return {
-        "answer": f"'{request.query}'에 대한 테스트 추천 응답입니다.",
-        "recommendedProjectIds": recommended_ids,
-        "reasoning": "로컬 LLM 모델 로딩 없이 백엔드-AI 서비스 연동을 검증하기 위한 mock 응답입니다."
-    }
+def search_projects(request: SearchRequest):
+    result = rag_service.run_rag(
+        query=request.query,
+        project_items=DUMMY_PROJECTS,
+        top_k=request.top_k,
+    )
+    return result
