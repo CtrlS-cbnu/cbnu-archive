@@ -4,7 +4,7 @@ import { logout } from '@/api/auth'
 import { ADMIN_PATH } from '@/config'
 
 export function GNB() {
-  const { role } = useAuthStore()
+  const role = useAuthStore((state) => state.role)
   const navigate = useNavigate()
 
   const handleLogout = async () => {

@@ -10,7 +10,9 @@ const DOMAINS = ['웹', '앱', '인공지능', '백엔드', '클라우드', '보
 
 export default function Home() {
   const navigate = useNavigate()
-  const { setKeyword, setFilter, setSearchType } = useSearchStore()
+  const setKeyword = useSearchStore((state) => state.setKeyword)
+  const setFilter = useSearchStore((state) => state.setFilter)
+  const setSearchType = useSearchStore((state) => state.setSearchType)
   const [query, setQuery] = useState('')
   const [recent, setRecent] = useState<ProjectSummary[]>([])
 

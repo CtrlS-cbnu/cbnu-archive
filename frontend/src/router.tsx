@@ -1,20 +1,23 @@
+import { lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { PageWrapper } from '@/components/layout/PageWrapper'
 import { RequireAuth } from '@/components/layout/RequireAuth'
-import Home from '@/pages/Home'
-import Login from '@/pages/Login'
-import SignUp from '@/pages/SignUp'
-import ProjectList from '@/pages/ProjectList'
-import ProjectDetail from '@/pages/ProjectDetail'
-import ProjectUpload from '@/pages/ProjectUpload'
-import ProjectEdit from '@/pages/ProjectEdit'
-import MyProjects from '@/pages/MyProjects'
-import Chat from '@/pages/Chat'
-import AdminPendingList from '@/pages/admin/AdminPendingList'
-import AdminReview from '@/pages/admin/AdminReview'
-import AdminStats from '@/pages/admin/AdminStats'
-import AdminMetadata from '@/pages/admin/AdminMetadata'
 import { ADMIN_PATH } from '@/config'
+
+const Home = lazy(() => import('@/pages/Home'))
+const Login = lazy(() => import('@/pages/Login'))
+const SignUp = lazy(() => import('@/pages/SignUp'))
+const ProjectList = lazy(() => import('@/pages/ProjectList'))
+const ProjectDetail = lazy(() => import('@/pages/ProjectDetail'))
+const ProjectUpload = lazy(() => import('@/pages/ProjectUpload'))
+const ProjectEdit = lazy(() => import('@/pages/ProjectEdit'))
+const MyProjects = lazy(() => import('@/pages/MyProjects'))
+const Chat = lazy(() => import('@/pages/Chat'))
+
+const AdminPendingList = lazy(() => import('@/pages/admin/AdminPendingList'))
+const AdminReview = lazy(() => import('@/pages/admin/AdminReview'))
+const AdminStats = lazy(() => import('@/pages/admin/AdminStats'))
+const AdminMetadata = lazy(() => import('@/pages/admin/AdminMetadata'))
 
 const router = createBrowserRouter([
   {

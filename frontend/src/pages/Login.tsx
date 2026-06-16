@@ -15,7 +15,7 @@ type FormValues = z.infer<typeof schema>
 export default function Login() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { role } = useAuthStore()
+  const role = useAuthStore((state) => state.role)
 
   const {
     register,
