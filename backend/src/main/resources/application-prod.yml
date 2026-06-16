@@ -23,8 +23,10 @@ app:
     embedding: ai
     vector: pgvector
     search: postgres
-    storage: s3
+    storage: minio
   storage:
-    s3:
-      bucket: ${S3_BUCKET:cbnu-archive-files}
-      region: ${S3_REGION:ap-northeast-2}
+    minio:
+      endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+      bucket: ${MINIO_BUCKET:cbnu-archive-files}
+      access-key: ${MINIO_ACCESS_KEY:minioadmin}
+      secret-key: ${MINIO_SECRET_KEY:minioadmin}
