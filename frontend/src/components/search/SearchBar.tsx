@@ -7,7 +7,10 @@ interface SearchBarProps {
 }
 
 export function SearchBar({ onSearch }: SearchBarProps) {
-  const { keyword, searchType, setKeyword, setSearchType } = useSearchStore()
+  const keyword = useSearchStore((state) => state.keyword)
+  const searchType = useSearchStore((state) => state.searchType)
+  const setKeyword = useSearchStore((state) => state.setKeyword)
+  const setSearchType = useSearchStore((state) => state.setSearchType)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

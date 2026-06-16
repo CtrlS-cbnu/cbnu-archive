@@ -31,7 +31,7 @@ function DetailSkeleton() {
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const { role } = useAuthStore()
+  const role = useAuthStore((state) => state.role)
 
   const [project, setProject] = useState<ProjectDetailType | null>(null)
   const [recommendations, setRecommendations] = useState<RecommendationItem[]>([])

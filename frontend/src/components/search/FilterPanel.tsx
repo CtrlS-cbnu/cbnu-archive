@@ -12,7 +12,9 @@ const MIN_YEAR = 2010
 const YEAR_OPTIONS = Array.from({ length: CURRENT_YEAR - MIN_YEAR + 1 }, (_, i) => CURRENT_YEAR - i)
 
 export function FilterPanel() {
-  const { filters, setFilter, resetFilters } = useSearchStore()
+  const filters = useSearchStore((state) => state.filters)
+  const setFilter = useSearchStore((state) => state.setFilter)
+  const resetFilters = useSearchStore((state) => state.resetFilters)
   const [techInput, setTechInput] = useState('')
   const [techStackOptions, setTechStackOptions] = useState<string[]>([])
 
