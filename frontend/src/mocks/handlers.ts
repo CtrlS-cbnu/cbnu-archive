@@ -169,11 +169,66 @@ const MOCK_BACKEND: BackendProjectResponse[] = [
   },
 ]
 
+const MOCK_PENDING_USERS: PendingUser[] = [
+  { id: 201, email: 'student1@cbnu.ac.kr', name: '홍길동', studentNumber: '2022010203', role: 'USER', status: 'PENDING' },
+  { id: 202, email: 'student2@cbnu.ac.kr', name: '성춘향', studentNumber: '2023020304', role: 'USER', status: 'PENDING' },
+]
+
 // ---------------------------------------------------------------------------
 // MSW request handlers — all paths match /api/v1/... to mirror the real backend
 // ---------------------------------------------------------------------------
 
 export const handlers = [
+  // GET /api/v1/tech-stacks
+  http.get('/api/v1/tech-stacks', () => {
+    return ok(['React', 'TypeScript', 'Spring Boot', 'Python', 'FastAPI', 'PyTorch', 'MySQL', 'PostgreSQL'])
+  }),
+
+  // GET /api/v1/projects/:projectId/recommendations
+  http.get('/api/v1/projects/:projectId/recommendations', ({ params }) => {
+    return ok({
+      recommendations: [
+        { id: 2, title: 'FastAPI + PyTorch 감성 분석 API', matchReason: '유사한 웹 API 연동 패턴 사용' },
+        { id: 3, title: '모바일 캘린더 + Todo 앱', matchReason: '동일 학기/연도 프로젝트' },
+      ]
+    })
+  }),
+
+  // GET /api/v1/files/projects/:projectId
+  http.get('/api/v1/files/projects/:projectId', ({ params }) => {
+    const projectId = Number(params.projectId)
+    return ok([
+      {
+        id: 1,
+        projectId,
+        fileName: '강의평가_설계서.pdf',
+        fileType: 'PDF',
+        size: 204800,
+        downloadUrl: '',
+        uploadedAt: new Date().toISOString(),
+      },
+      {
+        id: 2,
+        projectId,
+        fileName: '최종결과보고서.docx',
+        fileType: 'DOCX',
+        size: 1048576,
+        downloadUrl: '',
+        uploadedAt: new Date().toISOString(),
+      }
+    ])
+  }),
+
+  // GET /api/v1/files/:fileId/download
+  http.get('/api/v1/files/:fileId/download', () => {
+    const blob = new Blob(['mock file content'], { type: 'text/plain' })
+    return new HttpResponse(blob, {
+      headers: {
+        'Content-Type': 'application/octet-stream',
+      },
+    })
+  }),
+
   // GET /api/v1/projects — keyword search + filtering
   http.get('/api/v1/projects', ({ request }) => {
     const url = new URL(request.url)
@@ -238,6 +293,21 @@ export const handlers = [
     })
   }),
 
+  // POST /api/v1/auth/signup
+  http.post('/api/v1/auth/signup', async ({ request }) => {
+    const body = (await request.json()) as { email: string; name: string; studentNumber?: string }
+    const newUser: PendingUser = {
+      id: Date.now(),
+      email: body.email,
+      name: body.name,
+      studentNumber: body.studentNumber || '2024000000',
+      role: 'USER',
+      status: 'PENDING',
+    }
+    MOCK_PENDING_USERS.push(newUser)
+    return ok(newUser)
+  }),
+
   // POST /api/v1/auth/login
   http.post('/api/v1/auth/login', async ({ request }) => {
     const body = (await request.json()) as { email: string; password: string }
@@ -249,8 +319,24 @@ export const handlers = [
       )
     }
 
-    // Build a minimal mock JWT: header.payload.signature (not cryptographically valid but decodable)
     const isAdmin = body.email === 'admin@cbnu.ac.kr' && body.password === 'admin1234'
+    
+    // Prevent login if the user is PENDING approval
+    if (!isAdmin) {
+      const foundUser = MOCK_PENDING_USERS.find((u) => u.email === body.email)
+      if (foundUser && foundUser.status === 'PENDING') {
+        return HttpResponse.json(
+          {
+            success: false,
+            message: '아직 승인 대기 상태입니다. 관리자의 승인이 필요합니다.',
+            data: null,
+            errorCode: 'USER_NOT_ACTIVE',
+          },
+          { status: 400 },
+        )
+      }
+    }
+
     const userId = isAdmin ? 999 : 1
     const role = isAdmin ? 'ADMIN' : 'USER'
     const payload = btoa(JSON.stringify({ sub: String(userId), email: body.email, role }))
@@ -326,11 +412,6 @@ export const handlers = [
   // PATCH approve/reject mutate this array so the UI reflects state changes
   // --------------------------------------------------------------------------
   ...(() => {
-    const pendingUsers: PendingUser[] = [
-      { id: 201, email: 'student1@cbnu.ac.kr', name: '홍길동', studentNumber: '2022010203', role: 'USER', status: 'PENDING' },
-      { id: 202, email: 'student2@cbnu.ac.kr', name: '성춘향', studentNumber: '2023020304', role: 'USER', status: 'PENDING' },
-    ]
-
     const pendingProjects: BackendProjectResponse[] = [
       {
         id: 101,
@@ -429,13 +510,13 @@ export const handlers = [
       }),
 
       // Admin user management mocks
-      http.get('/api/v1/admin/users/pending', () => ok(pendingUsers)),
+      http.get('/api/v1/admin/users/pending', () => ok(MOCK_PENDING_USERS.filter((u) => u.status === 'PENDING'))),
 
       http.post('/api/v1/admin/users/:id/approve', ({ params }) => {
         const id = Number(params.id)
-        const idx = pendingUsers.findIndex((u) => u.id === id)
+        const idx = MOCK_PENDING_USERS.findIndex((u) => u.id === id)
         if (idx !== -1) {
-          pendingUsers[idx] = { ...pendingUsers[idx], status: 'ACTIVE' }
+          MOCK_PENDING_USERS[idx] = { ...MOCK_PENDING_USERS[idx], status: 'ACTIVE' }
           mockAuditLogs.unshift({
             id: Date.now(),
             actorUserId: 999,
@@ -446,15 +527,15 @@ export const handlers = [
             createdAt: new Date().toISOString()
           })
         }
-        return ok(pendingUsers[idx] ?? { id })
+        return ok(MOCK_PENDING_USERS[idx] ?? { id })
       }),
 
       http.post('/api/v1/admin/users/:id/reject', async ({ params, request }) => {
         const id = Number(params.id)
         const body = (await request.json() as { reason?: string }) || {}
-        const idx = pendingUsers.findIndex((u) => u.id === id)
+        const idx = MOCK_PENDING_USERS.findIndex((u) => u.id === id)
         if (idx !== -1) {
-          pendingUsers[idx] = { ...pendingUsers[idx], status: 'REJECTED' }
+          MOCK_PENDING_USERS[idx] = { ...MOCK_PENDING_USERS[idx], status: 'REJECTED' }
           mockAuditLogs.unshift({
             id: Date.now(),
             actorUserId: 999,

@@ -33,8 +33,11 @@ export default function Login() {
       await login(values)
       const redirect = searchParams.get('redirect') ?? '/'
       navigate(redirect, { replace: true })
-    } catch {
-      setError('root', { message: '이메일 또는 비밀번호를 확인해 주세요.' })
+    } catch (err: unknown) {
+      const msg =
+        (err as { response?: { data?: { message?: string } } })?.response?.data?.message ??
+        '이메일 또는 비밀번호를 확인해 주세요.'
+      setError('root', { message: msg })
     }
   }
 
