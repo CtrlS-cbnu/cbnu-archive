@@ -1,10 +1,10 @@
 import json
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parents[2]
+ROOT_DIR = Path(__file__).resolve().parents[3]
 
-JSON_PATH = BASE_DIR / "ai-service" / "dataset" / "metadata" / "project_metadata_records_100.json"
-OUTPUT_SQL = BASE_DIR / "infra" / "db" / "generated_seed_from_metadata.sql"
+JSON_PATH = ROOT_DIR / "ai-service" / "dataset" / "metadata" / "project_metadata_records_100.json"
+OUTPUT_SQL = Path(__file__).resolve().parent / "generated_seed_from_metadata.sql"
 
 
 def sql_text(value):

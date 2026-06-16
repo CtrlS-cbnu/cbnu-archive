@@ -12,15 +12,18 @@ todo.md
 # =========================
 # Operating System & IDE
 # =========================
+
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 *.swp
+*.iml
 
 # =========================
 # Environment Variables & Logs
 # =========================
+
 .env
 .env.*
 !.env.example
@@ -29,6 +32,7 @@ Thumbs.db
 # =========================
 # Frontend (React / Node.js)
 # =========================
+
 node_modules/
 build/
 dist/
@@ -40,6 +44,7 @@ yarn-error.log*
 # =========================
 # Backend (Spring Boot / Java)
 # =========================
+
 .gradle/
 build/
 target/
@@ -48,18 +53,22 @@ target/
 *.jar
 *.war
 bin/
-.idea/
-*.iml
-.DS_Store
 
 # =========================
 # AI Service (FastAPI / Python)
 # =========================
+
 __pycache__/
 *.py[cod]
 *$py.class
 venv/
 env/
 .pytest_cache/
-.coverageinfra/db/generated_seed_from_metadata.sql
+.coverage
+
+# =========================
+# Generated DB Seed Files
+# =========================
+
 infra/db/generated_seed_from_metadata.sql
+backend/scripts/db/generated_seed_from_metadata.sql
